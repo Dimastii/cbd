@@ -5,6 +5,44 @@
 #include "gnl/get_next_line.h"
 
 #define PI 3.14159265359
+#define ANLGLE PI / 3
+
+
+#define screenWidth 640
+#define screenHeight 480
+#define texWidth 64
+#define texHeight 64
+#define mapWidth 24
+#define mapHeight 24
+
+int worldMap[mapWidth][mapHeight]=
+		{
+				{4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,7,7,7,7,7,7,7,7},
+				{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
+				{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
+				{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
+				{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
+				{4,0,0,0,0,0,0,5,5,0,5,5,5,5,5,5,0,7,0,7,7,7,7,7},
+				{4,0,0,0,0,0,0,5,0,0,0,5,0,5,0,5,0,0,0,0,7,7,7,1},
+				{4,0,0,0,0,0,0,5,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,8},
+				{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,7,1},
+				{4,0,0,0,0,0,0,5,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,8},
+				{4,0,0,0,0,0,0,5,0,0,0,0,0,0,0,5,0,0,0,0,7,7,7,1},
+				{4,0,0,0,0,0,0,5,5,0,5,0,5,5,5,5,0,7,7,7,7,7,7,1},
+				{6,6,0,6,0,6,0,6,6,0,6,0,6,6,6,6,0,6,6,6,6,6,6,6},
+				{8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4},
+				{6,6,0,6,0,6,0,6,6,0,6,0,6,6,6,6,0,6,6,6,6,6,6,6},
+				{4,4,0,4,0,4,0,4,4,0,6,0,6,2,2,2,0,2,2,2,3,3,3,3},
+				{4,0,0,0,0,0,0,0,0,0,6,0,6,2,0,0,0,0,0,2,0,0,0,2},
+				{4,0,0,0,0,0,0,0,0,0,0,0,6,2,0,0,0,0,0,2,0,0,0,2},
+				{4,0,0,0,0,0,0,0,0,0,6,0,6,2,0,0,0,0,0,2,2,0,2,2},
+				{4,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,2},
+				{4,0,0,5,0,0,0,0,0,0,6,0,6,2,0,0,0,0,0,2,2,0,2,2},
+				{4,0,0,0,0,0,0,0,0,0,6,0,6,2,0,0,0,0,0,2,0,0,0,2},
+				{4,0,0,0,0,0,0,0,0,0,6,0,6,2,0,0,0,0,0,2,0,0,0,2},
+				{4,4,4,4,4,4,4,4,4,4,1,1,1,2,2,2,2,2,2,3,3,3,3,3}
+		};
+
 
 typedef struct  s_data {
 	void        *img;
@@ -32,7 +70,7 @@ typedef struct  s_vars {
 }               t_vars;
 
 
-void rey(t_vars vars);
+void rey(t_vars* vars);
 
 void            my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
@@ -42,92 +80,97 @@ void            my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
+
+
 int             key_hook(int keycode, t_vars *vars)
 {
 	double step;
+	double turn;
 
-	step = 10;
-	rey(*vars);
+	step = 9;
+	turn = 0.1;
 	printf("k_code:! %d\n", keycode);
 	if (keycode == 123) {
-		printf("\nhere1\n");
 		vars->x -= step;
 	}
 	if (keycode == 124) {
-		printf("\nhere2\n");
 		vars->x += step;
 	}
 	if (keycode == 125) {
-		printf("\nhere3\n");
 		vars->y += step;
 	}
 	if (keycode == 126) {
-		printf("\nhere4\n");
 		vars->y -= step;
 	}
 	if (keycode == 12) {
-		printf("\nhere4\n");
-		vars->angle += 0.05;
+		vars->angle += turn;
 	}
+	if (keycode == 14) {
+		vars->angle -= turn;
+	}
+	//rey(vars);
 }
-void 	write_map(int arr[3][3],t_vars* vars)
+
+void	write_map(t_vars* vars)
 {
-	int x = 0;
-	int y = 0;
-	int i = 0;
-	int j = 0;
-	int scale = 300;
-	while (i < 3)
+	int i = mapWidth;
+	int j = mapHeight;
+	int sc = vars->size_win_w / mapWidth;
+	while (i--)
 	{
-		j = 0;
-		while (j < 3)
-		{
-			x = 0;
-			while (x <= scale)
-			{
-				y = 0;
-				while (y <= scale)
-				{
-					if (arr[i][j] == 1)
-						my_mlx_pixel_put(&(vars->img), i * scale + x, j * scale + y, 123123123);
-					else
-						my_mlx_pixel_put(&(vars->img), i * scale + x, j * scale + y, 321312321);
-					y++;
+		j = mapHeight;
+		while (j--) {
+			if (worldMap[j][i] == 0) {
+				sc = vars->size_win_w / mapWidth;
+				while (sc-- != 0) {
 
+					my_mlx_pixel_put(&vars->img, (int) (j * (vars->size_win_h / mapHeight) + sc),
+									 (int) (i * (vars->size_win_w / mapWidth) + sc), 0x8800FF00);
 				}
-
-				x++;
 			}
-			//color += 100000;
-			j++;
 		}
-		i++;
 	}
-	mlx_put_image_to_window(vars->mlx, vars->win, vars->img.img, 0, 0);
 }
-void rey(t_vars vars)
-{
-	double i = 0;
-	double cx = vars.x;
-	double cy = vars.y;
-	int color = 999999999;
-	mlx_clear_window(vars.mlx, vars.win);
-	int arr_test_stop_rey[3][3] = {{1, 1, 1},
-								   {1, 0, 1},
-								   {1, 1, 1}};
-	//write_map(arr_test_stop_rey, &vars);
 
-		double t = 0;
-		while ( /*arr_test_stop_rey[(int) cx][(int) cy] != 1*/cx <= vars.size_win_w && cy <= vars.size_win_h && cx >= 0 && cy >= 0 ) {
-			t += 0.05;
-			cx = vars.x + t * cos(vars.angle);
-			cy = vars.y + t * sin(vars.angle);
-			if (arr_test_stop_rey[(int) cx / 300][(int) cy / 300] == 0){break;}
-			my_mlx_pixel_put(&vars.img, (int)cx, (int)cy , color);
-			color -=1000000;
+unsigned long colorr = 0x88FFFFFF;
+
+void rey(t_vars* vars)
+{
+	double cx;
+	double cy;
+
+	mlx_destroy_image(vars->mlx, vars->img.img);
+	vars->img.img = mlx_new_image(vars->mlx, vars->size_win_w, vars->size_win_h);
+	vars->img.addr = mlx_get_data_addr(vars->img.img, &vars->img.bits_per_pixel, &vars->img.line_length, &vars->img.endian);
+	write_map(vars);
+	double t;
+	double angle_offset = ANLGLE / 512;
+	double qqq = vars->angle * 1.5;
+	double angle = qqq;
+	int n = 0;
+	while (angle <= qqq + ANLGLE)
+	{
+		//printf("123123123\n");
+		t = 0;
+		cx = vars->x;
+		cy = vars->y;
+		while (cx <= vars->size_win_w && cy < vars->size_win_h - 1 && cx >= 0 && cy >= 0) {
+			t += 1;
+			//colorr -= 9;
+			cx = vars->x + t * cos(angle);
+			cy = vars->y + t * sin(angle);
+			if (worldMap[(int) cx / (vars->size_win_w / mapWidth)][(int) cy / (vars->size_win_h / mapHeight)] != 0) { break; }
+			my_mlx_pixel_put(&vars->img, (int) cx, (int) cy, colorr);
 		}
-	my_mlx_pixel_put(&vars.img,vars.x , vars.y  , 0x0000FF00);
-	mlx_put_image_to_window(vars.mlx, vars.win, vars.img.img, 0, 0);
+		//printf("%d\n", n);
+		n++;
+
+		angle += angle_offset;
+	}
+	printf("%d\n", n);
+	//printf("123123123\n");
+	my_mlx_pixel_put(&vars->img,vars->x , vars->y  , 0x00FF0000);
+	mlx_put_image_to_window(vars->mlx, vars->win, vars->img.img, 0, 0);
 
 }
 
@@ -138,20 +181,20 @@ int             main(void)
 	vars.size_win_w = 1000;
 	vars.size_win_h = 1000;
 
-	vars.x = 0;
+	vars.x = 1;
 	vars.y = 1.5;
 	vars.key = -1;
 
 	vars.angle = 0;
 
 	vars.mlx = mlx_init();
+
 	vars.win = mlx_new_window(vars.mlx, vars.size_win_w, vars.size_win_h, "Gucci flip flops");
 	vars.img.img = mlx_new_image(vars.mlx, vars.size_win_w, vars.size_win_h);
 	vars.img.addr = mlx_get_data_addr(vars.img.img, &vars.img.bits_per_pixel, &vars.img.line_length, &vars.img.endian);
 
-	mlx_put_image_to_window(vars.mlx, vars.win, vars.img.img, 0, 0);
-	mlx_clear_window(vars.mlx, vars.win);
 	mlx_hook(vars.win, 2, 1L<<0,key_hook , &vars);
-
+	mlx_loop_hook(vars.mlx, rey, &vars);
+	//printf("123123123\n");
 	mlx_loop(vars.mlx);
 }
