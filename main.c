@@ -5,13 +5,8 @@
 #include "gnl/get_next_line.h"
 
 #define PI 3.14159265359
-#define ANLGLE PI / 3
+#define ANLGLE PI / 2
 
-
-#define screenWidth 640
-#define screenHeight 480
-#define texWidth 64
-#define texHeight 64
 #define mapWidth 24
 #define mapHeight 24
 
@@ -88,7 +83,7 @@ int             key_hook(int keycode, t_vars *vars)
 	double turn;
 
 	step = 9;
-	turn = 0.1;
+	turn = 0.09;
 	printf("k_code:! %d\n", keycode);
 	if (keycode == 123) {
 		vars->x -= step;
@@ -132,7 +127,7 @@ void	write_map(t_vars* vars)
 	}
 }
 
-unsigned long colorr = 0x88FFFFFF;
+unsigned long colorr = 0xFFFFF0;
 
 void rey(t_vars* vars)
 {
@@ -147,7 +142,6 @@ void rey(t_vars* vars)
 	double angle_offset = ANLGLE / 512;
 	double qqq = vars->angle * 1.5;
 	double angle = qqq;
-	int n = 0;
 	while (angle <= qqq + ANLGLE)
 	{
 		//printf("123123123\n");
@@ -155,19 +149,19 @@ void rey(t_vars* vars)
 		cx = vars->x;
 		cy = vars->y;
 		while (cx <= vars->size_win_w && cy < vars->size_win_h - 1 && cx >= 0 && cy >= 0) {
-			t += 1;
-			//colorr -= 9;
+			t += 2;
+			colorr -= 10;
 			cx = vars->x + t * cos(angle);
 			cy = vars->y + t * sin(angle);
 			if (worldMap[(int) cx / (vars->size_win_w / mapWidth)][(int) cy / (vars->size_win_h / mapHeight)] != 0) { break; }
-			my_mlx_pixel_put(&vars->img, (int) cx, (int) cy, colorr);
+			my_mlx_pixel_put(&vars->img, (int) cx, (int) cy, 0x20FFF000);
 		}
+		//	my_mlx_pixel_put(&vars->img, n, n, 0x000000FF);
 		//printf("%d\n", n);
-		n++;
 
 		angle += angle_offset;
 	}
-	printf("%d\n", n);
+	//printf("%d\n", n);
 	//printf("123123123\n");
 	my_mlx_pixel_put(&vars->img,vars->x , vars->y  , 0x00FF0000);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img.img, 0, 0);
@@ -181,8 +175,8 @@ int             main(void)
 	vars.size_win_w = 1000;
 	vars.size_win_h = 1000;
 
-	vars.x = 1;
-	vars.y = 1.5;
+	vars.x = 50;
+	vars.y = 50;
 	vars.key = -1;
 
 	vars.angle = 0;
