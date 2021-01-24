@@ -5,7 +5,7 @@
 #include "gnl/get_next_line.h"
 
 #define PI 3.14159265359
-#define ANLGLE PI / 2
+#define ANLGLE PI / 3.0
 
 #define mapWidth 24
 #define mapHeight 24
@@ -110,24 +110,25 @@ void	write_map(t_vars* vars)
 {
 	int i = mapWidth;
 	int j = mapHeight;
-	int sc = vars->size_win_w / mapWidth;
+	int sc1 = vars->size_win_w / mapWidth;
+	int sc2 = vars->size_win_w / mapHeight;
 	while (i--)
 	{
 		j = mapHeight;
 		while (j--) {
 			if (worldMap[j][i] == 0) {
-				sc = vars->size_win_w / mapWidth;
-				while (sc-- != 0) {
-
-					my_mlx_pixel_put(&vars->img, (int) (j * (vars->size_win_h / mapHeight) + sc),
-									 (int) (i * (vars->size_win_w / mapWidth) + sc), 0x8800FF00);
+				sc1 = vars->size_win_w / mapWidth;
+				while (sc1-- != 0) {
+					sc2 = vars->size_win_w / mapHeight;
+					while (sc2-- != 0)
+					my_mlx_pixel_put(&vars->img, (int) (j * (vars->size_win_h / mapHeight) + sc2),
+									 (int) (i * (vars->size_win_w / mapWidth) + sc1), 0x8800FF00);
+					//my_mlx_pixel_put(&vars->img, (int) (j * (vars->size_win_h / mapHeight) + sc),(int) (i * (vars->size_win_w / mapWidth) + sc), 0x8800FF00);
 				}
 			}
 		}
 	}
 }
-
-unsigned long colorr = 0xFFFFF0;
 
 void rey(t_vars* vars)
 {
@@ -137,32 +138,47 @@ void rey(t_vars* vars)
 	mlx_destroy_image(vars->mlx, vars->img.img);
 	vars->img.img = mlx_new_image(vars->mlx, vars->size_win_w, vars->size_win_h);
 	vars->img.addr = mlx_get_data_addr(vars->img.img, &vars->img.bits_per_pixel, &vars->img.line_length, &vars->img.endian);
-	write_map(vars);
+	//write_map(vars);
 	double t;
 	double angle_offset = ANLGLE / 512;
 	double qqq = vars->angle * 1.5;
 	double angle = qqq;
+	double len_rey;
+	int	fragment;
+	int wall_y;
+	int num_rey = 1;
+	int wall_x = 0;
 	while (angle <= qqq + ANLGLE)
 	{
-		//printf("123123123\n");
 		t = 0;
 		cx = vars->x;
 		cy = vars->y;
 		while (cx <= vars->size_win_w && cy < vars->size_win_h - 1 && cx >= 0 && cy >= 0) {
-			t += 2;
-			colorr -= 10;
+			t += 1;
 			cx = vars->x + t * cos(angle);
 			cy = vars->y + t * sin(angle);
-			if (worldMap[(int) cx / (vars->size_win_w / mapWidth)][(int) cy / (vars->size_win_h / mapHeight)] != 0) { break; }
-			my_mlx_pixel_put(&vars->img, (int) cx, (int) cy, 0x20FFF000);
+			if (worldMap[(int) cx / (vars->size_win_w / mapWidth)][(int) cy / (vars->size_win_h / mapHeight)] != 0)
+			{
+				len_rey = sqrt(pow((cx - vars->x), 2) + pow((cy - vars->y), 2));
+				fragment = 0;
+				while (fragment++ < ((vars->size_win_w / 512)) && wall_x++ < vars->size_win_w)
+				{
+					wall_y = 0;
+					while (wall_y++/2 < vars->size_win_w * 53 / len_rey)
+					{
+						//printf("%d | %f\n", num_rey, len_rey);
+						my_mlx_pixel_put(&vars->img, (int) wall_x, (int) wall_y/2 + vars->size_win_h / 2, 0x0000FF00);
+						my_mlx_pixel_put(&vars->img, (int) wall_x, (int) vars->size_win_h / 2 - wall_y/2, 0x0000FF00);
+					}
+				}
+				break;
+			}
+			//my_mlx_pixel_put(&vars->img, (int) cx, (int) cy, 0x20FFF000);
 		}
-		//	my_mlx_pixel_put(&vars->img, n, n, 0x000000FF);
-		//printf("%d\n", n);
-
+		num_rey++;
 		angle += angle_offset;
 	}
-	//printf("%d\n", n);
-	//printf("123123123\n");
+	printf("rey N %d\n", num_rey);
 	my_mlx_pixel_put(&vars->img,vars->x , vars->y  , 0x00FF0000);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img.img, 0, 0);
 
@@ -172,11 +188,11 @@ int             main(void)
 {
 	t_vars      vars;
 
-	vars.size_win_w = 1000;
-	vars.size_win_h = 1000;
+	vars.size_win_w = 1024;
+	vars.size_win_h = 1024;
 
-	vars.x = 50;
-	vars.y = 50;
+	vars.x = 150;
+	vars.y = 150;
 	vars.key = -1;
 
 	vars.angle = 0;
