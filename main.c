@@ -147,104 +147,119 @@ void	write_map(t_vars* vars)
 	}
 }
 
+void ft_round(double min_angle,double *cx, double *cy)
+{
+	if (cos(min_angle) > 0 && sin(min_angle) > 0)
+	{
+		*cy = (*cy - floor(*cy) > 0) ? floor(*cy) : *cy - 1;
+		*cx = (*cx - ceil(*cx) < 0) ? ceil(*cx) : *cx + 1;
+	}
+	else if (cos(min_angle) > 0 && sin(min_angle) < 0)
+	{
+	//	printf("%f - %f = %f",*cy, ceil(*cy), *cy - ceil(*cy));
+		*cy = (*cy - ceil(*cy) < 0) ? ceil(*cy) : *cy + 1;
+		*cx = (*cx - ceil(*cx) < 0) ? ceil(*cx) : *cx + 1;
+	}
+	else if (cos(min_angle) < 0 && sin(min_angle) < 0)
+	{
+		*cy = (*cy - ceil(*cy) < 0) ? ceil(*cy) :*cy + 1;
+		*cx = (*cx - floor(*cx) > 0) ? floor(*cx) : *cx - 1;
+	}
+	else if (cos(min_angle) < 0 && sin(min_angle) > 0)
+	{
+		*cy = (*cy - floor(*cy) > 0) ? floor(*cy) : *cy - 1;
+		*cx = (*cx - ceil(*cx) > 0) ? ceil(*cx) : *cx  -1;
+	}
+	else
+		printf("11111111111\n");
+
+}
+
+double ft_len_rey_if_wall(double min_angle, double *c, t_vars *vars)
+{
+	double len;
+	double y;
+
+	len = (vars->x - *c) / sin(min_angle);
+	y = len * cos(min_angle);
+
+}
+
 void rey(t_vars* vars)
 {
 	double cx;
 	double cy;
+	double cyx;
 
-	double x;
-	double y;
 
-	//write_map(vars);
-	double t;
 	double angle_offset = ANLGLE / N_REY;
 	double max_angle = vars->angle_p + ANLGLE / 2.0;
 	double min_angle = vars->angle_p - ANLGLE / 2.0;
-	double len_rey;
-	int	fragment_x;
-	int	fragment_y;
+
 	int num_rey = 1;
-	int wall_y;
-	int wall_x = 0;
+
+	double lenx;
+	double leny;
 	while (min_angle <= max_angle)
 	{
-		t = 0;
+
 		cx = vars->x;
 		cy = vars->y;
-		while (cx <= vars->size_win_w && cy < vars->size_win_h - 1 && cx >= 0 && cy >= 0) {
-//			t += 1;
-			if (cos(min_angle) > 0 && sin(min_angle) > 0)
-			{
-				cy = ((int)cy / ((vars->size_win_h / mapWidth) * (vars->size_win_h / mapWidth)));
-				cx += ((int) cx % mapHeight) ?  vars->size_win_h / mapHeight : vars->size_win_h / mapHeight - (int) cx % mapHeight;
-				//cx += (vars->size_win_h / mapHeight) - ((int) cx % mapHeight);
-				printf("1\n");
-			}
-			else if (cos(min_angle) > 0 && sin(min_angle) < 0)
-			{
-				cy += ((int) cy % mapHeight) ?  vars->size_win_h / mapHeight : vars->size_win_h / mapHeight - (int) cy % (vars->size_win_h / mapHeight);
-				cx += ((int) cx % mapHeight) ?  vars->size_win_h / mapHeight : vars->size_win_h / mapHeight - (int) cx % (vars->size_win_h / mapHeight);
-				printf("2\n");
-			}
-			else if (cos(min_angle) < 0 && sin(min_angle) < 0)
-			{
-				cy += (vars->size_win_w / mapWidth) - ((int) cy % mapWidth);
-				cx = ((int)cx / ((vars->size_win_h / mapWidth) * (vars->size_win_h / mapWidth)));
-				printf("3\n");
-			}
-			else if (cos(min_angle) < 0 && sin(min_angle) > 0)
-			{
-				cy = ((int)cy / ((vars->size_win_h / mapWidth) * (vars->size_win_h / mapWidth)));
-				cx = ((int)cx / ((vars->size_win_h / mapWidth) * (vars->size_win_h / mapWidth)));
-				printf("4\n");
-			}
-			else
-				printf("21323\n");
+		printf("------%d-----\n",num_rey);
+		printf(" %f |||\n",min_angle);
 
-			len_rey = (fabs(cx - vars->x)) / sin(min_angle);
-			y = ((cx - vars->x) / sin(min_angle)) * cos(min_angle);
-			if (worldMap[(int) cx / (vars->size_win_w / mapWidth)][(int) y / (vars->size_win_h / mapHeight)] != 0) {
-				len_rey = (fabs(cx - vars->x)) / sin(min_angle);
-				cy = fabs(y);
-				printf("x len is see\n");
-			}
-			else {
-
-				len_rey = (fabs(cy - vars->y)) / cos(min_angle);
-				x = ((cy - vars->y) / cos(min_angle)) * sin(min_angle);
-				if (worldMap[(int) x / (vars->size_win_w / mapWidth)][(int) cy / (vars->size_win_h / mapHeight)] != 0) {
-					len_rey = (fabs(cy - vars->y)) / cos(min_angle);
-					cx = fabs(x);
-					printf("y len is see\n");
-				}
-			}
-
-//			cx = vars->x + t * cos(min_angle);
-//			cy = vars->y + t * sin(min_angle);
-			//printf("num_rey = %d | cx = %d | cy = %d |# = %d |\n",num_rey, (int) cx, (int) cy,vars->size_win_w / mapWidth);
-			printf("ang = %.3f | cx = %d | cy = %d | sin = %f| cos = %f| \n", min_angle, (int) cx, (int) cy,sin(min_angle), cos(min_angle));
-
-			//printf("%d | %d\n", (int) cx / (vars->size_win_w / mapWidth), (int) cy / (vars->size_win_h / mapHeight));
-			if (worldMap[(int) cx / (vars->size_win_w / mapWidth)][(int) cy / (vars->size_win_h / mapHeight)] != 0)
-				{
-
-//				len_rey = sqrt(pow((cx - vars->x), 2) + pow((cy - vars->y), 2));
-					fragment_x = 0;
-					while (fragment_x++ < ((vars->size_win_w / N_REY)) && wall_x++ < vars->size_win_w)
-					{
-						wall_y = 0;
-						//fragment_y = vars->size_win_h / 2;
-						while ((wall_y < (vars->size_win_h * 10 )/fabs(len_rey * sin(vars->angle_p + M_PI/2 - min_angle) + 1) && wall_y < vars->size_win_h / 2) /*vars->size_win_w * 20/ len_rey + 1*/)
-						{
-//							my_mlx_pixel_put(&vars->img, (int) wall_x - 1, (int) wall_y + vars->size_win_h / 2 - 1, 0x88d2b48c);
-//							my_mlx_pixel_put(&vars->img, (int) wall_x - 1, (int)vars->size_win_h/2 - wall_y - 1, 0x88f5deb3);
-							wall_y++;
-						}
-					}
-					break;
-				}
-			//my_mlx_pixel_put(&vars->img, (int) cx, (int) cy, 0xFFF000);
+		while (cx < mapWidth  && cx > 0)
+		{
+			ft_round(min_angle, &cx, &cyx);
+			lenx = (vars->x - cx) / sin(min_angle);
+			double y = vars->y + (lenx * cos(min_angle)) ;
+			printf(" %f | %f ||||||||||||||||\n", cx, y);
+			if (worldMap[(int)cx][(int)y] != 0)
+				printf("- %f | %f | %f | %f |\n", cx, y,lenx, 0.0);
 		}
+		while (cy < mapHeight && cy > 0)
+		{
+			ft_round(min_angle, &cyx, &cy);
+			leny = (vars->y - cy) / cos(min_angle);
+			double x = vars->x + (leny * sin(min_angle));
+			printf(" %f | %f ||||||||||||||||\n", cx, cy);
+
+			if (worldMap[(int)x][(int)cy] != 0)
+				printf("+ %f | %f | %f | %f |\n", x, cy,0.0, leny);
+		}
+		printf("%f | %f | %f | %f |\n", cx, cy,lenx, leny);
+//			len_rey = (fabs(cx - vars->x)) / sin(min_angle);
+//			y = ((cx - vars->x) / sin(min_angle)) * cos(min_angle);
+//			if (worldMap[(int) cx / (vars->size_win_w / mapWidth)][(int) y / (vars->size_win_h / mapHeight)] != 0) {
+//				len_rey = (fabs(cx - vars->x)) / sin(min_angle);
+//				cy = fabs(y);
+//				printf("x len is see\n");
+//			}
+//			else {
+//
+//				len_rey = (fabs(cy - vars->y)) / cos(min_angle);
+//				x = ((cy - vars->y) / cos(min_angle)) * sin(min_angle);
+//				if (worldMap[(int) x / (vars->size_win_w / mapWidth)][(int) cy / (vars->size_win_h / mapHeight)] != 0) {
+//					len_rey = (fabs(cy - vars->y)) / cos(min_angle);
+//					cx = fabs(x);
+//					printf("y len is see\n");
+//				}
+//			}
+//			if (worldMap[(int) cx / (vars->size_win_w / mapWidth)][(int) cy / (vars->size_win_h / mapHeight)] != 0)
+//				{
+//
+//					fragment_x = 0;
+//					while (fragment_x++ < ((vars->size_win_w / N_REY)) && wall_x++ < vars->size_win_w)
+//					{
+//						wall_y = 0;
+//						while ((wall_y < (vars->size_win_h * 10 )/fabs(len_rey * sin(vars->angle_p + M_PI/2 - min_angle) + 1) && wall_y < vars->size_win_h / 2) /*vars->size_win_w * 20/ len_rey + 1*/)
+//						{
+//							wall_y++;
+//						}
+//					}
+//					break;
+//				}
+
 		num_rey++;
 		min_angle += angle_offset;
 	}
@@ -259,8 +274,8 @@ int             main(void)
 	vars.size_win_w = 100;
 	vars.size_win_h = 100;
 
-	vars.x = 25;
-	vars.y = 25;
+	vars.x = 1.5;
+	vars.y = 1.5;
 	vars.key = -1;
 	vars.angle_p = 0;
 
