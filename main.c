@@ -92,7 +92,7 @@ int             key_hook(int keycode, t_vars *vars)
 	double step;
 	double turn;
 
-	step = 1;
+	step = 0.1;
 	turn = 0.1;
 	printf("k_code:! %d\n", keycode);
 	mlx_destroy_image(vars->mlx, vars->img.img);
@@ -100,19 +100,19 @@ int             key_hook(int keycode, t_vars *vars)
 	vars->img.addr = mlx_get_data_addr(vars->img.img, &vars->img.bits_per_pixel, &vars->img.line_length, &vars->img.endian);
 	if (keycode == 123) {
 
-		if (worldMap[(int) (vars->x - step) / (vars->size_win_w / mapWidth)][(int) (vars->y) / (vars->size_win_h / mapHeight)] == 0)
+		if (worldMap[(int) (vars->x - step)][(int) (vars->y)] == 0)
 			vars->x -= step;
 	}
 	if (keycode == 124) {
-		if (worldMap[(int) (vars->x + step) / (vars->size_win_w / mapWidth)][(int) (vars->y) / (vars->size_win_h / mapHeight)] == 0)
+		if (worldMap[(int) (vars->x + step)][(int) (vars->y)] == 0)
 			vars->x += step;
 	}
 	if (keycode == 125) {
-		if (worldMap[(int) (vars->x) / (vars->size_win_w / mapWidth)][(int) (vars->y + step) / (vars->size_win_h / mapHeight)] == 0)
+		if (worldMap[(int) (vars->x)][(int) (vars->y + step)] == 0)
 			vars->y += step;
 	}
 	if (keycode == 126) {
-		if (worldMap[(int) (vars->x) / (vars->size_win_w / mapWidth)][(int) (vars->y - step) / (vars->size_win_h / mapHeight)] == 0)
+		if (worldMap[(int) (vars->x)][(int) (vars->y - step)] == 0)
 			vars->y -= step;
 	}
 	if (keycode == 12) {
@@ -154,34 +154,23 @@ void ft_round(double min_angle,double *cx, double *cy)
 		*cy = (*cy - floor(*cy) > 0) ? floor(*cy) : *cy - 1;
 		*cx = (*cx - ceil(*cx) < 0) ? ceil(*cx) : *cx + 1;
 	}
-	else if (cos(min_angle) > 0 && sin(min_angle) < 0)
+	else if (cos(min_angle) < 0 && sin(min_angle) > 0)
 	{
-	//	printf("%f - %f = %f",*cy, ceil(*cy), *cy - ceil(*cy));
-		*cy = (*cy - ceil(*cy) < 0) ? ceil(*cy) : *cy + 1;
-		*cx = (*cx - ceil(*cx) < 0) ? ceil(*cx) : *cx + 1;
+		*cy = (*cy - floor(*cy) > 0) ? floor(*cy) : *cy - 1;
+		*cx = (*cx - floor(*cx) > 0) ? floor(*cx) : *cx  -1;
 	}
 	else if (cos(min_angle) < 0 && sin(min_angle) < 0)
 	{
 		*cy = (*cy - ceil(*cy) < 0) ? ceil(*cy) :*cy + 1;
 		*cx = (*cx - floor(*cx) > 0) ? floor(*cx) : *cx - 1;
 	}
-	else if (cos(min_angle) < 0 && sin(min_angle) > 0)
+	else if (cos(min_angle) > 0 && sin(min_angle) < 0)
 	{
-		*cy = (*cy - floor(*cy) > 0) ? floor(*cy) : *cy - 1;
-		*cx = (*cx - ceil(*cx) > 0) ? ceil(*cx) : *cx  -1;
+		*cy = (*cy - ceil(*cy) < 0) ? ceil(*cy) : *cy + 1;
+		*cx = (*cx - ceil(*cx) < 0) ? ceil(*cx) : *cx + 1;
 	}
 	else
 		printf("11111111111\n");
-
-}
-
-double ft_len_rey_if_wall(double min_angle, double *c, t_vars *vars)
-{
-	double len;
-	double y;
-
-	len = (vars->x - *c) / sin(min_angle);
-	y = len * cos(min_angle);
 
 }
 
@@ -204,20 +193,24 @@ void rey(t_vars* vars)
 	double y;
 	double x;
 
+	int no_so = -1;
+
+	int we_ea = -1;
+
 
 	double wall_y = vars->size_win_h / 2;
 
 	int sc = 50;
 	int n = 1;
 
-	int direction = 0;
+
 	while (min_angle <= max_angle)
 	{
-		direction = 0;
-		if (sin(min_angle) > 0) direction = 1;
+		no_so = (sin(min_angle) > 0) ?  1 : 0;
+		we_ea = (cos(min_angle) < 0) ?  1 : 0;
 		cx = vars->x;
 		cy = vars->y;
-		printf("------%d----- %f |sin = %f |cos = %f \n",num_rey , min_angle ,sin(min_angle) ,cos(min_angle));
+		//printf("------%d----- %f |sin = %f |cos = %f \n",num_rey , min_angle ,sin(min_angle) ,cos(min_angle));
 
 		lenx = 10000000000;
 		leny = 10000000000;
@@ -226,29 +219,29 @@ void rey(t_vars* vars)
 		wall_y = 0;
 		while (cx < mapWidth  && cx > 0)
 		{
+
+
 			ft_round(min_angle, &cx, &cyx);
 			len = fabs((vars->x - cx) / (cos(min_angle) + 0.0000002));
 			y = vars->y + (len * (sin(min_angle) * -1)) ;
 
-			printf("cx = %f y = %f | len = %f <-->" , cx, y, len);
-			if (worldMap[(int)cx][(int)y] != 0)
+			//printf("cx = %f y = %f | len = %f <-->" , cx, y, len);
+			if (y < mapWidth && y > 0 && worldMap[(int)cx - we_ea][(int)y] != 0)
 			{
-
 				lenx = fabs((vars->x - cx) / (cos(min_angle) + 0.0000002));
 				break;
 			}
 			n++;
 		}
 		n = 1;
-		printf("\n");
+		//printf("\n");
 		while (cy < mapHeight && cy > 0)
 		{
 			ft_round(min_angle, &cyx, &cy);
 			len = fabs((vars->y - cy) / (sin(min_angle) + 0.000002));
-			x = vars->x + (len * fabs(cos(min_angle)));
-
-			printf("x = %f cy = %f | len = %f <-->" ,x, cy, len);
-			if (worldMap[(int)x][(int)cy - direction] != 0)
+			x = vars->x + (len * cos(min_angle));
+			//printf("x = %f cy = %f | len = %f <-->" ,x, cy, len);
+			if (x < mapWidth && x > 0 && (worldMap[(int)x][(int)cy - no_so] != 0))
 			{
 
 				leny = fabs((vars->y - cy) / (sin(min_angle) + 0.000002));
@@ -256,23 +249,27 @@ void rey(t_vars* vars)
 			}
 			n++;
 		}
-		printf("\n");
+
+	//	printf("\n");
 		if (fabs(lenx) < fabs(leny))
 		{
 			len = fabs(lenx);
-			printf("len %f | \n", len);
+			we_ea = -1;
+		//	printf("len %f | \n", len);
+			my_mlx_pixel_put(&vars->img,cx * 10 , y  * 10 , 0x00FF0000);
 		}
 		else
 		{
 			len = fabs(leny);
-			printf("len %f | \n", len);
-		}
+			no_so = -1;
+		//	printf("len %f | \n", len);
+			my_mlx_pixel_put(&vars->img, x  * 10, cy  * 10 , 0x00FF0000);
 
-//	q
+		}
 		num_rey++;
 		min_angle += angle_offset;
+		my_mlx_pixel_put(&vars->img,vars->x * 10 , vars->y  * 10 , 0x00FF0000);
 	}
-	//qqmy_mlx_pixel_put(&vars->img,vars->x , vars->y  , 0x00FF0000);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img.img, 0, 0);
 }
 
@@ -280,13 +277,13 @@ int             main(void)
 {
 	t_vars      vars;
 
-	vars.size_win_w = 1000;
-	vars.size_win_h = 1000;
+	vars.size_win_w = 100;
+	vars.size_win_h = 100;
 
 	vars.x = 1.5;
 	vars.y = 1.5;
 	vars.key = -1;
-	vars.angle_p = 0;
+	vars.angle_p = M_PI;
 
 	vars.mlx = mlx_init();
 
