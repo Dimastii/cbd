@@ -92,7 +92,7 @@ int             key_hook(int keycode, t_vars *vars)
 	double step;
 	double turn;
 
-	step = 10;
+	step = 1;
 	turn = 0.1;
 	printf("k_code:! %d\n", keycode);
 	mlx_destroy_image(vars->mlx, vars->img.img);
@@ -200,70 +200,76 @@ void rey(t_vars* vars)
 
 	double lenx;
 	double leny;
+	double len;
+	double y;
+	double x;
+
+
+	double wall_y = vars->size_win_h / 2;
+
+	int sc = 50;
+	int n = 1;
 	while (min_angle <= max_angle)
 	{
 
 		cx = vars->x;
 		cy = vars->y;
-		printf("------%d-----\n",num_rey);
-		printf(" %f |||\n",min_angle);
+		printf("------%d----- %f |sin = %f |cos = %f \n",num_rey , min_angle ,sin(min_angle) ,cos(min_angle));
 
+		lenx = 10000000000;
+		leny = 10000000000;
+
+		//write_map(vars);
+		wall_y = 0;
 		while (cx < mapWidth  && cx > 0)
 		{
 			ft_round(min_angle, &cx, &cyx);
-			lenx = (vars->x - cx) / sin(min_angle);
-			double y = vars->y + (lenx * cos(min_angle)) ;
-			printf(" %f | %f ||||||||||||||||\n", cx, y);
+			len = (fabs(cos(min_angle)) <= 0.00000000000002) ? fabs(vars->x - cx) : fabs((vars->x - cx) / cos(min_angle));
+			y = vars->y + (len * (sin(min_angle) * -1)) ;
+
+			printf("cx = %f y = %f " , cx, y);
 			if (worldMap[(int)cx][(int)y] != 0)
-				printf("- %f | %f | %f | %f |\n", cx, y,lenx, 0.0);
+			{
+
+				lenx = (fabs(cos(min_angle)) <= 0.00000000000002) ? fabs(vars->x - cx) : fabs((vars->x - cx) / cos(min_angle));
+				break;
+			}
+			n++;
 		}
+		n = 1;
+		printf("\n");
 		while (cy < mapHeight && cy > 0)
 		{
 			ft_round(min_angle, &cyx, &cy);
-			leny = (vars->y - cy) / cos(min_angle);
-			double x = vars->x + (leny * sin(min_angle));
-			printf(" %f | %f ||||||||||||||||\n", cx, cy);
+			len = (fabs(sin(min_angle)) <= 0.00000000000002) ? fabs(vars->y - cy) : fabs((vars->y - cy) / sin(min_angle));
+			x = vars->x + (len * fabs(cos(min_angle)));
 
+			printf("x = %f cy = %f " ,x, cy);
 			if (worldMap[(int)x][(int)cy] != 0)
-				printf("+ %f | %f | %f | %f |\n", x, cy,0.0, leny);
-		}
-		printf("%f | %f | %f | %f |\n", cx, cy,lenx, leny);
-//			len_rey = (fabs(cx - vars->x)) / sin(min_angle);
-//			y = ((cx - vars->x) / sin(min_angle)) * cos(min_angle);
-//			if (worldMap[(int) cx / (vars->size_win_w / mapWidth)][(int) y / (vars->size_win_h / mapHeight)] != 0) {
-//				len_rey = (fabs(cx - vars->x)) / sin(min_angle);
-//				cy = fabs(y);
-//				printf("x len is see\n");
-//			}
-//			else {
-//
-//				len_rey = (fabs(cy - vars->y)) / cos(min_angle);
-//				x = ((cy - vars->y) / cos(min_angle)) * sin(min_angle);
-//				if (worldMap[(int) x / (vars->size_win_w / mapWidth)][(int) cy / (vars->size_win_h / mapHeight)] != 0) {
-//					len_rey = (fabs(cy - vars->y)) / cos(min_angle);
-//					cx = fabs(x);
-//					printf("y len is see\n");
-//				}
-//			}
-//			if (worldMap[(int) cx / (vars->size_win_w / mapWidth)][(int) cy / (vars->size_win_h / mapHeight)] != 0)
-//				{
-//
-//					fragment_x = 0;
-//					while (fragment_x++ < ((vars->size_win_w / N_REY)) && wall_x++ < vars->size_win_w)
-//					{
-//						wall_y = 0;
-//						while ((wall_y < (vars->size_win_h * 10 )/fabs(len_rey * sin(vars->angle_p + M_PI/2 - min_angle) + 1) && wall_y < vars->size_win_h / 2) /*vars->size_win_w * 20/ len_rey + 1*/)
-//						{
-//							wall_y++;
-//						}
-//					}
-//					break;
-//				}
+			{
 
+				leny = (fabs(sin(min_angle)) <= 0.00000000000002) ? fabs(vars->y - cy) : fabs((vars->y - cy) / sin(min_angle));
+				break;
+			}
+			n++;
+		}
+		printf("\n");
+		if (fabs(lenx) < fabs(leny))
+		{
+			len = fabs(lenx);
+			printf("len %f | \n", len);
+		}
+		else
+		{
+			len = fabs(leny);
+			printf("len %f | \n", len);
+		}
+
+//	q
 		num_rey++;
 		min_angle += angle_offset;
 	}
-	my_mlx_pixel_put(&vars->img,vars->x , vars->y  , 0x00FF0000);
+	//qqmy_mlx_pixel_put(&vars->img,vars->x , vars->y  , 0x00FF0000);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img.img, 0, 0);
 }
 
@@ -271,8 +277,8 @@ int             main(void)
 {
 	t_vars      vars;
 
-	vars.size_win_w = 100;
-	vars.size_win_h = 100;
+	vars.size_win_w = 1000;
+	vars.size_win_h = 1000;
 
 	vars.x = 1.5;
 	vars.y = 1.5;
