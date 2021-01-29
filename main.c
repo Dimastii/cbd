@@ -209,9 +209,12 @@ void rey(t_vars* vars)
 
 	int sc = 50;
 	int n = 1;
+
+	int direction = 0;
 	while (min_angle <= max_angle)
 	{
-
+		direction = 0;
+		if (sin(min_angle) > 0) direction = 1;
 		cx = vars->x;
 		cy = vars->y;
 		printf("------%d----- %f |sin = %f |cos = %f \n",num_rey , min_angle ,sin(min_angle) ,cos(min_angle));
@@ -224,14 +227,14 @@ void rey(t_vars* vars)
 		while (cx < mapWidth  && cx > 0)
 		{
 			ft_round(min_angle, &cx, &cyx);
-			len = (fabs(cos(min_angle)) <= 0.00000000000002) ? fabs(vars->x - cx) : fabs((vars->x - cx) / cos(min_angle));
+			len = fabs((vars->x - cx) / (cos(min_angle) + 0.0000002));
 			y = vars->y + (len * (sin(min_angle) * -1)) ;
 
-			printf("cx = %f y = %f " , cx, y);
+			printf("cx = %f y = %f | len = %f <-->" , cx, y, len);
 			if (worldMap[(int)cx][(int)y] != 0)
 			{
 
-				lenx = (fabs(cos(min_angle)) <= 0.00000000000002) ? fabs(vars->x - cx) : fabs((vars->x - cx) / cos(min_angle));
+				lenx = fabs((vars->x - cx) / (cos(min_angle) + 0.0000002));
 				break;
 			}
 			n++;
@@ -241,14 +244,14 @@ void rey(t_vars* vars)
 		while (cy < mapHeight && cy > 0)
 		{
 			ft_round(min_angle, &cyx, &cy);
-			len = (fabs(sin(min_angle)) <= 0.00000000000002) ? fabs(vars->y - cy) : fabs((vars->y - cy) / sin(min_angle));
+			len = fabs((vars->y - cy) / (sin(min_angle) + 0.000002));
 			x = vars->x + (len * fabs(cos(min_angle)));
 
-			printf("x = %f cy = %f " ,x, cy);
-			if (worldMap[(int)x][(int)cy] != 0)
+			printf("x = %f cy = %f | len = %f <-->" ,x, cy, len);
+			if (worldMap[(int)x][(int)cy - direction] != 0)
 			{
 
-				leny = (fabs(sin(min_angle)) <= 0.00000000000002) ? fabs(vars->y - cy) : fabs((vars->y - cy) / sin(min_angle));
+				leny = fabs((vars->y - cy) / (sin(min_angle) + 0.000002));
 				break;
 			}
 			n++;
