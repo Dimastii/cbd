@@ -5,7 +5,7 @@
 #include "gnl/get_next_line.h"
 
 //#define PI 3.14159265359
-#define ANLGLE M_PI / 2.0
+#define ANLGLE M_PI / 5
 #define N_REY vars->size_win_w
 
 
@@ -19,24 +19,24 @@ int worldMap[mapWidth][mapHeight]=
 				{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
 				{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
 				{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
-				{4,0,0,0,0,0,0,5,5,0,5,5,5,5,5,5,0,7,0,7,7,7,7,7},
-				{4,0,0,0,0,0,0,5,0,0,0,5,0,5,0,5,0,0,0,0,7,7,7,1},
+				{4,0,0,0,0,0,0,5,5,0,0,5,5,0,5,5,0,0,0,7,0,7,0,7},
+				{4,0,0,0,0,0,0,5,0,0,0,5,0,0,0,5,0,0,0,0,0,7,0,1},
 				{4,0,0,0,0,0,0,5,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,8},
-				{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,7,1},
+				{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,1},
 				{4,0,0,0,0,0,0,5,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,8},
-				{4,0,0,0,0,0,0,5,0,0,0,0,0,0,0,5,0,0,0,0,7,7,7,1},
-				{4,0,0,0,0,0,0,5,5,0,5,0,5,5,5,5,0,7,7,7,7,7,7,1},
-				{6,6,0,6,0,6,0,6,6,0,6,0,6,6,6,6,0,6,6,6,6,6,6,6},
+				{4,0,0,0,0,0,0,5,0,0,0,0,0,0,0,5,0,0,0,0,0,7,0,1},
+				{4,0,0,0,0,0,0,5,5,0,0,0,5,0,5,5,0,0,7,7,0,7,0,1},
+				{6,6,0,6,0,0,0,6,6,0,0,0,6,0,6,6,0,0,6,6,0,6,0,6},
 				{8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4},
-				{6,6,0,6,0,6,0,6,6,0,6,0,6,6,6,6,0,6,6,6,6,6,6,6},
-				{4,4,0,4,0,4,0,4,4,0,6,0,6,2,2,2,0,2,2,2,3,3,3,3},
-				{4,0,0,0,0,0,0,0,0,0,6,0,6,2,0,0,0,0,0,2,0,0,0,2},
-				{4,0,0,0,0,0,0,0,0,0,0,0,6,2,0,0,0,0,0,2,0,0,0,2},
-				{4,0,0,0,0,0,0,0,0,0,6,0,6,2,0,0,0,0,0,2,2,0,2,2},
-				{4,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,2},
-				{4,0,0,5,0,0,0,0,0,0,6,0,6,2,0,0,0,0,0,2,2,0,2,2},
-				{4,0,0,0,0,0,0,0,0,0,6,0,6,2,0,0,0,0,0,2,0,0,0,2},
-				{4,0,0,0,0,0,0,0,0,0,6,0,6,2,0,0,0,0,0,2,0,0,0,2},
+				{6,0,0,6,0,0,0,6,6,0,0,0,6,0,6,6,0,0,6,6,0,6,0,6},
+				{4,0,0,4,0,0,0,4,4,0,0,0,6,0,2,2,0,0,2,2,0,3,0,3},
+				{4,0,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,2,0,0,0,2},
+				{4,0,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,2,0,0,0,2},
+				{4,0,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,2,0,0,0,2},
+				{4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2},
+				{4,0,0,5,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,2,0,0,0,2},
+				{4,0,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,2,0,0,0,2},
+				{4,0,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,2,0,0,0,2},
 				{4,4,4,4,4,4,4,4,4,4,1,1,1,2,2,2,2,2,2,3,3,3,3,3}
 		};
 //		{
@@ -69,7 +69,9 @@ typedef struct  s_vars {
 
 	double angle_p;
 
-	int key;
+	int no_so;
+	int we_ea;
+	unsigned long color;
 
 	t_data 		img;
 }               t_vars;
@@ -92,34 +94,33 @@ int             key_hook(int keycode, t_vars *vars)
 	double step;
 	double turn;
 
-	step = 0.1;
-	turn = 0.1;
+	step = 0.17;
+	turn = 0.09;
 	printf("k_code:! %d\n", keycode);
 	mlx_destroy_image(vars->mlx, vars->img.img);
 	vars->img.img = mlx_new_image(vars->mlx, vars->size_win_w, vars->size_win_h);
 	vars->img.addr = mlx_get_data_addr(vars->img.img, &vars->img.bits_per_pixel, &vars->img.line_length, &vars->img.endian);
-	if (keycode == 123) {
-
-		if (worldMap[(int) (vars->x - step)][(int) (vars->y)] == 0)
-			vars->x -= step;
-	}
 	if (keycode == 124) {
-		if (worldMap[(int) (vars->x + step)][(int) (vars->y)] == 0)
-			vars->x += step;
+		vars->x -= step * sin(vars->angle_p);
+		vars->y -= step * cos(vars->angle_p);
+	}
+	if (keycode == 123) {
+		vars->x += step * sin(vars->angle_p);
+		vars->y += step * cos(vars->angle_p);
 	}
 	if (keycode == 125) {
-		if (worldMap[(int) (vars->x)][(int) (vars->y + step)] == 0)
-			vars->y += step;
+		vars->x -= step * cos(vars->angle_p);
+		vars->y += step * sin(vars->angle_p);
 	}
 	if (keycode == 126) {
-		if (worldMap[(int) (vars->x)][(int) (vars->y - step)] == 0)
-			vars->y -= step;
+		vars->x += step * cos(vars->angle_p);
+		vars->y -= step * sin(vars->angle_p);
 	}
 	if (keycode == 12) {
-		vars->angle_p += turn;
+		vars->angle_p -= turn;
 	}
 	if (keycode == 14) {
-		vars->angle_p -= turn;
+		vars->angle_p += turn;
 	}
 }
 
@@ -174,6 +175,27 @@ void ft_round(double min_angle,double *cx, double *cy)
 
 }
 
+ft_render(t_vars *vars, double len_r, double min_angle, int num)
+{
+	int wall_y;
+
+	double real_len = len_r * fabs(sin(vars->angle_p + M_PI/2 - min_angle));
+	double wall_h = vars->size_win_h / real_len;
+	int drawStart = -wall_h / 2 + vars->size_win_h / 2;
+	int drawEnd = wall_h / 2 + vars->size_win_h / 2;
+	if (drawStart <0) drawStart = 0;
+	if (drawEnd >= vars->size_win_h) drawEnd = vars->size_win_h - 1;
+
+
+	wall_y = drawStart;
+
+	while (wall_y < drawEnd)
+	{
+		my_mlx_pixel_put(&vars->img, num - 1 ,wall_y, vars->color);
+		wall_y++;
+	}
+}
+
 void rey(t_vars* vars)
 {
 	double cx;
@@ -193,40 +215,31 @@ void rey(t_vars* vars)
 	double y;
 	double x;
 
-	int no_so = -1;
+	vars->no_so = -1;
 
-	int we_ea = -1;
+	vars->we_ea = -1;
 
-
-	double wall_y = vars->size_win_h / 2;
-
-	int sc = 50;
 	int n = 1;
 
 
 	while (min_angle <= max_angle)
 	{
-		no_so = (sin(min_angle) > 0) ?  1 : 0;
-		we_ea = (cos(min_angle) < 0) ?  1 : 0;
+		vars->no_so = (sin(min_angle) > 0) ?  1 : 0;
+		vars->we_ea = (cos(min_angle) < 0) ?  1 : 0;
 		cx = vars->x;
 		cy = vars->y;
-		//printf("------%d----- %f |sin = %f |cos = %f \n",num_rey , min_angle ,sin(min_angle) ,cos(min_angle));
 
 		lenx = 10000000000;
 		leny = 10000000000;
 
-		//write_map(vars);
-		wall_y = 0;
 		while (cx < mapWidth  && cx > 0)
 		{
-
 
 			ft_round(min_angle, &cx, &cyx);
 			len = fabs((vars->x - cx) / (cos(min_angle) + 0.0000002));
 			y = vars->y + (len * (sin(min_angle) * -1)) ;
 
-			//printf("cx = %f y = %f | len = %f <-->" , cx, y, len);
-			if (y < mapWidth && y > 0 && worldMap[(int)cx - we_ea][(int)y] != 0)
+			if (y < mapWidth && y > 0 && worldMap[(int)cx - vars->we_ea][(int)y] != 0)
 			{
 				lenx = fabs((vars->x - cx) / (cos(min_angle) + 0.0000002));
 				break;
@@ -234,14 +247,12 @@ void rey(t_vars* vars)
 			n++;
 		}
 		n = 1;
-		//printf("\n");
 		while (cy < mapHeight && cy > 0)
 		{
 			ft_round(min_angle, &cyx, &cy);
 			len = fabs((vars->y - cy) / (sin(min_angle) + 0.000002));
 			x = vars->x + (len * cos(min_angle));
-			//printf("x = %f cy = %f | len = %f <-->" ,x, cy, len);
-			if (x < mapWidth && x > 0 && (worldMap[(int)x][(int)cy - no_so] != 0))
+			if (x < mapWidth && x > 0 && (worldMap[(int)x][(int)cy - vars->no_so] != 0))
 			{
 
 				leny = fabs((vars->y - cy) / (sin(min_angle) + 0.000002));
@@ -249,28 +260,26 @@ void rey(t_vars* vars)
 			}
 			n++;
 		}
-		unsigned long color;
-		//	printf("\n");
+
 		if (fabs(lenx) < fabs(leny))
 		{
-			color = (we_ea) ? 0x0000FF00 : 0x00FF00FF;
+			vars->color = (vars->we_ea) ? 0x009932CC : 0x0066CDAA;
 			len = fabs(lenx);
-			we_ea = -1;
-			//	printf("len %f | \n", len);
-			my_mlx_pixel_put(&vars->img,cx * vars->size_win_h  / mapHeight, y  * vars->size_win_h  / mapHeight , color);
+			vars->we_ea = -1;
+//			my_mlx_pixel_put(&vars->img,cx * vars->size_win_h  / mapHeight, y  * vars->size_win_h  / mapHeight , color);
 		}
 		else
 		{
-			color = (no_so) ? 0x000000FF : 0x00FF0000;
+			vars->color = (vars->no_so) ? 0x009400D3 : 0x002E8B57;
 			len = fabs(leny);
-			no_so = -1;
-		//	printf("len %f | \n", len);
-			my_mlx_pixel_put(&vars->img, x  * vars->size_win_w / mapWidth, cy  * vars->size_win_h  / mapHeight , color);
-
+			vars->no_so = -1;
+//			my_mlx_pixel_put(&vars->img, x  * vars->size_win_w / mapWidth, cy  * vars->size_win_h  / mapHeight , color);
 		}
+
+		ft_render(vars, len, min_angle, num_rey);
+
 		num_rey++;
 		min_angle += angle_offset;
-		my_mlx_pixel_put(&vars->img,vars->x * vars->size_win_w / mapWidth , vars->y  * vars->size_win_h  / mapHeight, 0x00FFFFFF);
 	}
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img.img, 0, 0);
 }
@@ -284,8 +293,7 @@ int             main(void)
 
 	vars.x = 1.5;
 	vars.y = 1.5;
-	vars.key = -1;
-	vars.angle_p = M_PI;
+	vars.angle_p = 0;
 
 	vars.mlx = mlx_init();
 
@@ -293,7 +301,7 @@ int             main(void)
 	vars.img.img = mlx_new_image(vars.mlx, vars.size_win_w, vars.size_win_h);
 	vars.img.addr = mlx_get_data_addr(vars.img.img, &vars.img.bits_per_pixel, &vars.img.line_length, &vars.img.endian);
 
-	mlx_hook(vars.win, 2, 1L<<0,key_hook , &vars);
+	mlx_hook(vars.win, 2, 1L<<2,key_hook , &vars);
 
 	mlx_loop_hook(vars.mlx, rey, &vars);
 
