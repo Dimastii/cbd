@@ -60,7 +60,7 @@ typedef struct  s_image {
 
 typedef struct  s_sprite_cord {
 
-	float enter_on_leny_x;
+	float enter_on_len_x;
 	float enter_on_leny_y;
 	float enter_on_lenx_x;
 	float enter_on_lenx_y;
@@ -75,8 +75,11 @@ typedef struct  s_sprite {
 
 	t_sprite_cord cord;
 
-	double len_sprt;
+	float enter_on_len_x;
+	float enter_on_len_y;
 
+
+	double len_sprt;
 	double len_pred_rey;
 	double x_pred;
 	double y_pred;
@@ -103,6 +106,8 @@ typedef struct  s_vars {
 
 	t_image 		img;
 	t_image		img_tex;
+	double x_tex;
+	double y_tex;
 
 	int key_del;
 }               t_vars;
@@ -216,14 +221,15 @@ void	ft_render(t_vars *vars, double len_r, double min_angle, int num)
 	if (drawend >= vars->size_win_h) drawend = vars->size_win_h - 1;
 
 
-	wall_y = drawStart;
+	int wall_y1 = drawStart;
 	int color;
-
-	while (wall_y < drawend)
+	wall_y = 0;
+	int y = 0;
+	while (y < 700)
 	{
-		color = my_mlx_pixel_take(vars->img_tex, 1 / (num - 1) % 24 , wall_y);
-
-		my_mlx_pixel_put(&vars->img, num - 1 ,wall_y, color);
+		color = my_mlx_pixel_take(vars->img_tex,(int)((vars->x_tex - (int)vars->x_tex) * (float)vars->img_tex.h), (int)(((float)wall_y /((float)drawend - (float)drawStart)) * (float)vars->img_tex.h));
+		my_mlx_pixel_put(&vars->img, num - 1 ,wall_y1, color);
+		wall_y1++;
 		wall_y++;
 	}
 }
@@ -334,8 +340,8 @@ void rey(t_vars* vars)
 			}
 			if (y < mapWidth && y > 0 && worldMap[(int)cx - vars->we_ea][(int)y] == 9)
 			{
-				vars->sprite[n_sprt].cord.enter_on_lenx_x = (float)cx;
-				vars->sprite[n_sprt].cord.enter_on_lenx_y = (float)y;
+				vars->sprite->enter_on_len_x = (float)cx;
+				vars->sprite->enter_on_len_x = (float)y;
 				vars->sprite[n_sprt].create = 1;
 				vars->sprite[n_sprt].cord.len_to_sprt = (float)sqrt(pow(((int)cx - 0.5 - vars->x  - vars->we_ea), 2) + pow((int)y - 0.5 - vars->y, 2));
 				n_sprt++;
@@ -354,8 +360,8 @@ void rey(t_vars* vars)
 			}
 			if (x < mapWidth && x > 0 && worldMap[(int)x][(int)cy - vars->no_so] == 9)
 			{
-				vars->sprite[n_sprt].cord.enter_on_leny_x = (float)x;
-				vars->sprite[n_sprt].cord.enter_on_leny_y = (float)cy;
+				vars->sprite->enter_on_len_x = (float)x;
+				vars->sprite->enter_on_len_y= (float)cy;
 				vars->sprite[n_sprt].create = 1;
 				vars->sprite[n_sprt].cord.len_to_sprt = (float)sqrt(pow(((int)cy - 0.5 - vars->y  - vars->no_so), 2) + pow((int)x - 0.5 - vars->x, 2));
 				n_sprt++;
@@ -368,6 +374,8 @@ void rey(t_vars* vars)
 			vars->color = (vars->we_ea) ? 0x009932CC : 0x0066CDAA;
 			len = lenx;
 			vars->we_ea = -1;
+			vars->x_tex = cx;
+			vars->x_tex = y;
 			yyy = 0xDC143C;
 		}
 		else
@@ -375,6 +383,8 @@ void rey(t_vars* vars)
 			vars->color = (vars->no_so) ? 0x009400D3 : 0x002e8B57;
 			len = leny;
 			vars->no_so = -1;
+			vars->x_tex = x;
+			vars->y_tex = cy;
 			yyy = 0xDCFF3C;
 		}
 
@@ -405,8 +415,8 @@ int             main(void)
 		vars.sprite[i].create = -1;
 	}
 
-	vars.img_tex.w = 64;
-	vars.img_tex.h = 64;
+	vars.img_tex.w = 1;
+	vars.img_tex.h = 1;
 
 	vars.mlx = mlx_init();
 
@@ -423,7 +433,7 @@ int             main(void)
 
 
 
-	vars.img_tex.img = mlx_xpm_file_to_image(vars.mlx, "./e_wall.xpm", &vars.img_tex.w, &vars.img_tex.h);
+	vars.img_tex.img = mlx_xpm_file_to_image(vars.mlx, "./anime.xpm", &vars.img_tex.w, &vars.img_tex.h);
 
 
 	vars.img_tex.addr = mlx_get_data_addr(vars.img_tex.img, &vars.img_tex.bits_per_pixel, &vars.img_tex.line_length, &vars.img_tex.endian);
