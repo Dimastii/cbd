@@ -106,6 +106,7 @@ typedef struct  s_vars {
 
 	t_image 		img;
 	t_image		img_tex;
+	t_image		img_tex_sp;
 	double x_tex;
 	double y_tex;
 
@@ -213,22 +214,26 @@ void	ft_render(t_vars *vars, double len_r, double min_angle, int num)
 {
 	int wall_y;
 
-	double real_len = len_r * fabs(sin(vars->angle_p + M_PI/2 - min_angle));
-	double wall_h = vars->size_win_h / real_len;
+	double wall_h = vars->size_win_h / len_r * fabs(sin(vars->angle_p + M_PI/2 - min_angle));
 	int drawStart = -wall_h / 2 + vars->size_win_h / 2;
 	int drawend = wall_h / 2 + vars->size_win_h / 2;
-	if (drawStart <0) drawStart = 0;
-	if (drawend >= vars->size_win_h) drawend = vars->size_win_h - 1;
+//	if (drawStart <0) drawStart = 0;
+//	if (drawend >= vars->size_win_h) drawend = vars->size_win_h - 1;
 
 
 	int wall_y1 = drawStart;
 	int color;
 	wall_y = 0;
 	int y = 0;
-	while (y < 700)
+	while (wall_y1 < drawend)
 	{
-		color = my_mlx_pixel_take(vars->img_tex,(int)((vars->x_tex - (int)vars->x_tex) * (float)vars->img_tex.h), (int)(((float)wall_y /((float)drawend - (float)drawStart)) * (float)vars->img_tex.h));
-		my_mlx_pixel_put(&vars->img, num - 1 ,wall_y1, color);
+		y = (int)(((float)(wall_y1 - drawStart) /((float)drawend - (float)drawStart)) * 700.0);
+		color = my_mlx_pixel_take(vars->img_tex,(int)((vars->x_tex - (int)vars->x_tex) * 700.0), y);
+		if (wall_y1 >= 0 && wall_y1 < vars->size_win_h)
+		{
+			my_mlx_pixel_put(&vars->img, num - 1 ,wall_y1, color);
+		}
+
 		wall_y1++;
 		wall_y++;
 	}
@@ -247,8 +252,8 @@ void	ft_print_wall_sprite(t_vars *vars, double len_r, int num_rey)
 
 	while (wall_h < drawend)
 	{
-		color = my_mlx_pixel_take(vars->img_tex, (num_rey - 1) % 64, wall_h);
-		my_mlx_pixel_put(&vars->img, num_rey - 1 ,wall_h, yyy);
+		color = my_mlx_pixel_take(vars->img_tex_sp, (num_rey - 1) % 64, wall_h);
+		my_mlx_pixel_put(&vars->img, num_rey - 1 ,wall_h, color);
 		wall_h++;
 	}
 }
@@ -425,26 +430,12 @@ int             main(void)
 	vars.img.img = mlx_new_image(vars.mlx, vars.size_win_w, vars.size_win_h);
 	vars.img.addr = mlx_get_data_addr(vars.img.img, &vars.img.bits_per_pixel, &vars.img.line_length, &vars.img.endian);
 
-
-
-
-
-
-
+	vars.img_tex_sp.img = mlx_xpm_file_to_image(vars.mlx, "./sp_anime.xpm", &vars.img_tex_sp.w, &vars.img_tex_sp.h);
+	vars.img_tex_sp.addr = mlx_get_data_addr(vars.img_tex_sp.img, &vars.img_tex_sp.bits_per_pixel, &vars.img_tex_sp.line_length, &vars.img_tex_sp.endian);
 
 
 	vars.img_tex.img = mlx_xpm_file_to_image(vars.mlx, "./anime.xpm", &vars.img_tex.w, &vars.img_tex.h);
-
-
 	vars.img_tex.addr = mlx_get_data_addr(vars.img_tex.img, &vars.img_tex.bits_per_pixel, &vars.img_tex.line_length, &vars.img_tex.endian);
-
-
-
-
-
-
-
-
 
 	mlx_hook(vars.win, 2, 1L<<2,key_hook , &vars);
 	mlx_loop_hook(vars.mlx, rey, &vars);
