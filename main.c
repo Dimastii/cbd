@@ -431,6 +431,7 @@ int             main(void)
 	t_vars      vars;
 	int i = 0;
 
+	
 	vars.size_win_w = 1000;
 	vars.size_win_h = 1000;
 
