@@ -25,7 +25,7 @@ int worldMap[mapWidth][mapHeight]=
 				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1,0,0,0,0,0,0,0,1},
+				{1,0,0,0,1,9,1,0,0,0,0,0,0,1,9,1,0,0,0,0,0,0,0,1},
 				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
 				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
@@ -182,39 +182,39 @@ void ft_round(double min_angle,double *cx, double *cy,t_vars *vars)
 {
 	if (cos(min_angle) > 0 && sin(min_angle) > 0)
 	{
-		*cy = (*cy - floor(*cy) > 0) ? floor(*cy) : *cy - 1;
 		*cx = (*cx - ceil(*cx) < 0) ? ceil(*cx) : *cx + 1;
-		vars->sprite->offset_mode_cord_sprite_x = 1;
+		*cy = (*cy - floor(*cy) > 0) ? floor(*cy) : *cy - 1;
+		vars->sprite->offset_mode_cord_sprite_x = 0;
 		vars->sprite->offset_mode_cord_sprite_y = 1;
 	}
 	else if (cos(min_angle) < 0 && sin(min_angle) > 0)
 	{
-		*cy = (*cy - floor(*cy) > 0) ? floor(*cy) : *cy - 1;
 		*cx = (*cx - floor(*cx) > 0) ? floor(*cx) : *cx  -1;
-		vars->sprite->offset_mode_cord_sprite_x = 1;
-		vars->sprite->offset_mode_cord_sprite_y = 0;
+		*cy = (*cy - floor(*cy) > 0) ? floor(*cy) : *cy - 1;
+		vars->sprite->offset_mode_cord_sprite_x = 0;
+		vars->sprite->offset_mode_cord_sprite_y = 1;
 	}
 	else if (cos(min_angle) < 0 && sin(min_angle) < 0)
 	{
-		*cy = (*cy - ceil(*cy) < 0) ? ceil(*cy) :*cy + 1;
 		*cx = (*cx - floor(*cx) > 0) ? floor(*cx) : *cx - 1;
+		*cy = (*cy - ceil(*cy) < 0) ? ceil(*cy) :*cy + 1;
 		vars->sprite->offset_mode_cord_sprite_x = 0;
-		vars->sprite->offset_mode_cord_sprite_y = 0;
+		vars->sprite->offset_mode_cord_sprite_y = 1;
 	}
 	else if (cos(min_angle) > 0 && sin(min_angle) < 0)
 	{
-		*cy = (*cy - ceil(*cy) < 0) ? ceil(*cy) : *cy + 1;
 		*cx = (*cx - ceil(*cx) < 0) ? ceil(*cx) : *cx + 1;
+		*cy = (*cy - ceil(*cy) < 0) ? ceil(*cy) : *cy + 1;
 		vars->sprite->offset_mode_cord_sprite_x = 0;
 		vars->sprite->offset_mode_cord_sprite_y = 1;
 	}
 }
 
-void	ft_render(t_vars *vars, double len_r, double min_angle, int num)
+void	ft_render(t_vars *vars, double len_r_norm, double min_angle, int num)
 {
 	int wall_y;
 
-	double wall_h = vars->size_win_h / len_r * fabs(sin(vars->angle_p + M_PI/2 - min_angle));
+	double wall_h = vars->size_win_h / len_r_norm * fabs(sin(vars->angle_p + M_PI/2 - min_angle));
 	int drawStart = -wall_h / 2 + vars->size_win_h / 2;
 	int drawend = wall_h / 2 + vars->size_win_h / 2;
 //	if (drawStart <0) drawStart = 0;
@@ -230,9 +230,7 @@ void	ft_render(t_vars *vars, double len_r, double min_angle, int num)
 		y = (int)(((float)(wall_y1 - drawStart) /((float)drawend - (float)drawStart)) * 700.0);
 		color = my_mlx_pixel_take(vars->img_tex,(int)((vars->x_tex - (int)vars->x_tex) * 700.0), y);
 		if (wall_y1 >= 0 && wall_y1 < vars->size_win_h)
-		{
 			my_mlx_pixel_put(&vars->img, num - 1 ,wall_y1, color);
-		}
 
 		wall_y1++;
 		wall_y++;
@@ -348,7 +346,7 @@ void rey(t_vars* vars)
 				vars->sprite->enter_on_len_x = (float)cx;
 				vars->sprite->enter_on_len_x = (float)y;
 				vars->sprite[n_sprt].create = 1;
-				vars->sprite[n_sprt].cord.len_to_sprt = (float)sqrt(pow(((int)cx - 0.5 - vars->x  - vars->we_ea), 2) + pow((int)y - 0.5 - vars->y, 2));
+				vars->sprite[n_sprt].cord.len_to_sprt = (float)sqrt(pow(((int)cx + 0.5 * vars->sprite[n_sprt].offset_mode_cord_sprite_x - vars->x  - vars->we_ea), 2) + pow((int)y + 0.5 * vars->sprite[n_sprt].offset_mode_cord_sprite_y - vars->y, 2));
 				n_sprt++;
 			}
 		}
@@ -368,7 +366,7 @@ void rey(t_vars* vars)
 				vars->sprite->enter_on_len_x = (float)x;
 				vars->sprite->enter_on_len_y= (float)cy;
 				vars->sprite[n_sprt].create = 1;
-				vars->sprite[n_sprt].cord.len_to_sprt = (float)sqrt(pow(((int)cy - 0.5 - vars->y  - vars->no_so), 2) + pow((int)x - 0.5 - vars->x, 2));
+				vars->sprite[n_sprt].cord.len_to_sprt = (float)sqrt(pow((int)x + 0.5 * vars->sprite[n_sprt].offset_mode_cord_sprite_x - vars->x, 2) + pow(((int)cy + 0.5 * vars->sprite[n_sprt].offset_mode_cord_sprite_y - vars->y  - vars->no_so), 2));
 				n_sprt++;
 			}
 		}
@@ -377,7 +375,7 @@ void rey(t_vars* vars)
 		if (lenx < leny)
 		{
 			vars->color = (vars->we_ea) ? 0x009932CC : 0x0066CDAA;
-			len = lenx;
+			len = lenx * fabs(sin(vars->angle_p + M_PI/2 - min_angle));
 			vars->we_ea = -1;
 			vars->x_tex = cx;
 			vars->x_tex = y;
@@ -386,15 +384,15 @@ void rey(t_vars* vars)
 		else
 		{
 			vars->color = (vars->no_so) ? 0x009400D3 : 0x002e8B57;
-			len = leny;
+			len = leny * fabs(sin(vars->angle_p + M_PI/2 - min_angle));
 			vars->no_so = -1;
 			vars->x_tex = x;
 			vars->y_tex = cy;
 			yyy = 0xDCFF3C;
 		}
-
 		ft_render(vars, len, min_angle, num_rey);
-		ft_render_sprite(0, cx, y, vars, num_rey);
+		if (len >= vars->sprite[0].cord.len_to_sprt)
+			ft_render_sprite(0, cx, y, vars, num_rey);
 
 		num_rey++;
 		min_angle += angle_offset;
@@ -412,16 +410,13 @@ int             main(void)
 	vars.size_win_w = 1000;
 	vars.size_win_h = 1000;
 
-	vars.x = 1.5;
-	vars.y = 1.5;
-	vars.angle_p = - M_PI / 4;
+	vars.x = 7;
+	vars.y = 9;
+	vars.angle_p = + M_PI /4 + M_PI / 2;
 	while (i++ < 100)
 	{
 		vars.sprite[i].create = -1;
 	}
-
-	vars.img_tex.w = 1;
-	vars.img_tex.h = 1;
 
 	vars.mlx = mlx_init();
 
