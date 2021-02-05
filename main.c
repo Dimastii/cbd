@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <math.h>
 #include "mlx.h"
@@ -12,39 +13,39 @@
 #define mapHeight 24
 
 int worldMap[mapWidth][mapHeight]=
-		{
-				{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,9,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,1,0,0,0,0,0,0,0,9,1,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,1,9,1,0,0,0,0,0,0,1,9,1,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-		};
 //		{
-//				{1,1,1,1,1},
-//				{1,0,0,0,1},
-//				{1,0,9,0,1},
-//				{1,0,0,0,1},
-//				{1,1,1,1,1},
+//				{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,9,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,1,0,0,0,0,0,0,0,9,1,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,1,9,1,0,0,0,0,0,0,1,9,1,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//				{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 //		};
+		{
+				{1,1,1,1,1},
+				{1,0,0,0,1},
+				{1,0,9,0,1},
+				{1,0,0,0,1},
+				{1,1,1,1,1},
+		};
 
 
 
@@ -147,27 +148,27 @@ int             key_hook(int keycode, t_vars *vars)
 	vars->img.addr = mlx_get_data_addr(vars->img.img, &vars->img.bits_per_pixel, &vars->img.line_length, &vars->img.endian);
 	if (keycode == 124) {
 //		if (worldMap[(int) (vars->x - 0.5)][(int) (vars->y - 0.5)] != 1) {
-			vars->x -= step * sin(vars->angle_p);
-			vars->y -= step * cos(vars->angle_p);
+		vars->x -= step * sin(vars->angle_p);
+		vars->y -= step * cos(vars->angle_p);
 //		}
 	}
 	if (keycode == 123) {
 //		if (worldMap[(int) (vars->x + 0.5)][(int) (vars->y + 0.5)] != 1) {
 
-			vars->x += step * sin(vars->angle_p);
-			vars->y += step * cos(vars->angle_p);
+		vars->x += step * sin(vars->angle_p);
+		vars->y += step * cos(vars->angle_p);
 //		}
 	}
 	if (keycode == 125) {
 //		if (worldMap[(int)(vars->x - 0.5)][(int)(vars->y +0.5)] != 1) {
-			vars->x -= step * cos(vars->angle_p);
-			vars->y += step * sin(vars->angle_p);
+		vars->x -= step * cos(vars->angle_p);
+		vars->y += step * sin(vars->angle_p);
 //		}
 	}
 	if (keycode == 126) {
 //		if (worldMap[(int) (vars->x + 0.5)][(int) (vars->y - 0.5)] != 1) {
-			vars->x += step * cos(vars->angle_p);
-			vars->y -= step * sin(vars->angle_p);
+		vars->x += step * cos(vars->angle_p);
+		vars->y -= step * sin(vars->angle_p);
 //		}
 	}
 	if (keycode == 12) {
@@ -271,23 +272,38 @@ void	ft_render_sprite(double dx, double x, double y, t_vars *vars , int num_rey)
 
 	while (i--)
 	{
-//		xs = vars->sprite[i].cord.enter_on_lenx_x + (vars->sprite[i].cord.len_to_sprt - len_to_cub) * pow(-1,vars->sprite[i].offset_mode_cord_sprite_x);
-//		ys = vars->sprite[i].cord.enter_on_lenx_y + (vars->sprite[i].cord.len_to_sprt - len_to_cub) * pow(-1,vars->sprite[i].offset_mode_cord_sprite_y);
-//		dx = sqrt(pow(xs - vars->sprite[i].cord.enter_on_lenx_x ,2) + pow(vars->sprite[i].cord.enter_on_lenx_y,2));
-//		if (vars->sprite[i].len_sprt > 0 &&
-//		((int)(xs + len_sp * pow(-1,vars->sprite[i].offset_mode_cord_sprite_x)) == (int)xs
-//		&& (int)(ys + len_sp * pow(-1,vars->sprite[i].offset_mode_cord_sprite_x)) == (int)ys))
-//		{
-			ft_print_wall_sprite(vars,vars->sprite[i].cord.len_to_sprt, num_rey);
-//		}
-		vars->sprite->x_pred = xs;
-		vars->sprite->y_pred = ys;
-		vars->sprite[i].len_sprt -= dx;
-//		printf("dx = %f | len_to_cub = %f\n", dx , len_to_cub);
+		ft_print_wall_sprite(vars,vars->sprite[i].cord.len_to_sprt, num_rey);
+
 	}
 }
 
+void ft_round_sprt_x(double angl, float *x, float *y)
+{
+	if (cos(angl) < 0)
+	{
+		*y = ceilf(*y) - (float)0.5;
+		*x -= (float)0.5;
+	}
+	else if (cos(angl) > 0)
+	{
+		*y = ceilf(*y) - (float)0.5;
+		*x += (float)0.5;
+	}
+}
 
+void ft_round_sprt_y(double angl, float *x, float *y)
+{
+	if (sin(angl) < 0)
+	{
+		*x = ceilf(*x) - (float)0.5;
+		*y += (float)0.5;
+	}
+	else if (sin(angl) > 0)
+	{
+		*x = ceilf(*x) - (float)0.5;
+		*y -= (float)0.5;
+	}
+}
 void rey(t_vars* vars)
 {
 	double cx;
@@ -344,9 +360,12 @@ void rey(t_vars* vars)
 			if (y < mapWidth && y > 0 && worldMap[(int)cx - vars->we_ea][(int)y] == 9)
 			{
 				vars->sprite->enter_on_len_x = (float)cx;
-				vars->sprite->enter_on_len_x = (float)y;
+				vars->sprite->enter_on_len_y = (float)y;
+
+				ft_round_sprt_x(min_angle,&vars->sprite->enter_on_len_x, &vars->sprite->enter_on_len_y);
+				vars->sprite[n_sprt].cord.len_to_sprt = sqrtf(powf(vars->sprite->enter_on_len_x - (float)vars->x, 2) + powf(vars->sprite->enter_on_len_y - (float)vars->y, 2));
+
 				vars->sprite[n_sprt].create = 1;
-				vars->sprite[n_sprt].cord.len_to_sprt = (float)sqrt(pow(((int)cx + 0.5 * vars->sprite[n_sprt].offset_mode_cord_sprite_x - vars->x  - vars->we_ea), 2) + pow((int)y + 0.5 * vars->sprite[n_sprt].offset_mode_cord_sprite_y - vars->y, 2));
 				n_sprt++;
 			}
 		}
@@ -365,13 +384,18 @@ void rey(t_vars* vars)
 			{
 				vars->sprite->enter_on_len_x = (float)x;
 				vars->sprite->enter_on_len_y= (float)cy;
+
+				ft_round_sprt_y(min_angle,&vars->sprite->enter_on_len_x, &vars->sprite->enter_on_len_y);
+				vars->sprite[n_sprt].cord.len_to_sprt = sqrtf(powf(vars->sprite->enter_on_len_x - (float)vars->x, 2) + powf(vars->sprite->enter_on_len_y - (float)vars->y, 2));
 				vars->sprite[n_sprt].create = 1;
-				vars->sprite[n_sprt].cord.len_to_sprt = (float)sqrt(pow((int)x + 0.5 * vars->sprite[n_sprt].offset_mode_cord_sprite_x - vars->x, 2) + pow(((int)cy + 0.5 * vars->sprite[n_sprt].offset_mode_cord_sprite_y - vars->y  - vars->no_so), 2));
 				n_sprt++;
 			}
 		}
-
-
+		if (num_rey == 500)
+		{
+			printf("len to sp = %f\n",vars->sprite[0].cord.len_to_sprt);
+		}
+		printf("%.5d)len to sp = %f |x =  %f | y = %f\n",num_rey,vars->sprite[0].cord.len_to_sprt,vars->sprite->enter_on_len_x,vars->sprite->enter_on_len_y );
 		if (lenx < leny)
 		{
 			vars->color = (vars->we_ea) ? 0x009932CC : 0x0066CDAA;
@@ -410,9 +434,9 @@ int             main(void)
 	vars.size_win_w = 1000;
 	vars.size_win_h = 1000;
 
-	vars.x = 7;
-	vars.y = 9;
-	vars.angle_p = + M_PI /4 + M_PI / 2;
+	vars.x =1.5;
+	vars.y =1.5;
+	vars.angle_p =- M_PI /4;
 	while (i++ < 100)
 	{
 		vars.sprite[i].create = -1;
