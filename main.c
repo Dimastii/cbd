@@ -5,7 +5,7 @@
 #include "fcntl.h"
 #include "gnl/get_next_line.h"
 
-#define ANLGLe M_PI / 5
+#define ANLGLe M_PI / 4
 #define N_REY vars->size_win_w
 
 
@@ -13,39 +13,39 @@
 #define mapHeight 24
 
 int worldMap[mapWidth][mapHeight]=
-//		{
-//				{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,9,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,1,0,0,0,0,0,0,0,9,1,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,1,9,1,0,0,0,0,0,0,1,9,1,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-//				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-//				{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-//		};
 		{
-				{1,1,1,1,1},
-				{1,0,0,0,1},
-				{1,0,9,0,1},
-				{1,0,0,0,1},
-				{1,1,1,1,1},
+				{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,9,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,1,0,0,0,0,0,0,0,9,1,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
+				{1,0,0,0,1,9,1,0,0,0,0,0,0,1,9,1,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,9,0,0,0,9,1,9,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0,0,9,1,9,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0,0,9,1,9,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,9,9,0,0,9,1,9,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0,0,9,1,9,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0,9,0,0,0,9,1,9,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0,0,9,1,9,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,9,0,9,1,9,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0,0,9,1,9,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0,0,9,1,9,1},
+				{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 		};
+//		{
+//				{1,1,1,1,1},
+//				{1,0,0,0,1},
+//				{1,0,9,0,1},
+//				{1,0,0,0,1},
+//				{1,1,1,1,1},
+//		};
 
 
 
@@ -116,6 +116,8 @@ typedef struct  s_vars {
 
 
 void rey(t_vars* vars);
+int ft_len_sprt(t_vars *vars, double ang, float len);
+
 
 void            my_mlx_pixel_put(t_image *data, int x, int y, int color)
 {
@@ -215,7 +217,7 @@ void	ft_render(t_vars *vars, double len_r_norm, double min_angle, int num)
 {
 	int wall_y;
 
-	double wall_h = vars->size_win_h / len_r_norm * fabs(sin(vars->angle_p + M_PI/2 - min_angle));
+	double wall_h = vars->size_win_h / len_r_norm;
 	int drawStart = -wall_h / 2 + vars->size_win_h / 2;
 	int drawend = wall_h / 2 + vars->size_win_h / 2;
 //	if (drawStart <0) drawStart = 0;
@@ -240,7 +242,7 @@ void	ft_render(t_vars *vars, double len_r_norm, double min_angle, int num)
 unsigned int yyy = 0xDC143C;
 void	ft_print_wall_sprite(t_vars *vars, double len_r, int num_rey)
 {
-	double wall_h = vars->size_win_h / (len_r + 2);
+	double wall_h = vars->size_win_h / (len_r);
 	int drawStart = -wall_h / 2 + vars->size_win_h / 2;
 	int drawend = wall_h / 2 + vars->size_win_h / 2;
 	if (drawStart <0) drawStart = 0;
@@ -257,14 +259,10 @@ void	ft_print_wall_sprite(t_vars *vars, double len_r, int num_rey)
 	}
 }
 
-void	ft_render_sprite(double dx, double x, double y, t_vars *vars , int num_rey)
+void	ft_render_sprite(t_vars *vars , int num_rey, double min_angle)
 {
-	double xs;
-	double ys;
 	int i;
-	double len_sp;
 
-	len_sp = (sqrt(2) - 1) / 2;
 	i = 0;
 	while (vars->sprite[i].create != -1) {
 		i++;
@@ -272,6 +270,7 @@ void	ft_render_sprite(double dx, double x, double y, t_vars *vars , int num_rey)
 
 	while (i--)
 	{
+		if (ft_len_sprt(vars, min_angle, vars->sprite[i].cord.len_to_sprt))
 		ft_print_wall_sprite(vars,vars->sprite[i].cord.len_to_sprt, num_rey);
 
 	}
@@ -303,6 +302,41 @@ void ft_round_sprt_y(double angl, float *x, float *y)
 		*x = ceilf(*x) - (float)0.5;
 		*y -= (float)0.5;
 	}
+}
+void ft_sort_sprt(t_vars *vars )
+{
+	int i = 0;
+	int j;
+	float temp;
+	while (vars->sprite[i].create != -1)
+	{
+		j = i + 1;
+		while (vars->sprite[j].create != -1)
+		{
+			if (vars->sprite[j].cord.len_to_sprt < vars->sprite[i].cord.len_to_sprt)
+			{
+				temp = vars->sprite[j].cord.len_to_sprt;
+				vars->sprite[j].cord.len_to_sprt = vars->sprite[i].cord.len_to_sprt;
+				vars->sprite[i].cord.len_to_sprt = temp;
+			}
+			j++;
+		}
+		i++;
+	}
+
+}
+
+int ft_len_sprt(t_vars *vars, double ang, float len)
+{
+	double a1;
+	double a2;
+
+	a1 = vars->angle_p - asin(0.5 / sqrt(pow(len, 2) + 0.25));
+	a2 = vars->angle_p + asin(0.5 / sqrt(pow(len, 2) + 0.25));
+	if (ang < a1 || ang > a2)
+		return (0);
+	else
+		return (1);
 }
 void rey(t_vars* vars)
 {
@@ -356,20 +390,21 @@ void rey(t_vars* vars)
 			{
 				lenx = len;
 				break;
+
 			}
-			if (y < mapWidth && y > 0 && worldMap[(int)cx - vars->we_ea][(int)y] == 9)
+			if (y < mapWidth && y > 0 && worldMap[(int)cx - vars->we_ea][(int)y] == 9 )
 			{
 				vars->sprite->enter_on_len_x = (float)cx;
 				vars->sprite->enter_on_len_y = (float)y;
 
 				ft_round_sprt_x(min_angle,&vars->sprite->enter_on_len_x, &vars->sprite->enter_on_len_y);
+				if (vars->sprite[n_sprt].cord.len_to_sprt == -1)
 				vars->sprite[n_sprt].cord.len_to_sprt = sqrtf(powf(vars->sprite->enter_on_len_x - (float)vars->x, 2) + powf(vars->sprite->enter_on_len_y - (float)vars->y, 2));
-
 				vars->sprite[n_sprt].create = 1;
 				n_sprt++;
 			}
 		}
-		n_sprt = 0;
+
 		while (cy < mapHeight && cy > 0)
 		{
 			ft_round(min_angle, &cyx, &cy, vars);
@@ -386,16 +421,14 @@ void rey(t_vars* vars)
 				vars->sprite->enter_on_len_y= (float)cy;
 
 				ft_round_sprt_y(min_angle,&vars->sprite->enter_on_len_x, &vars->sprite->enter_on_len_y);
-				vars->sprite[n_sprt].cord.len_to_sprt = sqrtf(powf(vars->sprite->enter_on_len_x - (float)vars->x, 2) + powf(vars->sprite->enter_on_len_y - (float)vars->y, 2));
+				if (vars->sprite[n_sprt].cord.len_to_sprt == -1)
+					vars->sprite[n_sprt].cord.len_to_sprt = sqrtf(powf(vars->sprite->enter_on_len_x - (float)vars->x, 2) + powf(vars->sprite->enter_on_len_y - (float)vars->y, 2));
 				vars->sprite[n_sprt].create = 1;
 				n_sprt++;
 			}
 		}
-		if (num_rey == 500)
-		{
-			printf("len to sp = %f\n",vars->sprite[0].cord.len_to_sprt);
-		}
-		printf("%.5d)len to sp = %f |x =  %f | y = %f\n",num_rey,vars->sprite[0].cord.len_to_sprt,vars->sprite->enter_on_len_x,vars->sprite->enter_on_len_y );
+
+
 		if (lenx < leny)
 		{
 			vars->color = (vars->we_ea) ? 0x009932CC : 0x0066CDAA;
@@ -415,8 +448,14 @@ void rey(t_vars* vars)
 			yyy = 0xDCFF3C;
 		}
 		ft_render(vars, len, min_angle, num_rey);
-		if (len >= vars->sprite[0].cord.len_to_sprt)
-			ft_render_sprite(0, cx, y, vars, num_rey);
+
+		printf("%d | %d) %f || %f \n",num_rey,0,vars->sprite[0].cord.len_to_sprt, len);
+		printf("%d | %d) %f || %f \n",num_rey,1,vars->sprite[1].cord.len_to_sprt, len);
+
+		ft_sort_sprt(vars);
+		if (len > vars->sprite[0].cord.len_to_sprt ) {
+			ft_render_sprite(vars, num_rey, min_angle);
+		}
 
 		num_rey++;
 		min_angle += angle_offset;
@@ -431,13 +470,13 @@ int             main(void)
 	t_vars      vars;
 	int i = 0;
 
-	
+
 	vars.size_win_w = 1000;
 	vars.size_win_h = 1000;
 
-	vars.x =1.5;
-	vars.y =1.5;
-	vars.angle_p =- M_PI /4;
+	vars.x =4;
+	vars.y =5;
+	vars.angle_p =- M_PI /2;
 	while (i++ < 100)
 	{
 		vars.sprite[i].create = -1;
