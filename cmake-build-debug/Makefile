@@ -224,6 +224,33 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/main.c.s
 .PHONY : main.c.s
 
+sprt.o: sprt.c.o
+
+.PHONY : sprt.o
+
+# target to build an object file
+sprt.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/sprt.c.o
+.PHONY : sprt.c.o
+
+sprt.i: sprt.c.i
+
+.PHONY : sprt.i
+
+# target to preprocess a source file
+sprt.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/sprt.c.i
+.PHONY : sprt.c.i
+
+sprt.s: sprt.c.s
+
+.PHONY : sprt.s
+
+# target to generate assembly for a file
+sprt.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/sprt.c.s
+.PHONY : sprt.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -242,6 +269,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... sprt.o"
+	@echo "... sprt.i"
+	@echo "... sprt.s"
 .PHONY : help
 
 

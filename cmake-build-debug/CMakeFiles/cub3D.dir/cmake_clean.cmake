@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/cub3D.dir/gnl/get_next_line.c.o"
   "CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o"
   "CMakeFiles/cub3D.dir/main.c.o"
+  "CMakeFiles/cub3D.dir/sprt.c.o"
   "cub3D"
   "cub3D.pdb"
 )

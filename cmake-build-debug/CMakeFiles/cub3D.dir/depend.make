@@ -8,6 +8,12 @@ CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o: ../gnl/get_next_line.h
 CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o: ../gnl/get_next_line_utils.c
 
 CMakeFiles/cub3D.dir/main.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/cub3D.dir/main.c.o: ../cub.h
 CMakeFiles/cub3D.dir/main.c.o: ../gnl/get_next_line.h
 CMakeFiles/cub3D.dir/main.c.o: ../main.c
+
+CMakeFiles/cub3D.dir/sprt.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/cub3D.dir/sprt.c.o: ../cub.h
+CMakeFiles/cub3D.dir/sprt.c.o: ../gnl/get_next_line.h
+CMakeFiles/cub3D.dir/sprt.c.o: ../sprt.c
 

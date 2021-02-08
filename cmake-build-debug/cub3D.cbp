@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/cub.h">
+			<Option target="cub3D"/>
+		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/gnl/get_next_line.c">
 			<Option target="cub3D"/>
 		</Unit>
@@ -100,6 +103,9 @@
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/minilibx_mms_20200219/mlx.h">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/sprt.c">
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/CMakeLists.txt">

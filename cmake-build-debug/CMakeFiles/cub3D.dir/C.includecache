@@ -8,13 +8,7 @@
 
 ../minilibx_mms_20200219/mlx.h
 
-/Users/cveeta/CLionProjects/cub3D/gnl/get_next_line.h
-unistd.h
-/Users/cveeta/CLionProjects/cub3D/gnl/unistd.h
-stdlib.h
-/Users/cveeta/CLionProjects/cub3D/gnl/stdlib.h
-
-/Users/cveeta/CLionProjects/cub3D/main.c
+/Users/cveeta/CLionProjects/cub3D/cub.h
 stdio.h
 -
 math.h
@@ -25,4 +19,14 @@ fcntl.h
 /Users/cveeta/CLionProjects/cub3D/fcntl.h
 gnl/get_next_line.h
 /Users/cveeta/CLionProjects/cub3D/gnl/get_next_line.h
+
+/Users/cveeta/CLionProjects/cub3D/gnl/get_next_line.h
+unistd.h
+/Users/cveeta/CLionProjects/cub3D/gnl/unistd.h
+stdlib.h
+/Users/cveeta/CLionProjects/cub3D/gnl/stdlib.h
+
+/Users/cveeta/CLionProjects/cub3D/main.c
+cub.h
+/Users/cveeta/CLionProjects/cub3D/cub.h
 

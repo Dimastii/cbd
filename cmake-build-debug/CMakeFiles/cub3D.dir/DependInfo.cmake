@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cveeta/CLionProjects/cub3D/gnl/get_next_line.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/gnl/get_next_line.c.o"
   "/Users/cveeta/CLionProjects/cub3D/gnl/get_next_line_utils.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o"
   "/Users/cveeta/CLionProjects/cub3D/main.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/main.c.o"
+  "/Users/cveeta/CLionProjects/cub3D/sprt.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/sprt.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
