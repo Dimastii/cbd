@@ -9,5 +9,11 @@ CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o
  /Users/cveeta/CLionProjects/cub3D/gnl/get_next_line_utils.c
 CMakeFiles/cub3D.dir/main.c.o
  ../minilibx_mms_20200219/mlx.h
+ /Users/cveeta/CLionProjects/cub3D/cub.h
  /Users/cveeta/CLionProjects/cub3D/gnl/get_next_line.h
  /Users/cveeta/CLionProjects/cub3D/main.c
+CMakeFiles/cub3D.dir/sprt.c.o
+ ../minilibx_mms_20200219/mlx.h
+ /Users/cveeta/CLionProjects/cub3D/cub.h
+ /Users/cveeta/CLionProjects/cub3D/gnl/get_next_line.h
+ /Users/cveeta/CLionProjects/cub3D/sprt.c
