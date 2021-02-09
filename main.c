@@ -1,5 +1,6 @@
 
 
+#include <float.h>
 #include "cub.h"
 unsigned int yyy = 0xDC143C;
 
@@ -8,26 +9,26 @@ int worldMap[mapWidth][mapHeight]=
 				{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,9,1,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,1,9,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
+				{1,0,0,0,1,9,1,0,0,0,0,0,0,1,9,1,0,0,0,0,0,0,0,1},
+				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,9,1},
+				{1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1},
+				{1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1},
+				{1,0,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1},
+				{1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1},
+				{1,0,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1},
+				{1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1},
+				{1,0,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1},
+				{1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1},
+				{1,0,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1},
 				{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 		};
 //		{
@@ -58,6 +59,16 @@ int            my_mlx_pixel_take(t_image data, int x, int y)
 	dst = data.addr + (y * data.line_length + x * (data.bits_per_pixel / 8));
 	color = *(unsigned int*)dst;
 	return (color);
+}
+
+void			ft_round_angle(double *ang)
+{
+	if (*ang < 0)
+		while (*ang < -M_PI)
+			*ang += M_PI;
+	else if (*ang > 0)
+			while (*ang > M_PI)
+				*ang -= M_PI;
 }
 
 int             key_hook(int keycode, t_vars *vars)
@@ -101,6 +112,9 @@ int             key_hook(int keycode, t_vars *vars)
 	}
 	if (keycode == 14) {
 		vars->angle_p += turn;
+	}
+	if (keycode == 53) {
+		exit(0);
 	}
 }
 
@@ -146,11 +160,21 @@ void	ft_render_wall(t_vars *vars, double len_r_norm, int num)
 	int color;
 	int y;
 
+	vars->img_tex_print = vars->img_tex_wall_no;
+	if (vars->no_so != -1 && vars->no_so == 0)
+		vars->img_tex_print = vars->img_tex_wall_no;
+	if (vars->no_so != -1 && vars->no_so == 1)
+		vars->img_tex_print = vars->img_tex_wall_so;
+	if (vars->we_ea != -1 && vars->we_ea == 0)
+		vars->img_tex_print = vars->img_tex_wall_we;
+	if (vars->we_ea != -1 && vars->we_ea == 1)
+		vars->img_tex_print = vars->img_tex_wall_ea;
+
 	wall_y = 0;
 	while (wall_y1 < drawend)
 	{
 		y = (int)(((float)(wall_y1 - drawStart) /((float)drawend - (float)drawStart)) * 700.0);
-		color = my_mlx_pixel_take(vars->img_tex,(int)((vars->x_tex - (int)vars->x_tex) * 700.0), y);
+		color = my_mlx_pixel_take(vars->img_tex_print, (int)((vars->x_tex - (int)vars->x_tex) * 700.0), y);
 		if (wall_y1 >= 0 && wall_y1 < vars->size_win_h)
 			my_mlx_pixel_put(&vars->img, num - 1 ,wall_y1, color);
 
@@ -168,25 +192,69 @@ int ft_len_sprt(t_vars *vars, double ang, t_sprite *sprt)
 	float h_x;
 	double ang_range;
 
-	ang_range = atan(0.5 / sprt->cord.len_to_sprt);
 
 	h_x = sprt->enter_on_len_x - (float)vars->x;
-	angle_sptr = atan(fabs((sprt->enter_on_len_y - vars->y))/fabs((sprt->enter_on_len_x - vars->x)));
-	if (ang <= angle_sptr + 0.05 && ang >= angle_sptr - 0.05) {
-		printf("Sprt =%f    ang=%f\n", angle_sptr, ang);
-		vars->color = 0xDCFF3C;
-	}
-	else
-		vars->color = 0xDCFFFF;
 
+
+	if (cos(ang) > 0 && (sin(ang) > 0 || sin(ang) < 0)) {
+		ang_range = atan(0.5 / sprt->cord.len_to_sprt);
+		angle_sptr = -atan(fabs((sprt->enter_on_len_y - vars->y) / (h_x)));
+		if (sprt->enter_on_len_y - vars->y < 0) {
+			angle_sptr *= -1;
+		}
+		printf("tg Sprt = %f    ang = %f\n", angle_sptr, ang);
+
+	}
+	else if (cos(ang) < 0 && (sin(ang) > 0 || sin(ang) < 0))
+	{
+		ang_range = atan(0.5 / sprt->cord.len_to_sprt);
+		angle_sptr = -(M_PI/2 - atan(fabs(h_x / (sprt->enter_on_len_y - vars->y))));
+		if (sprt->enter_on_len_y - vars->y < 0) {
+			angle_sptr = (M_PI/2 - atan(fabs(h_x / (sprt->enter_on_len_y - vars->y))));
+		}
+		printf("cg Sprt = %f    ang = %f\n", angle_sptr, ang);
+	}
 	a1 = angle_sptr - ang_range;
 	a2 = angle_sptr + ang_range;
+	if (sin(ang) >= sin(a1) && sin(ang) <= sin(a2)) {
+		vars->color = 0xDCFF3C;
+		return (1);
+	}
+	else {
+		vars->color = 0xDCFFFF;
+		return (0);
+
+	}
+//привести угол к виду от -пи до пи
 
 
-	if (sin(ang) >= sin(a1) && sin(ang) <= sin(a2))
-		return (1);
-	else
-		return (1);
+//	else if (sin(ang) < 0 && (cos(ang) > 0 || cos(ang) < 0)) {
+//		ang_range = atan(0.5 / sprt->cord.len_to_sprt);
+//		angle_sptr = -1/(atan(fabs((sprt->enter_on_len_y - vars->y) / (h_x))));
+//		if (h_x > 0) {
+//			angle_sptr *= -1;
+//		}
+//		printf("Sprt =%f    ang=%f\n", angle_sptr, ang);
+//	}
+
+
+
+//	else if (cos(ang) > 0 && sin(ang) > 0 && cos(ang) < 0 && sin(ang) > 0)
+//	{
+//		ang_range = atan(0.5 / sprt->cord.len_to_sprt);
+//		angle_sptr = -1/atan(fabs((h_x) / (sprt->enter_on_len_y - vars->y)));
+//		if (h_x < 0) {
+//			angle_sptr *= -1;
+//		}
+//	}
+
+
+
+
+
+
+
+
 }
 void rey(t_vars* vars)
 {
@@ -281,28 +349,29 @@ void rey(t_vars* vars)
 		{
 			//vars->color = (vars->we_ea) ? 0x009932CC : 0x0066CDAA;
 			len = lenx * fabs(sin(vars->angle_p + M_PI/2 - min_angle));
-			vars->we_ea = -1;
+			vars->no_so = -1;
 			vars->x_tex = cx;
 			vars->x_tex = y;
 			yyy = 0xDC143C;
 		}
 		else
 		{
-		//	vars->color = (vars->no_so) ? 0x009400D3 : 0x002e8B57;
+			//	vars->color = (vars->no_so) ? 0x009400D3 : 0x002e8B57;
 			len = leny * fabs(sin(vars->angle_p + M_PI/2 - min_angle));
-			vars->no_so = -1;
+			vars->we_ea = -1;
 			vars->x_tex = x;
 			vars->y_tex = cy;
 			yyy = 0xDCFF3C;
 		}
+
 		ft_render_wall(vars, len, num_rey);
 
 		ft_sort_sprt(vars);
-//		if (len > vars->sprite[0].cord.len_to_sprt ) {
+		if (len > vars->sprite[0].cord.len_to_sprt ) {
 			if (vars->sprite[0].cord.len_to_sprt != -1)
 				ft_render_sprite(vars, num_rey, min_angle);
 
-//		}
+		}
 		num_rey++;
 		min_angle += angle_offset;
 	}
@@ -321,7 +390,7 @@ int             main(void)
 
 	vars.x =4;
 	vars.y =5;
-	vars.angle_p =0;
+	vars.angle_p =- M_PI/2;
 	while (i++ < 100)
 	{
 		vars.sprite[i].create = -1;
@@ -338,8 +407,18 @@ int             main(void)
 	vars.img_tex_sp.addr = mlx_get_data_addr(vars.img_tex_sp.img, &vars.img_tex_sp.bits_per_pixel, &vars.img_tex_sp.line_length, &vars.img_tex_sp.endian);
 
 
-	vars.img_tex.img = mlx_xpm_file_to_image(vars.mlx, "./anime.xpm", &vars.img_tex.w, &vars.img_tex.h);
-	vars.img_tex.addr = mlx_get_data_addr(vars.img_tex.img, &vars.img_tex.bits_per_pixel, &vars.img_tex.line_length, &vars.img_tex.endian);
+	vars.img_tex_wall_no.img = mlx_xpm_file_to_image(vars.mlx, "./anime_wall_rez.xpm", &vars.img_tex_wall_no.w, &vars.img_tex_wall_no.h);
+	vars.img_tex_wall_no.addr = mlx_get_data_addr(vars.img_tex_wall_no.img, &vars.img_tex_wall_no.bits_per_pixel, &vars.img_tex_wall_no.line_length, &vars.img_tex_wall_no.endian);
+
+	vars.img_tex_wall_so.img = mlx_xpm_file_to_image(vars.mlx, "./anime_wall_gop_.xpm", &vars.img_tex_wall_so.w, &vars.img_tex_wall_so.h);
+	vars.img_tex_wall_so.addr = mlx_get_data_addr(vars.img_tex_wall_so.img, &vars.img_tex_wall_so.bits_per_pixel, &vars.img_tex_wall_so.line_length, &vars.img_tex_wall_so.endian);
+
+	vars.img_tex_wall_we.img = mlx_xpm_file_to_image(vars.mlx, "./sp_anime.xpm", &vars.img_tex_wall_we.w, &vars.img_tex_wall_we.h);
+	vars.img_tex_wall_we.addr = mlx_get_data_addr(vars.img_tex_wall_we.img, &vars.img_tex_wall_we.bits_per_pixel, &vars.img_tex_wall_we.line_length, &vars.img_tex_wall_we.endian);
+
+	vars.img_tex_wall_ea.img = mlx_xpm_file_to_image(vars.mlx, "./anime.xpm", &vars.img_tex_wall_ea.w, &vars.img_tex_wall_ea.h);
+	vars.img_tex_wall_ea.addr = mlx_get_data_addr(vars.img_tex_wall_ea.img, &vars.img_tex_wall_ea.bits_per_pixel, &vars.img_tex_wall_ea.line_length, &vars.img_tex_wall_ea.endian);
+
 
 	mlx_hook(vars.win, 2, 1L<<2,key_hook , &vars);
 	mlx_loop_hook(vars.mlx, rey, &vars);
