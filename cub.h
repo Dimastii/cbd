@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:59:11 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/08 20:26:40 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/09 17:45:13 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,14 @@ typedef struct  s_vars {
 	t_sprite sprite[100];
 
 	t_image 		img;
-	t_image		img_tex;
+
+	t_image		img_tex_wall_no;
+	t_image		img_tex_wall_so;
+	t_image		img_tex_wall_we;
+	t_image		img_tex_wall_ea;
 	t_image		img_tex_sp;
+	t_image		img_tex_print;
+
 	double x_tex;
 	double y_tex;
 }               t_vars;
