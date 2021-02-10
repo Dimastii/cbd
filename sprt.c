@@ -6,14 +6,14 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:58:40 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/10 12:21:11 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/10 21:20:02 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
 
 ///unsigned int yyy = 0xDC143C;
-void	ft_print_wall_sprite(t_vars *vars, double len_r, int num_rey, double min_angle)
+void	ft_print_wall_sprite(t_vars *vars, double len_r, int num_rey, int clr)
 {
 //	double wall_h = vars->size_win_h / (len_r);
 //	int drawStart = -wall_h / 2 + vars->size_win_h / 2;
@@ -45,7 +45,7 @@ void	ft_print_wall_sprite(t_vars *vars, double len_r, int num_rey, double min_an
 		y = (int)(((float)(wall_y1 - drawStart) /((float)drawend - (float)drawStart)) * 700.0);
 		//color = my_mlx_pixel_take(vars->img_tex_sp,(int)((vars->x_tex - (int)vars->x_tex) * 700.0), y);
 		if (wall_y1 >= 0 && wall_y1 < vars->size_win_h && wall_y1 % 2)
-			my_mlx_pixel_put(&vars->img, num_rey - 1 ,wall_y1, vars->color);
+			my_mlx_pixel_put(&vars->img, num_rey - 1 ,wall_y1, clr);
 
 		wall_y1++;
 		wall_y++;
@@ -64,10 +64,12 @@ void	ft_render_sprite(t_vars *vars , int num_rey, double min_angle)
 	while (i) {
 		i--;
 		//vars->sprite[i].cord.num++;
-		if (ft_len_sprt(vars, min_angle, &vars->sprite[i])) {
-			vars->color = 44444 * (i+1);
-			ft_print_wall_sprite(vars, vars->sprite[i].cord.len_to_sprt, num_rey, min_angle);
+		if (ft_len_sprt(vars, min_angle, vars->sprite[i])) {
+			vars->color = 44444;
+			ft_print_wall_sprite(vars, vars->sprite[i].cord.len_to_sprt, num_rey, vars->sprite[i].clr);
 		}
+//		else
+//			printf("%d | i = %d\n", num_rey, i);
 	}
 }
 
@@ -102,7 +104,7 @@ void ft_sort_sprt(t_vars *vars )
 {
 	int i = 0;
 	int j;
-	float temp;
+	t_sprite temp;
 	while (vars->sprite[i].create != -1)
 	{
 		j = i + 1;
@@ -110,9 +112,9 @@ void ft_sort_sprt(t_vars *vars )
 		{
 			if (vars->sprite[j].cord.len_to_sprt < vars->sprite[i].cord.len_to_sprt)
 			{
-				temp = vars->sprite[j].cord.len_to_sprt;
-				vars->sprite[j].cord.len_to_sprt = vars->sprite[i].cord.len_to_sprt;
-				vars->sprite[i].cord.len_to_sprt = temp;
+				temp = vars->sprite[j];
+				vars->sprite[j] = vars->sprite[i];
+				vars->sprite[i] =  temp;
 			}
 			j++;
 		}
