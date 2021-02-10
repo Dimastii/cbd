@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:58:40 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/08 20:41:32 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/10 12:21:11 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_print_wall_sprite(t_vars *vars, double len_r, int num_rey, double min_an
 	{
 		y = (int)(((float)(wall_y1 - drawStart) /((float)drawend - (float)drawStart)) * 700.0);
 		//color = my_mlx_pixel_take(vars->img_tex_sp,(int)((vars->x_tex - (int)vars->x_tex) * 700.0), y);
-		if (wall_y1 >= 0 && wall_y1 < vars->size_win_h)
+		if (wall_y1 >= 0 && wall_y1 < vars->size_win_h && wall_y1 % 2)
 			my_mlx_pixel_put(&vars->img, num_rey - 1 ,wall_y1, vars->color);
 
 		wall_y1++;
@@ -61,11 +61,13 @@ void	ft_render_sprite(t_vars *vars , int num_rey, double min_angle)
 		i++;
 	}
 
-	while (i--)
-	{
+	while (i) {
+		i--;
 		//vars->sprite[i].cord.num++;
-		if (ft_len_sprt(vars, min_angle, &vars->sprite[i]))
-			ft_print_wall_sprite(vars,vars->sprite[i].cord.len_to_sprt, num_rey, min_angle);
+		if (ft_len_sprt(vars, min_angle, &vars->sprite[i])) {
+			vars->color = 44444 * (i+1);
+			ft_print_wall_sprite(vars, vars->sprite[i].cord.len_to_sprt, num_rey, min_angle);
+		}
 	}
 }
 
