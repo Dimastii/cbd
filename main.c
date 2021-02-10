@@ -5,31 +5,31 @@
 unsigned int yyy = 0xDC143C;
 
 int worldMap[mapWidth][mapHeight]=
-		{//      1 2 3 4 5 6 7 8 9 10111213141516171819
-				{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,9,1,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1},
-				{1,0,0,0,1,9,1,0,0,0,0,0,0,1,9,1,0,0,0,0,0,0,0,1},
-				{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,9,1},
-				{1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1},
-				{1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1},
-				{1,0,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1},
-				{1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1},
-				{1,0,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1},
-				{1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1},
-				{1,0,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1},
-				{1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1},
-				{1,0,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,1},
-				{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+		{//     	   1 2 3 4 5 6 7 8 9 10111231141516171819
+		/*0*/		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*2*/		{1,0,0,0,0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,1},
+		/*3*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*4*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*5*/		{1,0,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*6*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*7*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*8*/		{1,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*9*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1},
+		/*11*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*12*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1},
+		/*13*/		{1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*14*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1},
+		/*15*/		{1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
+		/*16*/		{1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1},
+		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
+		/*1*/		{1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,1},
+		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
+		/*1*/		{1,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1},
+		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
+		/*1*/		{1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
+		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
+		/*1*/		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 		};
 //		{
 //				{1,1,1,1,1},
@@ -64,11 +64,18 @@ int            my_mlx_pixel_take(t_image data, int x, int y)
 void			ft_round_angle(double *ang)
 {
 	if (*ang < 0)
-		while (*ang < -M_PI)
-			*ang += M_PI;
+		while (*ang < - (2.0 * M_PI))
+			*ang += (2.0 * M_PI);
 	else if (*ang > 0)
-			while (*ang > M_PI)
-				*ang -= M_PI;
+		while (*ang > (2.0 *  M_PI))
+			*ang -= (2.0 * M_PI);
+	if (*ang > M_PI) {
+		*ang -= (2.0 * M_PI);
+	}
+	if (*ang < -M_PI) {
+		*ang += (2.0 * M_PI);
+	}
+
 }
 
 int             key_hook(int keycode, t_vars *vars)
@@ -83,26 +90,26 @@ int             key_hook(int keycode, t_vars *vars)
 	vars->img.img = mlx_new_image(vars->mlx, vars->size_win_w, vars->size_win_h);
 	vars->img.addr = mlx_get_data_addr(vars->img.img, &vars->img.bits_per_pixel, &vars->img.line_length, &vars->img.endian);
 	if (keycode == 124) {
-//		if (worldMap[(int) (vars->x - 0.5)][(int) (vars->y - 0.5)] != 1) {
+//		if (worldMap[(int) (vars->x - 1)][(int) (vars->y - 1)] != 1) {
 		vars->x -= step * sin(vars->angle_p);
 		vars->y -= step * cos(vars->angle_p);
 //		}
 	}
 	if (keycode == 123) {
-//		if (worldMap[(int) (vars->x + 0.5)][(int) (vars->y + 0.5)] != 1) {
+//		if (worldMap[(int) (vars->x + 1)][(int) (vars->y + 1)] != 1) {
 
 		vars->x += step * sin(vars->angle_p);
 		vars->y += step * cos(vars->angle_p);
 //		}
 	}
 	if (keycode == 125) {
-//		if (worldMap[(int)(vars->x - 0.5)][(int)(vars->y +0.5)] != 1) {
+//		if (worldMap[(int)(vars->x - 1)][(int)(vars->y + 1)] != 1) {
 		vars->x -= step * cos(vars->angle_p);
 		vars->y += step * sin(vars->angle_p);
 //		}
 	}
 	if (keycode == 126) {
-//		if (worldMap[(int) (vars->x + 0.5)][(int) (vars->y - 0.5)] != 1) {
+//		if (worldMap[(int) (vars->x + 1)][(int) (vars->y - 1)] != 1) {
 		vars->x += step * cos(vars->angle_p);
 		vars->y -= step * sin(vars->angle_p);
 //		}
@@ -184,77 +191,102 @@ void	ft_render_wall(t_vars *vars, double len_r_norm, int num)
 }
 
 
-int ft_len_sprt(t_vars *vars, double ang, t_sprite *sprt)
+int ft_len_sprt(t_vars *vars, double ang, t_sprite sprt)
 {
 	double a1;
 	double a2;
-	double angle_sptr;
+	double angle_sptr = -1;
 	float h_x;
 	double ang_range;
+	int key = -1;
 
+	h_x = sprt.enter_on_len_x - (float)vars->x;
 
-	h_x = sprt->enter_on_len_x - (float)vars->x;
+	ang_range = atan(0.5 / sprt.cord.len_to_sprt);
 
+	ft_round_angle(&ang);
 
-	if (cos(ang) > 0 && (sin(ang) > 0 || sin(ang) < 0)) {
-		ang_range = atan(0.5 / sprt->cord.len_to_sprt);
-		angle_sptr = -atan(fabs((sprt->enter_on_len_y - vars->y) / (h_x)));
-		if (sprt->enter_on_len_y - vars->y < 0) {
-			angle_sptr *= -1;
-		}
-		printf("tg Sprt = %f    ang = %f\n", angle_sptr, ang);
+	if (sprt.enter_on_len_x - vars->x >= 0 && sprt.enter_on_len_y - vars->y >= 0) {
+		angle_sptr = -atan((sprt.enter_on_len_y - vars->y) / (h_x));
+		printf("11111Sprt = % f ang = % f\n", angle_sptr, ang);
+		key = 0;
+	}
+	else if (sprt.enter_on_len_x - vars->x >= 0 && sprt.enter_on_len_y - vars->y <= 0 ) {
+		angle_sptr = -atan((sprt.enter_on_len_y - vars->y) / (h_x));
+		printf("22222Sprt = % f ang = % f\n", angle_sptr, ang);
+		key = 1;
 
 	}
-	else if (cos(ang) < 0 && (sin(ang) > 0 || sin(ang) < 0))
-	{
-		ang_range = atan(0.5 / sprt->cord.len_to_sprt);
-		angle_sptr = -(M_PI/2 - atan(fabs(h_x / (sprt->enter_on_len_y - vars->y))));
-		if (sprt->enter_on_len_y - vars->y < 0) {
-			angle_sptr = (M_PI/2 - atan(fabs(h_x / (sprt->enter_on_len_y - vars->y))));
-		}
-		printf("cg Sprt = %f    ang = %f\n", angle_sptr, ang);
+	else if (sprt.enter_on_len_x - vars->x <= 0 && sprt.enter_on_len_y - vars->y <= 0) {
+		angle_sptr = -atan((sprt.enter_on_len_y - vars->y) / (h_x)) + M_PI;
+		printf("33333Sprt = % f ang = % f\n", angle_sptr, ang);
+		key = 1;
 	}
+	else if (sprt.enter_on_len_x - vars->x <= 0 && sprt.enter_on_len_y - vars->y >= 0) {
+		angle_sptr = -atan((sprt.enter_on_len_y - vars->y) / (h_x)) - M_PI;
+		printf("44444Sprt = % f ang = % f\n", angle_sptr, ang);
+		key = 0;
+
+	}
+
 	a1 = angle_sptr - ang_range;
 	a2 = angle_sptr + ang_range;
-	if (sin(ang) >= sin(a1) && sin(ang) <= sin(a2)) {
+
+//	if (cos(ang) >= 0 && (sin(ang) >= sin(a1) && sin(ang) <= sin(a2)))
+//	{
+//		printf("???\n");
+//		vars->color = 0xDCFF3C;
+//		return (1);
+//	}
+////	if ((cos(ang)>= cos(a1) && cos(ang) <= cos(a2)))
+////	{
+////		printf("!!!\n");
+////		vars->color = 0xDCFF3C;
+////		return (1);
+////	}
+//	if (cos(ang) <= 0 && sin(ang) <= 0 && (cos(ang) >= cos(a1) && cos(ang) <= cos(a2)) )
+//	{
+//		printf("???\n");
+//
+//		vars->color = 0xDCFF3C;
+//		return (1);
+//	}
+//	if (cos(ang) < 0 && sin(ang) > 0 && (sin(ang) <= sin(a1) && sin(ang) >= sin(a2)))
+//	{
+//		printf("???\n");
+//
+//		vars->color = 0xDCFF3C;
+//		return (1);
+//	}
+////	if (!(cos(ang)>= cos(a1) && cos(ang) <= cos(a2)))
+////	{
+////		printf("!!!\n");
+////		vars->color = 0xDCFF3C;
+////		return (1);
+////	}
+
+	if ((ang >= a1 && ang <= a2))
+	{
+//		printf("@@@\n");
 		vars->color = 0xDCFF3C;
 		return (1);
 	}
-	else {
-		vars->color = 0xDCFFFF;
-		return (0);
+	if (a2 > M_PI || a1 < - M_PI) {
+		printf("aoaoaoaoaoaoaoaoao\n");
 
+		if (sin(ang) > sin(a2) && sin(ang) < sin(a1)) {
+			printf("aoaoaoaoaoaoaoaoao\n");
+			vars->color = 0xDCFF3C;
+			return (1);
+		}
 	}
-//привести угол к виду от -пи до пи
-
-
-//	else if (sin(ang) < 0 && (cos(ang) > 0 || cos(ang) < 0)) {
-//		ang_range = atan(0.5 / sprt->cord.len_to_sprt);
-//		angle_sptr = -1/(atan(fabs((sprt->enter_on_len_y - vars->y) / (h_x))));
-//		if (h_x > 0) {
-//			angle_sptr *= -1;
-//		}
-//		printf("Sprt =%f    ang=%f\n", angle_sptr, ang);
-//	}
-
-
-
-//	else if (cos(ang) > 0 && sin(ang) > 0 && cos(ang) < 0 && sin(ang) > 0)
+//	else if ((a1 * ang < 0 || a2 * ang < 0) && ((ang + (-1) >= a1 && ang * (-1) <= a2)))
 //	{
-//		ang_range = atan(0.5 / sprt->cord.len_to_sprt);
-//		angle_sptr = -1/atan(fabs((h_x) / (sprt->enter_on_len_y - vars->y)));
-//		if (h_x < 0) {
-//			angle_sptr *= -1;
-//		}
+//		printf("loool\n");
+//		vars->color = 0xDCFF3C;
+//		return (1);
 //	}
-
-
-
-
-
-
-
-
+		return (0);
 }
 void rey(t_vars* vars)
 {
@@ -279,14 +311,16 @@ void rey(t_vars* vars)
 
 
 	int i;
-	while (min_angle <= max_angle)
+	while (min_angle <= max_angle - angle_offset)
 	{
 		i = -1;
 		while (i++ < 100)
 		{
 			vars->sprite[i].create = -1;
+			vars->sprite[i].clr = 111;
 			vars->sprite[i].cord.len_to_sprt = -1;
 			vars->sprite[i].cord.num = 0;
+//			vars->sprite[i].
 		}
 		vars->no_so = (sin(min_angle) > 0) ?  1 : 0;
 		vars->we_ea = (cos(min_angle) < 0) ?  1 : 0;
@@ -306,21 +340,28 @@ void rey(t_vars* vars)
 			{
 				lenx = len;
 				break;
-
 			}
 			if (y < mapWidth && y > 0 && worldMap[(int)cx - vars->we_ea][(int)y] == 9 )
 			{
-				vars->sprite->enter_on_len_x = (float)cx;
-				vars->sprite->enter_on_len_y = (float)y;
+				if (vars->sprite[n_sprt].cord.len_to_sprt == -1) {
 
-				ft_round_sprt_x(min_angle,&vars->sprite->enter_on_len_x, &vars->sprite->enter_on_len_y);
-				if (vars->sprite[n_sprt].cord.len_to_sprt == -1)
-				vars->sprite[n_sprt].cord.len_to_sprt = sqrtf(powf(vars->sprite->enter_on_len_x - (float)vars->x, 2) + powf(vars->sprite->enter_on_len_y - (float)vars->y, 2));
-				vars->sprite[n_sprt].create = 1;
+					vars->sprite[n_sprt].enter_on_len_x = (float) cx;
+					vars->sprite[n_sprt].enter_on_len_y = (float) y;
+
+					ft_round_sprt_x(min_angle, &vars->sprite[n_sprt].enter_on_len_x,
+									&vars->sprite[n_sprt].enter_on_len_y);
+					if (vars->sprite[n_sprt].cord.len_to_sprt == -1)
+						vars->sprite[n_sprt].cord.len_to_sprt = sqrtf(
+								powf(vars->sprite[n_sprt].enter_on_len_x - (float) vars->x, 2) +
+								powf(vars->sprite[n_sprt].enter_on_len_y - (float) vars->y, 2));
+					vars->sprite[n_sprt].create = 1;
+					vars->sprite[n_sprt].clr = 444444 * (n_sprt +1);
+
+				}
 				n_sprt++;
 			}
 		}
-
+		n_sprt = 0;
 		while (cy < mapHeight && cy > 0)
 		{
 			ft_round(min_angle, &cyx, &cy, vars);
@@ -333,13 +374,19 @@ void rey(t_vars* vars)
 			}
 			if (x < mapWidth && x > 0 && worldMap[(int)x][(int)cy - vars->no_so] == 9)
 			{
-				vars->sprite->enter_on_len_x = (float)x;
-				vars->sprite->enter_on_len_y= (float)cy;
+				if (vars->sprite[n_sprt].cord.len_to_sprt == -1) {
+					vars->sprite[n_sprt].enter_on_len_x = (float) x;
+					vars->sprite[n_sprt].enter_on_len_y = (float) cy;
 
-				ft_round_sprt_y(min_angle,&vars->sprite->enter_on_len_x, &vars->sprite->enter_on_len_y);
-				if (vars->sprite[n_sprt].cord.len_to_sprt == -1)
-					vars->sprite[n_sprt].cord.len_to_sprt = sqrtf(powf(vars->sprite->enter_on_len_x - (float)vars->x, 2) + powf(vars->sprite->enter_on_len_y - (float)vars->y, 2));
-				vars->sprite[n_sprt].create = 1;
+					ft_round_sprt_y(min_angle, &vars->sprite[n_sprt].enter_on_len_x,
+									&vars->sprite[n_sprt].enter_on_len_y);
+
+					vars->sprite[n_sprt].cord.len_to_sprt = sqrtf(
+							powf(vars->sprite[n_sprt].enter_on_len_x - (float) vars->x, 2) +
+							powf(vars->sprite->enter_on_len_y - (float) vars->y, 2));
+					vars->sprite[n_sprt].create = 1;
+					vars->sprite[n_sprt].clr = 444444 * (n_sprt +1);
+				}
 				n_sprt++;
 			}
 		}
@@ -347,7 +394,6 @@ void rey(t_vars* vars)
 
 		if (lenx < leny)
 		{
-			//vars->color = (vars->we_ea) ? 0x009932CC : 0x0066CDAA;
 			len = lenx * fabs(sin(vars->angle_p + M_PI/2 - min_angle));
 			vars->no_so = -1;
 			vars->x_tex = cx;
@@ -356,7 +402,6 @@ void rey(t_vars* vars)
 		}
 		else
 		{
-			//	vars->color = (vars->no_so) ? 0x009400D3 : 0x002e8B57;
 			len = leny * fabs(sin(vars->angle_p + M_PI/2 - min_angle));
 			vars->we_ea = -1;
 			vars->x_tex = x;
@@ -388,9 +433,9 @@ int             main(void)
 	vars.size_win_w = 1000;
 	vars.size_win_h = 1000;
 
-	vars.x =4;
-	vars.y =5;
-	vars.angle_p =- M_PI/2;
+	vars.x =9.5;
+	vars.y =7.5;
+	vars.angle_p = M_PI;
 	while (i++ < 100)
 	{
 		vars.sprite[i].create = -1;
@@ -407,7 +452,7 @@ int             main(void)
 	vars.img_tex_sp.addr = mlx_get_data_addr(vars.img_tex_sp.img, &vars.img_tex_sp.bits_per_pixel, &vars.img_tex_sp.line_length, &vars.img_tex_sp.endian);
 
 
-	vars.img_tex_wall_no.img = mlx_xpm_file_to_image(vars.mlx, "./anime_wall_rez.xpm", &vars.img_tex_wall_no.w, &vars.img_tex_wall_no.h);
+	vars.img_tex_wall_no.img = mlx_xpm_file_to_image(vars.mlx, "./sp_anime.xpm", &vars.img_tex_wall_no.w, &vars.img_tex_wall_no.h);
 	vars.img_tex_wall_no.addr = mlx_get_data_addr(vars.img_tex_wall_no.img, &vars.img_tex_wall_no.bits_per_pixel, &vars.img_tex_wall_no.line_length, &vars.img_tex_wall_no.endian);
 
 	vars.img_tex_wall_so.img = mlx_xpm_file_to_image(vars.mlx, "./anime_wall_gop_.xpm", &vars.img_tex_wall_so.w, &vars.img_tex_wall_so.h);

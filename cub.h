@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:59:11 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/09 17:45:13 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/10 20:38:13 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 #define mapWidth  24
 #define mapHeight 24
 
-#define ANLGLE M_PI / 4
+#define ANLGLE M_PI / 4.0
 #define N_REY vars->size_win_w
 
 typedef struct  s_image {
@@ -55,7 +55,7 @@ typedef struct  s_sprite {
 	float enter_on_len_x;
 	float enter_on_len_y;
 
-
+	int clr;
 	int create;
 }               t_sprite;
 
@@ -91,9 +91,9 @@ typedef struct  s_vars {
 
 
 void rey(t_vars* vars);
-int ft_len_sprt(t_vars *vars, double ang, t_sprite *sprt);
+int ft_len_sprt(t_vars *vars, double ang, t_sprite sprt);
 
-void	ft_print_wall_sprite(t_vars *vars, double len_r, int num_rey, double min_angle);
+void	ft_print_wall_sprite(t_vars *vars, double len_r, int num_rey, int clr);
 void	ft_render_sprite(t_vars *vars , int num_rey, double min_angle);
 void ft_round_sprt_x(double angl, float *x, float *y);
 void ft_round_sprt_y(double angl, float *x, float *y);
