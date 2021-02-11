@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:58:40 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/10 21:20:02 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/11 22:09:00 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,10 @@ void	ft_render_sprite(t_vars *vars , int num_rey, double min_angle)
 			ft_print_wall_sprite(vars, vars->sprite[i].cord.len_to_sprt, num_rey, vars->sprite[i].clr);
 		}
 //		else
-//			printf("%d | i = %d\n", num_rey, i);
+//			printf("not in range %d | i = %d\n", num_rey, i);
 	}
 }
+
 
 void ft_round_sprt_x(double angl, float *x, float *y)
 {
