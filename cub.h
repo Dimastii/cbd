@@ -90,7 +90,7 @@ typedef struct  s_vars {
 }               t_vars;
 
 
-void rey(t_vars* vars);
+int rey(t_vars* vars);
 int ft_len_sprt(t_vars *vars, double ang, t_sprite sprt);
 
 void	ft_print_wall_sprite(t_vars *vars, double len_r, int num_rey, int clr);

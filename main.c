@@ -8,27 +8,27 @@ int worldMap[mapWidth][mapHeight]=
 		{//     	   1 2 3 4 5 6 7 8 9 10111231141516171819
 		/*0*/		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*2*/		{1,0,0,0,0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,0,1},
-		/*3*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*4*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*5*/		{1,0,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*2*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*3*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1},
+		/*4*/		{1,0,0,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,0,1},
+		/*5*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
 		/*6*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		/*7*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*8*/		{1,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*9*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1},
+		/*8*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*9*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		/*11*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*12*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1},
-		/*13*/		{1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*14*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1},
-		/*15*/		{1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
-		/*16*/		{1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,1},
-		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
-		/*1*/		{1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,1},
-		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
-		/*1*/		{1,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1},
-		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
-		/*1*/		{1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
-		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
+		/*12*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*13*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*14*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*15*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*16*/		{1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1},
+		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		/*1*/		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 		};
 //		{
@@ -198,7 +198,6 @@ int ft_len_sprt(t_vars *vars, double ang, t_sprite sprt)
 	double angle_sptr = -1;
 	float h_x;
 	double ang_range;
-	int key = -1;
 
 	h_x = sprt.enter_on_len_x - (float)vars->x;
 
@@ -208,87 +207,41 @@ int ft_len_sprt(t_vars *vars, double ang, t_sprite sprt)
 
 	if (sprt.enter_on_len_x - vars->x >= 0 && sprt.enter_on_len_y - vars->y >= 0) {
 		angle_sptr = -atan((sprt.enter_on_len_y - vars->y) / (h_x));
-		printf("11111Sprt = % f ang = % f\n", angle_sptr, ang);
-		key = 0;
+//		printf("11111Sprt = % f ang = % f\n", angle_sptr, ang);
 	}
 	else if (sprt.enter_on_len_x - vars->x >= 0 && sprt.enter_on_len_y - vars->y <= 0 ) {
 		angle_sptr = -atan((sprt.enter_on_len_y - vars->y) / (h_x));
-		printf("22222Sprt = % f ang = % f\n", angle_sptr, ang);
-		key = 1;
-
+//		printf("22222Sprt = % f ang = % f\n", angle_sptr, ang);
 	}
 	else if (sprt.enter_on_len_x - vars->x <= 0 && sprt.enter_on_len_y - vars->y <= 0) {
 		angle_sptr = -atan((sprt.enter_on_len_y - vars->y) / (h_x)) + M_PI;
-		printf("33333Sprt = % f ang = % f\n", angle_sptr, ang);
-		key = 1;
+//		printf("33333Sprt = % f ang = % f\n", angle_sptr, ang);
 	}
 	else if (sprt.enter_on_len_x - vars->x <= 0 && sprt.enter_on_len_y - vars->y >= 0) {
 		angle_sptr = -atan((sprt.enter_on_len_y - vars->y) / (h_x)) - M_PI;
-		printf("44444Sprt = % f ang = % f\n", angle_sptr, ang);
-		key = 0;
-
+//		printf("44444Sprt = % f ang = % f\n", angle_sptr, ang);
 	}
 
 	a1 = angle_sptr - ang_range;
 	a2 = angle_sptr + ang_range;
 
-//	if (cos(ang) >= 0 && (sin(ang) >= sin(a1) && sin(ang) <= sin(a2)))
-//	{
-//		printf("???\n");
-//		vars->color = 0xDCFF3C;
-//		return (1);
-//	}
-////	if ((cos(ang)>= cos(a1) && cos(ang) <= cos(a2)))
-////	{
-////		printf("!!!\n");
-////		vars->color = 0xDCFF3C;
-////		return (1);
-////	}
-//	if (cos(ang) <= 0 && sin(ang) <= 0 && (cos(ang) >= cos(a1) && cos(ang) <= cos(a2)) )
-//	{
-//		printf("???\n");
-//
-//		vars->color = 0xDCFF3C;
-//		return (1);
-//	}
-//	if (cos(ang) < 0 && sin(ang) > 0 && (sin(ang) <= sin(a1) && sin(ang) >= sin(a2)))
-//	{
-//		printf("???\n");
-//
-//		vars->color = 0xDCFF3C;
-//		return (1);
-//	}
-////	if (!(cos(ang)>= cos(a1) && cos(ang) <= cos(a2)))
-////	{
-////		printf("!!!\n");
-////		vars->color = 0xDCFF3C;
-////		return (1);
-////	}
-
 	if ((ang >= a1 && ang <= a2))
 	{
-//		printf("@@@\n");
 		vars->color = 0xDCFF3C;
 		return (1);
 	}
 	if (a2 > M_PI || a1 < - M_PI) {
-		printf("aoaoaoaoaoaoaoaoao\n");
+//		printf("aoaoaoaoaoaoaoaoao\n");
 
 		if (sin(ang) > sin(a2) && sin(ang) < sin(a1)) {
-			printf("aoaoaoaoaoaoaoaoao\n");
+//			printf("aoaoaoaoaoaoaoaoao\n");
 			vars->color = 0xDCFF3C;
 			return (1);
 		}
 	}
-//	else if ((a1 * ang < 0 || a2 * ang < 0) && ((ang + (-1) >= a1 && ang * (-1) <= a2)))
-//	{
-//		printf("loool\n");
-//		vars->color = 0xDCFF3C;
-//		return (1);
-//	}
-		return (0);
+	return (0);
 }
-void rey(t_vars* vars)
+int		rey(t_vars* vars)
 {
 	double cx;
 	double cy;
@@ -320,7 +273,6 @@ void rey(t_vars* vars)
 			vars->sprite[i].clr = 111;
 			vars->sprite[i].cord.len_to_sprt = -1;
 			vars->sprite[i].cord.num = 0;
-//			vars->sprite[i].
 		}
 		vars->no_so = (sin(min_angle) > 0) ?  1 : 0;
 		vars->we_ea = (cos(min_angle) < 0) ?  1 : 0;
@@ -334,7 +286,7 @@ void rey(t_vars* vars)
 		while (cx < mapWidth  && cx > 0)
 		{
 			ft_round(min_angle, &cx, &cyx, vars);
-			len = fabs((vars->x - cx) / (cos(min_angle) - 0.0000002));
+			len = fabs((vars->x - cx) / (cos(min_angle) - 0.000000002));
 			y = vars->y + (len * (sin(min_angle) * -1));
 			if (y < mapWidth && y > 0 && worldMap[(int)cx - vars->we_ea][(int)y] == 1)
 			{
@@ -350,22 +302,23 @@ void rey(t_vars* vars)
 
 					ft_round_sprt_x(min_angle, &vars->sprite[n_sprt].enter_on_len_x,
 									&vars->sprite[n_sprt].enter_on_len_y);
-					if (vars->sprite[n_sprt].cord.len_to_sprt == -1)
-						vars->sprite[n_sprt].cord.len_to_sprt = sqrtf(
+//						vars->sprite[n_sprt].cord.len_to_sprt = fabsf((vars->sprite[n_sprt].enter_on_len_x - (float) vars->x));
+
+					vars->sprite[n_sprt].cord.len_to_sprt = sqrtf(
 								powf(vars->sprite[n_sprt].enter_on_len_x - (float) vars->x, 2) +
-								powf(vars->sprite[n_sprt].enter_on_len_y - (float) vars->y, 2));
+								powf(vars->sprite[n_sprt].enter_on_len_y - (float) vars->y, 2)) * fabsf((float)sin(vars->angle_p + M_PI/2 - min_angle));
 					vars->sprite[n_sprt].create = 1;
 					vars->sprite[n_sprt].clr = 444444 * (n_sprt +1);
 
+					n_sprt++;
 				}
-				n_sprt++;
 			}
 		}
-		n_sprt = 0;
+//		n_sprt = 0;
 		while (cy < mapHeight && cy > 0)
 		{
 			ft_round(min_angle, &cyx, &cy, vars);
-			len = fabs((vars->y - cy) / (sin(min_angle) - 0.000002));
+			len = fabs((vars->y - cy) / (sin(min_angle) - 0.00000002));
 			x = vars->x - (len * cos(min_angle)  * - 1);
 			if (x < mapWidth && x > 0 && (worldMap[(int)x][(int)cy - vars->no_so] == 1))
 			{
@@ -380,14 +333,15 @@ void rey(t_vars* vars)
 
 					ft_round_sprt_y(min_angle, &vars->sprite[n_sprt].enter_on_len_x,
 									&vars->sprite[n_sprt].enter_on_len_y);
+//					vars->sprite[n_sprt].cord.len_to_sprt = fabsf((vars->sprite[n_sprt].enter_on_len_y - (float) vars->y) / (float)(sin(min_angle) - 0.00000002) * fabsf((float)sin(vars->angle_p + M_PI/2 - min_angle))) ;
 
 					vars->sprite[n_sprt].cord.len_to_sprt = sqrtf(
 							powf(vars->sprite[n_sprt].enter_on_len_x - (float) vars->x, 2) +
-							powf(vars->sprite->enter_on_len_y - (float) vars->y, 2));
+							powf(vars->sprite[n_sprt].enter_on_len_y - (float) vars->y, 2)) * fabsf((float)sin(vars->angle_p + M_PI/2 - min_angle));
 					vars->sprite[n_sprt].create = 1;
 					vars->sprite[n_sprt].clr = 444444 * (n_sprt +1);
+					n_sprt++;
 				}
-				n_sprt++;
 			}
 		}
 
@@ -412,22 +366,24 @@ void rey(t_vars* vars)
 		ft_render_wall(vars, len, num_rey);
 
 		ft_sort_sprt(vars);
-		if (len > vars->sprite[0].cord.len_to_sprt ) {
+		if (len >= vars->sprite[0].cord.len_to_sprt ) {
 			if (vars->sprite[0].cord.len_to_sprt != -1)
 				ft_render_sprite(vars, num_rey, min_angle);
-
 		}
+		//else
+			printf("%d)wall is close wall = %f | sprt = %f\n",num_rey, len, vars->sprite[0].cord.len_to_sprt);
+
 		num_rey++;
 		min_angle += angle_offset;
 	}
 
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img.img, 0, 0);
+	return (0);
 }
 
 int             main(void)
 {
 	t_vars      vars;
-	int i = 0;
 
 
 	vars.size_win_w = 1000;
@@ -436,10 +392,6 @@ int             main(void)
 	vars.x =9.5;
 	vars.y =7.5;
 	vars.angle_p = M_PI;
-	while (i++ < 100)
-	{
-		vars.sprite[i].create = -1;
-	}
 
 	vars.mlx = mlx_init();
 
