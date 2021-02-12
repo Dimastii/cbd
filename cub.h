@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:59:11 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/12 02:33:11 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/12 21:10:51 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,18 +89,24 @@ typedef struct  s_vars {
 
 
 	double x_tex;
-	double y_tex;
+	double x_tex_sprt;
+
+	int color_floor;
+	int color_roof;
+
+	double cos_ang;
+	double sin_ang;
 }               t_vars;
 
 
-int rey(t_vars* vars);
-int ft_len_sprt(t_vars *vars, double ang, t_sprite sprt);
-
-void	ft_print_wall_sprite(t_vars *vars, double len_r, int num_rey, int clr);
-void	ft_render_sprite(t_vars *vars , int num_rey, double min_angle);
-void ft_round_sprt_x(double angl, float *x, float *y);
-void ft_round_sprt_y(double angl, float *x, float *y);
-void ft_sort_sprt(t_vars *vars );
-void            my_mlx_pixel_put(t_image *data, int x, int y, int color);
-int            my_mlx_pixel_take(t_image data, int x, int y);
+int				rey(t_vars* vars);
+int				ft_len_sprt(t_vars *vars, double ang, t_sprite *sprt);
+void			ft_render_background(int num_rey, t_vars *vars);
+void			ft_print_wall_sprite(t_vars *vars, double len_r,int num_rey,int clr);
+void			ft_render_sprite(t_vars *vars , int num_rey, double min_angle);
+void			ft_round_sprt_x(double angl,float *x, float *y);
+void			ft_round_sprt_y(double angl,float *x, float *y);
+void			ft_sort_sprt(t_vars *vars );
+void			my_mlx_pixel_put(t_image *data,int x,int y,int color);
+int				my_mlx_pixel_take(t_image data,int x,int y);
 #endif //CUB3D_CUB_H

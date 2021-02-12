@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:58:40 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/11 22:09:00 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/12 17:28:26 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,24 @@ void	ft_print_wall_sprite(t_vars *vars, double len_r, int num_rey, int clr)
 	int drawStart = -wall_h / 2 + vars->size_win_h / 2;
 	int drawend = wall_h / 2 + vars->size_win_h / 2;
 	int wall_y1 = drawStart;
-	int color = 1111111;
+	int color;
 	int y;
 
-
+	vars->img_tex_print.h = vars->img_tex_sp.h;
+	vars->img_tex_print.w = vars->img_tex_sp.w;
+	vars->img_tex_print = vars->img_tex_sp;
 	wall_y = 0;
 	while (wall_y1 < drawend)
 	{
-		y = (int)(((float)(wall_y1 - drawStart) /((float)drawend - (float)drawStart)) * 700.0);
-		//color = my_mlx_pixel_take(vars->img_tex_sp,(int)((vars->x_tex - (int)vars->x_tex) * 700.0), y);
-		if (wall_y1 >= 0 && wall_y1 < vars->size_win_h && wall_y1 % 2)
-			my_mlx_pixel_put(&vars->img, num_rey - 1 ,wall_y1, clr);
 
+		y = (int)(((float)(wall_y1 - drawStart) /((float)drawend - (float)drawStart)) * (float)vars->img_tex_print.h);
+		color = my_mlx_pixel_take(vars->img_tex_print, (int)(vars->x_tex_sprt * vars->img_tex_print.w), y);
+//		printf("%d\n",color);
+		if (wall_y1 >= 0 && wall_y1 < vars->size_win_h && color > 0)
+			my_mlx_pixel_put(&vars->img, num_rey - 1 ,wall_y1, color);
+//		if (wall_y1 >= 0 && wall_y1 < vars->size_win_h && color < 0) {
+//			my_mlx_pixel_put(&vars->img, num_rey - 1, wall_y1, 0xDC143C);
+//		}
 		wall_y1++;
 		wall_y++;
 	}
@@ -63,8 +69,7 @@ void	ft_render_sprite(t_vars *vars , int num_rey, double min_angle)
 
 	while (i) {
 		i--;
-		//vars->sprite[i].cord.num++;
-		if (ft_len_sprt(vars, min_angle, vars->sprite[i])) {
+		if (ft_len_sprt(vars, min_angle, &vars->sprite[i])) {
 			vars->color = 44444;
 			ft_print_wall_sprite(vars, vars->sprite[i].cord.len_to_sprt, num_rey, vars->sprite[i].clr);
 		}
