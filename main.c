@@ -168,20 +168,24 @@ void	ft_render_wall(t_vars *vars, double len_r_norm, int num)
 	int y;
 
 	vars->img_tex_print = vars->img_tex_wall_no;
-	if (vars->no_so != -1 && vars->no_so == 0)
+	if (vars->no_so != -1 && vars->no_so == 0) {
 		vars->img_tex_print = vars->img_tex_wall_no;
-	if (vars->no_so != -1 && vars->no_so == 1)
-		vars->img_tex_print = vars->img_tex_wall_so;
-	if (vars->we_ea != -1 && vars->we_ea == 0)
-		vars->img_tex_print = vars->img_tex_wall_we;
-	if (vars->we_ea != -1 && vars->we_ea == 1)
-		vars->img_tex_print = vars->img_tex_wall_ea;
 
+	}
+	if (vars->no_so != -1 && vars->no_so == 1) {
+		vars->img_tex_print = vars->img_tex_wall_so;
+	}
+	if (vars->we_ea != -1 && vars->we_ea == 0) {
+		vars->img_tex_print = vars->img_tex_wall_we;
+	}
+	if (vars->we_ea != -1 && vars->we_ea == 1) {
+		vars->img_tex_print = vars->img_tex_wall_ea;
+	}
 	wall_y = 0;
 	while (wall_y1 < drawend)
 	{
-		y = (int)(((float)(wall_y1 - drawStart) /((float)drawend - (float)drawStart)) * 700.0);
-		color = my_mlx_pixel_take(vars->img_tex_print, (int)((vars->x_tex - (int)vars->x_tex) * 700.0), y);
+		y = (int)(((float)(wall_y1 - drawStart) /((float)drawend - (float)drawStart)) * (float)vars->img_tex_print.h);
+		color = my_mlx_pixel_take(vars->img_tex_print, (int)((vars->x_tex - (int)vars->x_tex) * vars->img_tex_print.w), y);
 		if (wall_y1 >= 0 && wall_y1 < vars->size_win_h)
 			my_mlx_pixel_put(&vars->img, num - 1 ,wall_y1, color);
 
@@ -306,7 +310,7 @@ int		rey(t_vars* vars)
 
 					vars->sprite[n_sprt].cord.len_to_sprt = sqrtf(
 								powf(vars->sprite[n_sprt].enter_on_len_x - (float) vars->x, 2) +
-								powf(vars->sprite[n_sprt].enter_on_len_y - (float) vars->y, 2)) * fabsf((float)sin(vars->angle_p + M_PI/2 - min_angle));
+								powf(vars->sprite[n_sprt].enter_on_len_y - (float) vars->y, 2));
 					vars->sprite[n_sprt].create = 1;
 					vars->sprite[n_sprt].clr = 444444 * (n_sprt +1);
 
@@ -337,7 +341,7 @@ int		rey(t_vars* vars)
 
 					vars->sprite[n_sprt].cord.len_to_sprt = sqrtf(
 							powf(vars->sprite[n_sprt].enter_on_len_x - (float) vars->x, 2) +
-							powf(vars->sprite[n_sprt].enter_on_len_y - (float) vars->y, 2)) * fabsf((float)sin(vars->angle_p + M_PI/2 - min_angle));
+							powf(vars->sprite[n_sprt].enter_on_len_y - (float) vars->y, 2));
 					vars->sprite[n_sprt].create = 1;
 					vars->sprite[n_sprt].clr = 444444 * (n_sprt +1);
 					n_sprt++;
@@ -371,7 +375,7 @@ int		rey(t_vars* vars)
 				ft_render_sprite(vars, num_rey, min_angle);
 		}
 		//else
-			printf("%d)wall is close wall = %f | sprt = %f\n",num_rey, len, vars->sprite[0].cord.len_to_sprt);
+//			printf("%d)wall is close wall = %f | sprt = %f\n",num_rey, len, vars->sprite[0].cord.len_to_sprt);
 
 		num_rey++;
 		min_angle += angle_offset;
@@ -400,21 +404,23 @@ int             main(void)
 	vars.img.img = mlx_new_image(vars.mlx, vars.size_win_w, vars.size_win_h);
 	vars.img.addr = mlx_get_data_addr(vars.img.img, &vars.img.bits_per_pixel, &vars.img.line_length, &vars.img.endian);
 
-	vars.img_tex_sp.img = mlx_xpm_file_to_image(vars.mlx, "./sp_anime.xpm", &vars.img_tex_sp.w, &vars.img_tex_sp.h);
+	vars.img_tex_sp.img = mlx_xpm_file_to_image(vars.mlx, "./tex/sp_anime.xpm", &vars.img_tex_sp.w, &vars.img_tex_sp.h);
 	vars.img_tex_sp.addr = mlx_get_data_addr(vars.img_tex_sp.img, &vars.img_tex_sp.bits_per_pixel, &vars.img_tex_sp.line_length, &vars.img_tex_sp.endian);
 
 
-	vars.img_tex_wall_no.img = mlx_xpm_file_to_image(vars.mlx, "./sp_anime.xpm", &vars.img_tex_wall_no.w, &vars.img_tex_wall_no.h);
+	vars.img_tex_wall_no.img = mlx_xpm_file_to_image(vars.mlx, "./tex/wave_of_kaganav3.xpm", &vars.img_tex_wall_no.w, &vars.img_tex_wall_no.h);
 	vars.img_tex_wall_no.addr = mlx_get_data_addr(vars.img_tex_wall_no.img, &vars.img_tex_wall_no.bits_per_pixel, &vars.img_tex_wall_no.line_length, &vars.img_tex_wall_no.endian);
 
-	vars.img_tex_wall_so.img = mlx_xpm_file_to_image(vars.mlx, "./anime_wall_gop_.xpm", &vars.img_tex_wall_so.w, &vars.img_tex_wall_so.h);
+	vars.img_tex_wall_so.img = mlx_xpm_file_to_image(vars.mlx, "./tex/lapa.xpm", &vars.img_tex_wall_so.w, &vars.img_tex_wall_so.h);
 	vars.img_tex_wall_so.addr = mlx_get_data_addr(vars.img_tex_wall_so.img, &vars.img_tex_wall_so.bits_per_pixel, &vars.img_tex_wall_so.line_length, &vars.img_tex_wall_so.endian);
 
-	vars.img_tex_wall_we.img = mlx_xpm_file_to_image(vars.mlx, "./sp_anime.xpm", &vars.img_tex_wall_we.w, &vars.img_tex_wall_we.h);
+	vars.img_tex_wall_we.img = mlx_xpm_file_to_image(vars.mlx, "./tex/lapa1.xpm", &vars.img_tex_wall_we.w, &vars.img_tex_wall_we.h);
 	vars.img_tex_wall_we.addr = mlx_get_data_addr(vars.img_tex_wall_we.img, &vars.img_tex_wall_we.bits_per_pixel, &vars.img_tex_wall_we.line_length, &vars.img_tex_wall_we.endian);
 
-	vars.img_tex_wall_ea.img = mlx_xpm_file_to_image(vars.mlx, "./anime.xpm", &vars.img_tex_wall_ea.w, &vars.img_tex_wall_ea.h);
+	vars.img_tex_wall_ea.img = mlx_xpm_file_to_image(vars.mlx, "./tex/wall_pink_tyan3.xpm", &vars.img_tex_wall_ea.w, &vars.img_tex_wall_ea.h);
 	vars.img_tex_wall_ea.addr = mlx_get_data_addr(vars.img_tex_wall_ea.img, &vars.img_tex_wall_ea.bits_per_pixel, &vars.img_tex_wall_ea.line_length, &vars.img_tex_wall_ea.endian);
+
+	printf("%d\n",vars.img_tex_wall_so.h);
 
 
 	mlx_hook(vars.win, 2, 1L<<2,key_hook , &vars);

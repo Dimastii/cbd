@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:59:11 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/10 20:38:13 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/12 02:33:11 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 #define mapWidth  24
 #define mapHeight 24
 
-#define ANLGLE M_PI / 4.0
+#define ANLGLE M_PI / 3.3
 #define N_REY vars->size_win_w
 
 typedef struct  s_image {
@@ -82,8 +82,11 @@ typedef struct  s_vars {
 	t_image		img_tex_wall_so;
 	t_image		img_tex_wall_we;
 	t_image		img_tex_wall_ea;
+	int 		img_tex_x;
+	int 		img_tex_y;
 	t_image		img_tex_sp;
 	t_image		img_tex_print;
+
 
 	double x_tex;
 	double y_tex;
