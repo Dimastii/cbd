@@ -14,4 +14,6 @@ add_executable(cub3D
 		gnl/get_next_line_utils.c
 		libmlx.dylib
 		main.c
-		sprt.c cub.h)
+		sprt.c
+		cub.h
+		)
