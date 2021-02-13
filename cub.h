@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:59:11 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/12 21:10:51 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/13 15:28:33 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,28 +35,23 @@ typedef struct  s_image {
 }               t_image;
 
 typedef struct  s_sprite_cord {
-
-	float enter_on_len_x;
-	float enter_on_leny_y;
-	float enter_on_lenx_x;
-	float enter_on_lenx_y;
-	int num;
-	float len_to_sprt;
-
-
+//	float enter_on_len_x;
+//	float enter_on_leny_y;
+//	float enter_on_lenx_x;
+//	float enter_on_lenx_y;
+//	int num;
+//	float len_to_sprt;
 }               t_sprite_cord;
 
 typedef struct  s_sprite {
-	int offset_mode_cord_sprite_x;
-	int offset_mode_cord_sprite_y;
-
-	t_sprite_cord cord;
+	float len_to_sprt;
+	int clr;
 
 	float enter_on_len_x;
 	float enter_on_len_y;
 
-	int clr;
 	int create;
+
 }               t_sprite;
 
 typedef struct  s_vars {
@@ -72,7 +67,6 @@ typedef struct  s_vars {
 
 	int no_so;
 	int we_ea;
-	unsigned long color;
 
 	t_sprite sprite[100];
 
@@ -82,8 +76,6 @@ typedef struct  s_vars {
 	t_image		img_tex_wall_so;
 	t_image		img_tex_wall_we;
 	t_image		img_tex_wall_ea;
-	int 		img_tex_x;
-	int 		img_tex_y;
 	t_image		img_tex_sp;
 	t_image		img_tex_print;
 
@@ -100,6 +92,7 @@ typedef struct  s_vars {
 
 
 int				rey(t_vars* vars);
+void ft_round(double *cx, double *cy,t_vars *vars);
 int				ft_len_sprt(t_vars *vars, double ang, t_sprite *sprt);
 void			ft_render_background(int num_rey, t_vars *vars);
 void			ft_print_wall_sprite(t_vars *vars, double len_r,int num_rey,int clr);
