@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:59:11 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/13 16:17:41 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/14 19:50:04 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ typedef struct  s_vars {
 
 	int		button_rotate;
 	int		button_move;
-
 }               t_vars;
 
 
