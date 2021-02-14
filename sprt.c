@@ -100,3 +100,61 @@ void ft_sort_sprt(t_vars *vars )
 		i++;
 	}
 }
+void			  ft_round_angle(double *ang)
+{
+	if (*ang < 0)
+		while (*ang < - (2.0 * M_PI))
+			*ang += (2.0 * M_PI);
+	else if (*ang > 0)
+		while (*ang > (2.0 *  M_PI))
+			*ang -= (2.0 * M_PI);
+	if (*ang > M_PI) {
+		*ang -= (2.0 * M_PI);
+	}
+	if (*ang < -M_PI) {
+		*ang += (2.0 * M_PI);
+	}
+
+}
+int ft_len_sprt(t_vars *vars, double ang, t_sprite *sprt)
+{
+	double a1;
+	double a2;
+	double angle_sptr = -1;
+	float h_x;
+	double ang_range;
+
+	h_x = sprt->enter_on_len_x - (float)vars->x;
+
+	ang_range = atan(0.5 / sprt->len_to_sprt);
+
+	ft_round_angle(&ang);
+
+	if (sprt->enter_on_len_x - vars->x >= 0 && sprt->enter_on_len_y - vars->y >= 0)
+		angle_sptr = -atan((sprt->enter_on_len_y - vars->y) / (h_x));
+	else if (sprt->enter_on_len_x - vars->x >= 0 && sprt->enter_on_len_y - vars->y <= 0 )
+		angle_sptr = -atan((sprt->enter_on_len_y - vars->y) / (h_x));
+	else if (sprt->enter_on_len_x - vars->x <= 0 && sprt->enter_on_len_y - vars->y <= 0)
+		angle_sptr = -atan((sprt->enter_on_len_y - vars->y) / (h_x)) + M_PI;
+	else if (sprt->enter_on_len_x - vars->x <= 0 && sprt->enter_on_len_y - vars->y >= 0)
+		angle_sptr = -atan((sprt->enter_on_len_y - vars->y) / (h_x)) - M_PI;
+
+	a1 = angle_sptr - ang_range;
+	a2 = angle_sptr + ang_range;
+
+	if ((ang >= a1 && ang <= a2))
+	{
+		vars->x_tex_sprt = (ang - a1) / (a2 - a1);
+		return (1);
+	}
+	if (a2 >= M_PI || a1 <= - M_PI) {
+		if (sin(ang) >= sin(a2) && sin(ang) <= sin(a1)) {
+			if (a2 >= M_PI && ang < 0)
+				vars->x_tex_sprt = ((ang + 2 * M_PI) - a1) / (a2 - a1);
+			else if (a1 <= - M_PI && ang > 0)
+				vars->x_tex_sprt = ((ang - 2 * M_PI) - a1) / (a2 - a1);
+			return (1);
+		}
+	}
+	return (0);
+}

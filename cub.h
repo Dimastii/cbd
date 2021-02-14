@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:59:11 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/13 15:28:33 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/14 19:50:04 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,6 @@ typedef struct  s_image {
 	int 		w;
 	int 		h;
 }               t_image;
-
-typedef struct  s_sprite_cord {
-//	float enter_on_len_x;
-//	float enter_on_leny_y;
-//	float enter_on_lenx_x;
-//	float enter_on_lenx_y;
-//	int num;
-//	float len_to_sprt;
-}               t_sprite_cord;
 
 typedef struct  s_sprite {
 	float len_to_sprt;
@@ -88,6 +79,9 @@ typedef struct  s_vars {
 
 	double cos_ang;
 	double sin_ang;
+
+	int		button_rotate;
+	int		button_move;
 }               t_vars;
 
 
@@ -102,4 +96,4 @@ void			ft_round_sprt_y(double angl,float *x, float *y);
 void			ft_sort_sprt(t_vars *vars );
 void			my_mlx_pixel_put(t_image *data,int x,int y,int color);
 int				my_mlx_pixel_take(t_image data,int x,int y);
-#endif //CUB3D_CUB_H
+#endif

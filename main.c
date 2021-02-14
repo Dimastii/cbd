@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 21:40:42 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/13 15:35:52 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/14 21:19:29 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,68 +71,106 @@ int            my_mlx_pixel_take(t_image data, int x, int y)
 	return (color);
 }
 
-void			  ft_round_angle(double *ang)
-{
-	if (*ang < 0)
-		while (*ang < - (2.0 * M_PI))
-			*ang += (2.0 * M_PI);
-	else if (*ang > 0)
-		while (*ang > (2.0 *  M_PI))
-			*ang -= (2.0 * M_PI);
-	if (*ang > M_PI) {
-		*ang -= (2.0 * M_PI);
-	}
-	if (*ang < -M_PI) {
-		*ang += (2.0 * M_PI);
-	}
-
-}
-
-int             key_hook(int keycode, t_vars *vars)
+void 	ft_move(t_vars *vars)
 {
 	double step;
 	double turn;
 
-	step = 0.15;
-	turn = 0.05;
-	printf("k_code:! %d\n", keycode);
-	mlx_destroy_image(vars->mlx, vars->img.img);
-	vars->img.img = mlx_new_image(vars->mlx, vars->size_win_w, vars->size_win_h);
-	vars->img.addr = mlx_get_data_addr(vars->img.img, &vars->img.bits_per_pixel, &vars->img.line_length, &vars->img.endian);
-	if (keycode == 124) {
-//		if (worldMap[(int) (vars->x - 1)][(int) (vars->y - 1)] != 1) {
-		vars->x -= step * sin(vars->angle_p);
-		vars->y -= step * cos(vars->angle_p);
-//		}
-	}
-	if (keycode == 123) {
-//		if (worldMap[(int) (vars->x + 1)][(int) (vars->y + 1)] != 1) {
-
-		vars->x += step * sin(vars->angle_p);
-		vars->y += step * cos(vars->angle_p);
-//		}
-	}
-	if (keycode == 125) {
-//		if (worldMap[(int)(vars->x - 1)][(int)(vars->y + 1)] != 1) {
-		vars->x -= step * cos(vars->angle_p);
-		vars->y += step * sin(vars->angle_p);
-//		}
-	}
-	if (keycode == 126) {
-//		if (worldMap[(int) (vars->x + 1)][(int) (vars->y - 1)] != 1) {
-		vars->x += step * cos(vars->angle_p);
-		vars->y -= step * sin(vars->angle_p);
-//		}
-	}
-	if (keycode == 12) {
+	step = 0.9;
+	turn = 0.15;
+	if (vars->button_rotate == 12) {
 		vars->angle_p -= turn;
 	}
-	if (keycode == 14) {
+	else if (vars->button_rotate == 14) {
 		vars->angle_p += turn;
 	}
+	if (vars->button_move == 124) {
+		vars->x -= step * sin(vars->angle_p);
+		vars->y -= step * cos(vars->angle_p);
+	}
+	else if (vars->button_move == 123) {
+		vars->x += step * sin(vars->angle_p);
+		vars->y += step * cos(vars->angle_p);
+	}
+	else if (vars->button_move == 125) {
+		vars->x -= step * cos(vars->angle_p);
+		vars->y += step * sin(vars->angle_p);
+	}
+	else if (vars->button_move == 126) {
+		vars->x += step * cos(vars->angle_p);
+		vars->y -= step * sin(vars->angle_p);
+	}
+}
+int             key_release_hook(int keycode, t_vars *vars)
+{
+	printf("~k_code:! %d\n", keycode);
+
+//	rey(vars);
+//	mlx_destroy_image(vars->mlx, vars->img.img);
+//	vars->img.img = mlx_new_image(vars->mlx, vars->size_win_w, vars->size_win_h);
+//	vars->img.addr = mlx_get_data_addr(vars->img.img, &vars->img.bits_per_pixel, &vars->img.line_length,
+//									   &vars->img.endian);
+	if (keycode == 124) {
+		vars->button_move = -1;
+	}
+	else if (keycode == 123) {
+		vars->button_move = -1;
+	}
+	else if (keycode == 125) {
+		vars->button_move = -1;
+	}
+	else if (keycode == 126) {
+		vars->button_move = -1;
+
+	}
+	if (keycode == 12) {
+		vars->button_rotate = -1;
+	}
+	else if (keycode == 14) {
+		vars->button_rotate = -1;
+
+	}
+
 	if (keycode == 53) {
 		exit(0);
 	}
+}
+int             key_hook(int keycode, t_vars *vars)
+{
+	printf("k_code:! %d\n", keycode);
+//	rey(vars);
+//	mlx_destroy_image(vars->mlx, vars->img.img);
+//	vars->img.img = mlx_new_image(vars->mlx, vars->size_win_w, vars->size_win_h);
+//	vars->img.addr = mlx_get_data_addr(vars->img.img, &vars->img.bits_per_pixel, &vars->img.line_length,
+//									   &vars->img.endian);
+
+
+	if (keycode == 124) {
+		vars->button_move = 124;
+	}
+	else if (keycode == 123) {
+		vars->button_move = 123;
+	}
+	else if (keycode == 125) {
+		vars->button_move = 125;
+	}
+	else if (keycode == 126) {
+		vars->button_move = 126;
+	}
+	else {
+		vars->button_move = -1;
+	}
+
+
+	if (keycode == 12)
+		vars->button_rotate = 12;
+	else if (keycode == 14)
+		vars->button_rotate = 14;
+	else
+		vars->button_rotate = -1;
+
+	if (keycode == 53)
+		exit(0);
 }
 
 void ft_round(double *cx, double *cy,t_vars *vars)
@@ -207,57 +245,7 @@ void	ft_render_wall(t_vars *vars, double len_r_norm, int num)
 }
 
 
-int ft_len_sprt(t_vars *vars, double ang, t_sprite *sprt)
-{
-	double a1;
-	double a2;
-	double angle_sptr = -1;
-	float h_x;
-	double ang_range;
 
-	h_x = sprt->enter_on_len_x - (float)vars->x;
-
-	ang_range = atan(0.5 / sprt->len_to_sprt);
-
-	ft_round_angle(&ang);
-
-	if (sprt->enter_on_len_x - vars->x >= 0 && sprt->enter_on_len_y - vars->y >= 0) {
-		angle_sptr = -atan((sprt->enter_on_len_y - vars->y) / (h_x));
-//		printf("11111Sprt = % f ang = % f\n", angle_sptr, ang);
-	}
-	else if (sprt->enter_on_len_x - vars->x >= 0 && sprt->enter_on_len_y - vars->y <= 0 ) {
-		angle_sptr = -atan((sprt->enter_on_len_y - vars->y) / (h_x));
-//		printf("22222Sprt = % f ang = % f\n", angle_sptr, ang);
-	}
-	else if (sprt->enter_on_len_x - vars->x <= 0 && sprt->enter_on_len_y - vars->y <= 0) {
-		angle_sptr = -atan((sprt->enter_on_len_y - vars->y) / (h_x)) + M_PI;
-//		printf("33333Sprt = % f ang = % f\n", angle_sptr, ang);
-	}
-	else if (sprt->enter_on_len_x - vars->x <= 0 && sprt->enter_on_len_y - vars->y >= 0) {
-		angle_sptr = -atan((sprt->enter_on_len_y - vars->y) / (h_x)) - M_PI;
-//		printf("44444Sprt = % f ang = % f\n", angle_sptr, ang);
-	}
-
-	a1 = angle_sptr - ang_range;
-	a2 = angle_sptr + ang_range;
-
-	if ((ang >= a1 && ang <= a2))
-	{
-		vars->x_tex_sprt = (ang - a1) / (a2 - a1);
-		return (1);
-	}
-	if (a2 >= M_PI || a1 <= - M_PI) {
-		if (sin(ang) >= sin(a2) && sin(ang) <= sin(a1)) {
-			if (a2 >= M_PI && ang < 0)
-				vars->x_tex_sprt = ((ang + 2 * M_PI) - a1) / (a2 - a1);
-			else if (a1 <= - M_PI && ang > 0)
-				vars->x_tex_sprt = ((ang - 2 * M_PI) - a1) / (a2 - a1);
-			// vars->x_tex_sprt = (sin(ang) - sin(a2)) / (sin(a2) - sin(a1));
-			return (1);
-		}
-	}
-	return (0);
-}
 int		rey(t_vars* vars)
 {
 	double cx;
@@ -281,6 +269,11 @@ int		rey(t_vars* vars)
 
 
 	int i;
+	mlx_clear_window   (vars->mlx, vars->win);
+
+	mlx_sync(1, vars->img.img);
+
+	ft_move(vars);
 	while (min_angle <= max_angle - angle_offset)
 	{
 		vars->cos_ang = cos(min_angle);
@@ -386,10 +379,6 @@ int		rey(t_vars* vars)
 int             main(void)
 {
 	t_vars      vars;
-	struct s_sprite s;
-
-//	printf("%lu", sizeof s);
-//	return 0;
 
 	vars.size_win_w = 1000;
 	vars.size_win_h = 1000;
@@ -408,11 +397,11 @@ int             main(void)
 	vars.img.img = mlx_new_image(vars.mlx, vars.size_win_w, vars.size_win_h);
 	vars.img.addr = mlx_get_data_addr(vars.img.img, &vars.img.bits_per_pixel, &vars.img.line_length, &vars.img.endian);
 
-	vars.img_tex_sp.img = mlx_xpm_file_to_image(vars.mlx, "./sprt_tex/sprt_tyan4.xpm", &vars.img_tex_sp.w, &vars.img_tex_sp.h);
+	vars.img_tex_sp.img = mlx_xpm_file_to_image(vars.mlx, "./sprt_tex/sprt_niichan.xpm", &vars.img_tex_sp.w, &vars.img_tex_sp.h);
 	vars.img_tex_sp.addr = mlx_get_data_addr(vars.img_tex_sp.img, &vars.img_tex_sp.bits_per_pixel, &vars.img_tex_sp.line_length, &vars.img_tex_sp.endian);
 
 
-	vars.img_tex_wall_no.img = mlx_xpm_file_to_image(vars.mlx, "./wall_tex/wave_of_kaganav3.xpm", &vars.img_tex_wall_no.w, &vars.img_tex_wall_no.h);
+	vars.img_tex_wall_no.img = mlx_xpm_file_to_image(vars.mlx, "./wall_tex/wave_of_kaganav1.xpm", &vars.img_tex_wall_no.w, &vars.img_tex_wall_no.h);
 	vars.img_tex_wall_no.addr = mlx_get_data_addr(vars.img_tex_wall_no.img, &vars.img_tex_wall_no.bits_per_pixel, &vars.img_tex_wall_no.line_length, &vars.img_tex_wall_no.endian);
 
 	vars.img_tex_wall_so.img = mlx_xpm_file_to_image(vars.mlx, "./wall_tex/kit.xpm", &vars.img_tex_wall_so.w, &vars.img_tex_wall_so.h);
@@ -424,9 +413,10 @@ int             main(void)
 	vars.img_tex_wall_ea.img = mlx_xpm_file_to_image(vars.mlx, "./wall_tex/wall_pink_tyan3.xpm", &vars.img_tex_wall_ea.w, &vars.img_tex_wall_ea.h);
 	vars.img_tex_wall_ea.addr = mlx_get_data_addr(vars.img_tex_wall_ea.img, &vars.img_tex_wall_ea.bits_per_pixel, &vars.img_tex_wall_ea.line_length, &vars.img_tex_wall_ea.endian);
 
+//	mlx_sync(1, vars.img.img);
 
-
-	mlx_hook(vars.win, 2, 1L<<2,key_hook , &vars);
+	mlx_hook(vars.win, 2, 1L<<0,key_hook , &vars);
+	mlx_hook(vars.win, 3, 1L<<1,key_release_hook , &vars);
 	mlx_loop_hook(vars.mlx, rey, &vars);
 	mlx_loop(vars.mlx);
 }
