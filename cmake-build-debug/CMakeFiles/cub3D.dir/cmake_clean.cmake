@@ -1,8 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/cub3D.dir/general_utils.c.o"
   "CMakeFiles/cub3D.dir/gnl/get_next_line.c.o"
   "CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o"
   "CMakeFiles/cub3D.dir/main.c.o"
+  "CMakeFiles/cub3D.dir/preprocess.c.o"
+  "CMakeFiles/cub3D.dir/render_wall_back.c.o"
   "CMakeFiles/cub3D.dir/sprt.c.o"
+  "CMakeFiles/cub3D.dir/utils.c.o"
   "cub3D"
   "cub3D.pdb"
 )

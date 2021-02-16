@@ -143,6 +143,33 @@ cub3D/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/build
 .PHONY : cub3D/fast
 
+general_utils.o: general_utils.c.o
+
+.PHONY : general_utils.o
+
+# target to build an object file
+general_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/general_utils.c.o
+.PHONY : general_utils.c.o
+
+general_utils.i: general_utils.c.i
+
+.PHONY : general_utils.i
+
+# target to preprocess a source file
+general_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/general_utils.c.i
+.PHONY : general_utils.c.i
+
+general_utils.s: general_utils.c.s
+
+.PHONY : general_utils.s
+
+# target to generate assembly for a file
+general_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/general_utils.c.s
+.PHONY : general_utils.c.s
+
 gnl/get_next_line.o: gnl/get_next_line.c.o
 
 .PHONY : gnl/get_next_line.o
@@ -224,6 +251,60 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/main.c.s
 .PHONY : main.c.s
 
+preprocess.o: preprocess.c.o
+
+.PHONY : preprocess.o
+
+# target to build an object file
+preprocess.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/preprocess.c.o
+.PHONY : preprocess.c.o
+
+preprocess.i: preprocess.c.i
+
+.PHONY : preprocess.i
+
+# target to preprocess a source file
+preprocess.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/preprocess.c.i
+.PHONY : preprocess.c.i
+
+preprocess.s: preprocess.c.s
+
+.PHONY : preprocess.s
+
+# target to generate assembly for a file
+preprocess.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/preprocess.c.s
+.PHONY : preprocess.c.s
+
+render_wall_back.o: render_wall_back.c.o
+
+.PHONY : render_wall_back.o
+
+# target to build an object file
+render_wall_back.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/render_wall_back.c.o
+.PHONY : render_wall_back.c.o
+
+render_wall_back.i: render_wall_back.c.i
+
+.PHONY : render_wall_back.i
+
+# target to preprocess a source file
+render_wall_back.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/render_wall_back.c.i
+.PHONY : render_wall_back.c.i
+
+render_wall_back.s: render_wall_back.c.s
+
+.PHONY : render_wall_back.s
+
+# target to generate assembly for a file
+render_wall_back.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/render_wall_back.c.s
+.PHONY : render_wall_back.c.s
+
 sprt.o: sprt.c.o
 
 .PHONY : sprt.o
@@ -251,6 +332,33 @@ sprt.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/sprt.c.s
 .PHONY : sprt.c.s
 
+utils.o: utils.c.o
+
+.PHONY : utils.o
+
+# target to build an object file
+utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/utils.c.o
+.PHONY : utils.c.o
+
+utils.i: utils.c.i
+
+.PHONY : utils.i
+
+# target to preprocess a source file
+utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/utils.c.i
+.PHONY : utils.c.i
+
+utils.s: utils.c.s
+
+.PHONY : utils.s
+
+# target to generate assembly for a file
+utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/utils.c.s
+.PHONY : utils.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -260,6 +368,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... cub3D"
+	@echo "... general_utils.o"
+	@echo "... general_utils.i"
+	@echo "... general_utils.s"
 	@echo "... gnl/get_next_line.o"
 	@echo "... gnl/get_next_line.i"
 	@echo "... gnl/get_next_line.s"
@@ -269,9 +380,18 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... preprocess.o"
+	@echo "... preprocess.i"
+	@echo "... preprocess.s"
+	@echo "... render_wall_back.o"
+	@echo "... render_wall_back.i"
+	@echo "... render_wall_back.s"
 	@echo "... sprt.o"
 	@echo "... sprt.i"
 	@echo "... sprt.s"
+	@echo "... utils.o"
+	@echo "... utils.i"
+	@echo "... utils.s"
 .PHONY : help
 
 

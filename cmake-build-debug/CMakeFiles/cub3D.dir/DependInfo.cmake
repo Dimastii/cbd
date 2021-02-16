@@ -4,10 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/cveeta/CLionProjects/cub3D/general_utils.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/general_utils.c.o"
   "/Users/cveeta/CLionProjects/cub3D/gnl/get_next_line.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/gnl/get_next_line.c.o"
   "/Users/cveeta/CLionProjects/cub3D/gnl/get_next_line_utils.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o"
   "/Users/cveeta/CLionProjects/cub3D/main.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/main.c.o"
+  "/Users/cveeta/CLionProjects/cub3D/preprocess.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/preprocess.c.o"
+  "/Users/cveeta/CLionProjects/cub3D/render_wall_back.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/render_wall_back.c.o"
   "/Users/cveeta/CLionProjects/cub3D/sprt.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/sprt.c.o"
+  "/Users/cveeta/CLionProjects/cub3D/utils.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/utils.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
