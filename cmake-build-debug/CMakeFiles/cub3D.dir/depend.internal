@@ -27,6 +27,11 @@ CMakeFiles/cub3D.dir/render_wall_back.c.o
  /Users/cveeta/CLionProjects/cub3D/cub.h
  /Users/cveeta/CLionProjects/cub3D/gnl/get_next_line.h
  /Users/cveeta/CLionProjects/cub3D/render_wall_back.c
+CMakeFiles/cub3D.dir/save.c.o
+ ../minilibx_mms_20200219/mlx.h
+ /Users/cveeta/CLionProjects/cub3D/cub.h
+ /Users/cveeta/CLionProjects/cub3D/gnl/get_next_line.h
+ /Users/cveeta/CLionProjects/cub3D/save.c
 CMakeFiles/cub3D.dir/sprt.c.o
  ../minilibx_mms_20200219/mlx.h
  /Users/cveeta/CLionProjects/cub3D/cub.h

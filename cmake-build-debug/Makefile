@@ -305,6 +305,33 @@ render_wall_back.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/render_wall_back.c.s
 .PHONY : render_wall_back.c.s
 
+save.o: save.c.o
+
+.PHONY : save.o
+
+# target to build an object file
+save.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/save.c.o
+.PHONY : save.c.o
+
+save.i: save.c.i
+
+.PHONY : save.i
+
+# target to preprocess a source file
+save.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/save.c.i
+.PHONY : save.c.i
+
+save.s: save.c.s
+
+.PHONY : save.s
+
+# target to generate assembly for a file
+save.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/save.c.s
+.PHONY : save.c.s
+
 sprt.o: sprt.c.o
 
 .PHONY : sprt.o
@@ -386,6 +413,9 @@ help:
 	@echo "... render_wall_back.o"
 	@echo "... render_wall_back.i"
 	@echo "... render_wall_back.s"
+	@echo "... save.o"
+	@echo "... save.i"
+	@echo "... save.s"
 	@echo "... sprt.o"
 	@echo "... sprt.i"
 	@echo "... sprt.s"

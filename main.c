@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 21:40:42 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/16 16:57:49 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/17 16:23:07 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int worldMap[mapWidth][mapHeight] =
 		/*0*/		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		/*2*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*3*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1},
+		/*3*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		/*4*/		{1,0,0,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,0,1},
 		/*5*/		{1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
 		/*6*/		{1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
@@ -27,7 +27,7 @@ int worldMap[mapWidth][mapHeight] =
 		/*8*/		{1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		/*9*/		{1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		/*11*/		{1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*12*/		{1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+		/*12*/		{1,0,0,0,9,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1},
 		/*13*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		/*14*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 		/*15*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
@@ -199,9 +199,10 @@ int				 game_loop(t_vars* vars)
 
 
 	int i;
-
-	mlx_clear_window(vars->mlx, vars->win);
-	mlx_sync(1, vars->img.img);
+	if (vars->mode_gl == 1)
+		mlx_clear_window(vars->mlx, vars->win);
+	if (vars->mode_gl == 1)
+		mlx_sync(1, vars->img.img);
 
 	ft_move(vars);
 	while (min_angle <= max_angle - angle_offset)
@@ -295,42 +296,44 @@ int				 game_loop(t_vars* vars)
 			ft_render_background(num_rey, vars);
 		ft_render_wall(vars, len, num_rey);
 		ft_sort_sprt(vars);
-		if (vars->sprite[0].len_to_sprt != -1 && len >= vars->sprite[0].len_to_sprt )
+		if (vars->sprite[0].len_to_sprt != -1 && len >= vars->sprite[0].len_to_sprt)
 				ft_render_sprite(vars, num_rey, min_angle);
 		num_rey++;
 		min_angle += angle_offset;
+	}
+	if (vars->mode_gl == 2)
+	{
+		screen(vars);
+		exit(0);
 	}
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img.img, 0, 0);
 	return (0);
 }
 
-int             main(void)
+int             main(int argc, char **argv)
 {
 	t_vars      vars;
 
-	open_file(&vars);
-
-//	return 0;
-////	lets_pars();
 
 
-//	vars.size_win_w = 1000;
-//	vars.size_win_h = 1000;
+	if (!ft_strncmp(argv[2], "--save", 6))
+		vars.mode_gl = 2;
+	else
+		vars.mode_gl = 1;
+	open_file(&vars, argv[1]);
 
 	vars.x =9.5;
 	vars.y =7.5;
-	vars.angle_p = M_PI;
+	vars.angle_p = -M_PI/8;
 
 	vars.mlx = mlx_init();
 
-	vars.color_floor = 0x483D8B;
-
-	vars.color_roof = 0xFFE4E1;
-
-	vars.win = mlx_new_window(vars.mlx, vars.size_win_w, vars.size_win_h, "Gucci flip flops");
+	if (vars.mode_gl == 1)
+		vars.win = mlx_new_window(vars.mlx, vars.size_win_w, vars.size_win_h, "Gucci flip flops");
 	vars.img.img = mlx_new_image(vars.mlx, vars.size_win_w, vars.size_win_h);
 	vars.img.addr = mlx_get_data_addr(vars.img.img, &vars.img.bits_per_pixel, &vars.img.line_length, &vars.img.endian);
-
+	printf("%p\n", vars.img.addr);
+	printf("%p\n", &vars.img);
 	vars.img_tex_sp.img = mlx_xpm_file_to_image(vars.mlx, vars.path_tex_wall_sp, &vars.img_tex_sp.w, &vars.img_tex_sp.h);
 	vars.img_tex_sp.addr = mlx_get_data_addr(vars.img_tex_sp.img, &vars.img_tex_sp.bits_per_pixel, &vars.img_tex_sp.line_length, &vars.img_tex_sp.endian);
 
@@ -347,8 +350,10 @@ int             main(void)
 	vars.img_tex_wall_ea.img = mlx_xpm_file_to_image(vars.mlx, vars.path_tex_wall_ea, &vars.img_tex_wall_ea.w, &vars.img_tex_wall_ea.h);
 	vars.img_tex_wall_ea.addr = mlx_get_data_addr(vars.img_tex_wall_ea.img, &vars.img_tex_wall_ea.bits_per_pixel, &vars.img_tex_wall_ea.line_length, &vars.img_tex_wall_ea.endian);
 
-	mlx_hook(vars.win, 2, 1L<<0,key_hook , &vars);
-	mlx_hook(vars.win, 3, 1L<<1,key_release_hook , &vars);
+	if (vars.mode_gl == 1)
+		mlx_hook(vars.win, 2, 1L<<0,key_hook , &vars);
+	if (vars.mode_gl == 1)
+		mlx_hook(vars.win, 3, 1L<<1,key_release_hook , &vars);
 	mlx_loop_hook(vars.mlx, game_loop, &vars);
 	mlx_loop(vars.mlx);
 	return (0);

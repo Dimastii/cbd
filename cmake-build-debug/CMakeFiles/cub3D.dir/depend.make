@@ -27,6 +27,11 @@ CMakeFiles/cub3D.dir/render_wall_back.c.o: ../cub.h
 CMakeFiles/cub3D.dir/render_wall_back.c.o: ../gnl/get_next_line.h
 CMakeFiles/cub3D.dir/render_wall_back.c.o: ../render_wall_back.c
 
+CMakeFiles/cub3D.dir/save.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/cub3D.dir/save.c.o: ../cub.h
+CMakeFiles/cub3D.dir/save.c.o: ../gnl/get_next_line.h
+CMakeFiles/cub3D.dir/save.c.o: ../save.c
+
 CMakeFiles/cub3D.dir/sprt.c.o: ../minilibx_mms_20200219/mlx.h
 CMakeFiles/cub3D.dir/sprt.c.o: ../cub.h
 CMakeFiles/cub3D.dir/sprt.c.o: ../gnl/get_next_line.h

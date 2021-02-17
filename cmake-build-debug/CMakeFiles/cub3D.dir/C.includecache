@@ -17,6 +17,8 @@ mlx.h
 /Users/cveeta/CLionProjects/cub3D/mlx.h
 fcntl.h
 /Users/cveeta/CLionProjects/cub3D/fcntl.h
+unistd.h
+/Users/cveeta/CLionProjects/cub3D/unistd.h
 gnl/get_next_line.h
 /Users/cveeta/CLionProjects/cub3D/gnl/get_next_line.h
 
@@ -26,7 +28,7 @@ unistd.h
 stdlib.h
 /Users/cveeta/CLionProjects/cub3D/gnl/stdlib.h
 
-/Users/cveeta/CLionProjects/cub3D/preprocess.c
+/Users/cveeta/CLionProjects/cub3D/main.c
 cub.h
 /Users/cveeta/CLionProjects/cub3D/cub.h
 

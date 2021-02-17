@@ -16,4 +16,4 @@ add_executable(cub3D
 		main.c
 		sprt.c
 		cub.h
-		render_wall_back.c general_utils.c preprocess.c utils.c)
+		render_wall_back.c general_utils.c preprocess.c utils.c save.c)

@@ -1,13 +1,13 @@
-R  1000  1000
+R  3500  7900
 
 NO  ./wall_tex/wave_of_kaganav1.xpm
 SO          ./wall_tex/wave_of_kaganav2.xpm
-WE  ./wall_tex/wave_of_kaganav3.xpm
-EA                                 ./wall_tex/wave_of_kaganav4.xpm
+WE  ./wall_tex/wall_pink_tyan2.xpm
+EA                                 ./wall_tex/wall_pink_tyan1.xpm
 
-S ./sprt_tex/sprt_tyan2.xpm
-F  220,100,10
-C        225,30,0
+                    S ./sprt_tex/sprt_tyan2.xpm
+F  205,136,179
+     C       		102,102,153
 
         1111111111111111111111111
         1000000000110000000000001

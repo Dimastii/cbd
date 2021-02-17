@@ -6,15 +6,23 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:37:20 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/16 18:22:26 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/17 15:43:55 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
 
-int		create_trgb(int r, int g, int b)
+int		rgb_to_int(int r, int g, int b)
 {
 	return(r << 16 | g << 8 | b);
+}
+
+int		int_to_rgb(t_rgb *clr, int color)
+{
+	clr->r = color >> 16;
+	clr->g = color >> 8;
+	clr->b = color;
+	//return(r << 16 | g << 8 | b);
 }
 
 void		print_error(int mode)
@@ -37,14 +45,17 @@ int			resolution(char *line, t_vars *vars)
 		line++;
 		vars->size_win_w = ft_atoi(&line);
 		vars->size_win_h = ft_atoi(&line);
-		if (vars->size_win_w > 2560)
+		if (vars->size_win_w > 2560 && vars->mode_gl == 1)
 			vars->size_win_w = 2560;
-		if (vars->size_win_h > 1440)
+		if (vars->size_win_h > 1440 && vars->mode_gl == 1)
 			vars->size_win_h = 1440;
 		if (*line || !vars->size_win_h || !vars->size_win_w)
 			print_error(1);
 		return 0;
 	}
+	else
+		return (1);
+
 }
 
 int			cardinal_points(char *line, t_vars *vars)
@@ -54,7 +65,7 @@ int			cardinal_points(char *line, t_vars *vars)
 	i = 1;
 
 	path = NULL;
-	while (ft_isspace(*line) == ' ')
+	while (ft_isspace(*line))
 		line++;
 	if (*line == 'N' && *(line + 1) == 'O' && *(line + 2) == ' ')
 		path = &vars->path_tex_wall_no;
@@ -79,7 +90,7 @@ int			cardinal_points(char *line, t_vars *vars)
 			*path = line;
 	}
 	else
-		print_error(2);
+		return (1);
 	printf("%s\n",*path);
 	return (0);
 }
@@ -92,7 +103,7 @@ int			rgb(char *line, t_vars *vars)
 	int c;
 
 	color = NULL;
-	while (ft_isspace(*line) == ' ')
+	while (ft_isspace(*line))
 		line++;
 	if (*line == 'F' && *(line + 1) == ' ')
 		color = &vars->color_floor;
@@ -110,21 +121,26 @@ int			rgb(char *line, t_vars *vars)
 				c = ft_atoi(&line);
 			else
 				print_error(3);
+			if ((*line) || a > 255 || b > 255 || c > 255)
+				print_error(3);
 		}
 		else
 			print_error(3);
-		printf("%d %d %d\n", a,b,c);
+		*color = rgb_to_int(a, b, c);
 	}
+	else
+		return (1);
+	return (0);
 }
 
-void		open_file(t_vars *vars)
+void		open_file(t_vars *vars, char *file)
 {
 	int fd;
 	char *line;
 	char *line_free;
 
 	line_free = line;
-	fd = open("cub.cub", O_RDONLY);
+	fd = open(file, O_RDONLY);
 	get_next_line(fd, &line);
 	resolution(line, vars);
 	get_next_line(fd, &line);
