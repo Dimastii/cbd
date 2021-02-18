@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:37:20 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/18 12:35:54 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/18 12:37:11 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void		print_error(int mode)
 		write(2, "ERROR : incorrect path\n", sizeof("ERROR : incorrect path\n"));
 	if (mode == 3)
 		write(2, "ERROR : incorrect path\n", sizeof("ERROR : incorrect path\n"));
-	if (mode == 3)
+	if (mode == 4)
 		write(2, "ERROR : incorrect arg\n", sizeof("ERROR : incorrect arg\n"));
 	exit(0);
 }

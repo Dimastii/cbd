@@ -30,7 +30,11 @@ unistd.h
 stdlib.h
 /Users/cveeta/CLionProjects/cub3D/stdlib.h
 
-/Users/cveeta/CLionProjects/cub3D/main.c
+/Users/cveeta/CLionProjects/cub3D/preprocess.c
+cub.h
+/Users/cveeta/CLionProjects/cub3D/cub.h
+
+/Users/cveeta/CLionProjects/cub3D/save.c
 cub.h
 /Users/cveeta/CLionProjects/cub3D/cub.h
 
