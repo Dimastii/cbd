@@ -9,11 +9,11 @@ link_directories(./)
 
 add_executable(cub3D
 		minilibx_mms_20200219/mlx.h
-		gnl/get_next_line.h
-		gnl/get_next_line.c
-		gnl/get_next_line_utils.c
+		get_next_line.h
+		get_next_line.c
+		get_next_line_utils.c
 		libmlx.dylib
 		main.c
 		sprt.c
 		cub.h
-		)
+		render_wall_back.c general_utils.c preprocess.c utils.c save.c)
