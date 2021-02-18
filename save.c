@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 11:04:08 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/18 11:42:11 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/18 12:06:50 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void			screenshot(t_vars *vars)
 	int		pos_pix;
 	int		size;
 
-	fd = open("screen.bmp", O_CREAT | O_WRONLY);
+	fd = open("screen.bmp", O_CREAT | O_WRONLY, 0777);
 	all_pix = vars->size_win_w * vars->size_win_h * 4 + 54;
 	zero = 0;
 	pos_pix = 54;
