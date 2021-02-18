@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:59:11 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/17 15:48:16 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/18 12:31:49 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 #include "mlx.h"
 #include "fcntl.h"
 #include "unistd.h"
-#include "gnl/get_next_line.h"
+#include "get_next_line.h"
+#include <string.h>
 
 #define mapWidth  24
 #define mapHeight 24
@@ -25,12 +26,6 @@
 #define ANLGLE M_PI / 4
 #define N_REY vars->size_win_w
 
-typedef struct	s_rgb{
-	int r;
-	int g;
-	int b;
-	int clr;
-}				t_rgb;
 typedef struct  s_image {
 	void        *img;
 	char        *addr;
@@ -97,7 +92,6 @@ typedef struct  s_vars {
 	int mode_gl;
 }               t_vars;
 
-
 void			ft_round(double *cx, double *cy,t_vars *vars);
 void			ft_render_background(int num_rey, t_vars *vars);
 void			ft_print_wall_sprite(t_vars *vars, double len_r,int num_rey);
@@ -109,7 +103,6 @@ void			my_mlx_pixel_put(t_image *data,int x,int y,int color);
 void			ft_render_wall(t_vars *vars, double len_r_norm, int num);
 void			ft_round_angle(double *ang);
 void			open_file(t_vars *vars, char *file);
-int				int_to_rgb(t_rgb *clr, int color);
 int				game_loop(t_vars* vars);
 int				ft_len_sprt(t_vars *vars, double ang, t_sprite *sprt);
 int				my_mlx_pixel_take(t_image data,int x,int y);
@@ -117,9 +110,13 @@ int				ft_atoi(char **str);
 int				ft_isspace(int c);
 int				ft_isdigit(int c);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
-int				screen(t_vars *vars);
-void			generateBitmapImage(unsigned char* image, int height, int width, char* imageFileName);
-unsigned char*	createBitmapFileHeader(int height, int stride);
-unsigned char*	createBitmapInfoHeader(int height, int width);
+void			screenshot(t_vars *vars);
+size_t				ft_strlen(const char *s);
+char				*ft_strchr(const char *string, int symbol);
+char				*ft_strjoin(char const *s1, char const *s2);
+int					get_next_line(int fd, char **line);
+char				*ft_strdup(const char *s);
+size_t				ft_strlcpy(char *dst, const char *src);
+void			print_error(int mode);
 
 #endif

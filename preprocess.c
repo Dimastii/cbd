@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:37:20 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/17 15:43:55 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/18 12:35:54 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,16 @@ int		rgb_to_int(int r, int g, int b)
 	return(r << 16 | g << 8 | b);
 }
 
-int		int_to_rgb(t_rgb *clr, int color)
-{
-	clr->r = color >> 16;
-	clr->g = color >> 8;
-	clr->b = color;
-	//return(r << 16 | g << 8 | b);
-}
-
 void		print_error(int mode)
 {
 	if (mode == 1)
-		printf("ERROR : incorrect resolution\n");
+		write(2, "ERROR : incorrect resolution\n", sizeof("ERROR : incorrect resolution\n"));
 	if (mode == 2)
-		printf("ERROR : incorrect path\n");
+		write(2, "ERROR : incorrect path\n", sizeof("ERROR : incorrect path\n"));
 	if (mode == 3)
-		printf("ERROR : incorrect rgb\n");
+		write(2, "ERROR : incorrect path\n", sizeof("ERROR : incorrect path\n"));
+	if (mode == 3)
+		write(2, "ERROR : incorrect arg\n", sizeof("ERROR : incorrect arg\n"));
 	exit(0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 21:40:42 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/17 16:23:07 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/18 12:39:23 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,11 +199,11 @@ int				 game_loop(t_vars* vars)
 
 
 	int i;
+
 	if (vars->mode_gl == 1)
 		mlx_clear_window(vars->mlx, vars->win);
 	if (vars->mode_gl == 1)
 		mlx_sync(1, vars->img.img);
-
 	ft_move(vars);
 	while (min_angle <= max_angle - angle_offset)
 	{
@@ -303,10 +303,11 @@ int				 game_loop(t_vars* vars)
 	}
 	if (vars->mode_gl == 2)
 	{
-		screen(vars);
+		screenshot(vars);
 		exit(0);
 	}
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img.img, 0, 0);
+
 	return (0);
 }
 
@@ -314,7 +315,8 @@ int             main(int argc, char **argv)
 {
 	t_vars      vars;
 
-
+	if (!argc)
+		print_error(4);
 
 	if (!ft_strncmp(argv[2], "--save", 6))
 		vars.mode_gl = 2;
@@ -332,8 +334,7 @@ int             main(int argc, char **argv)
 		vars.win = mlx_new_window(vars.mlx, vars.size_win_w, vars.size_win_h, "Gucci flip flops");
 	vars.img.img = mlx_new_image(vars.mlx, vars.size_win_w, vars.size_win_h);
 	vars.img.addr = mlx_get_data_addr(vars.img.img, &vars.img.bits_per_pixel, &vars.img.line_length, &vars.img.endian);
-	printf("%p\n", vars.img.addr);
-	printf("%p\n", &vars.img);
+
 	vars.img_tex_sp.img = mlx_xpm_file_to_image(vars.mlx, vars.path_tex_wall_sp, &vars.img_tex_sp.w, &vars.img_tex_sp.h);
 	vars.img_tex_sp.addr = mlx_get_data_addr(vars.img_tex_sp.img, &vars.img_tex_sp.bits_per_pixel, &vars.img_tex_sp.line_length, &vars.img_tex_sp.endian);
 

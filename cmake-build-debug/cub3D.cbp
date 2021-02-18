@@ -90,13 +90,13 @@
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/general_utils.c">
 			<Option target="cub3D"/>
 		</Unit>
-		<Unit filename="/Users/cveeta/CLionProjects/cub3D/gnl/get_next_line.c">
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/get_next_line.c">
 			<Option target="cub3D"/>
 		</Unit>
-		<Unit filename="/Users/cveeta/CLionProjects/cub3D/gnl/get_next_line.h">
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/get_next_line.h">
 			<Option target="cub3D"/>
 		</Unit>
-		<Unit filename="/Users/cveeta/CLionProjects/cub3D/gnl/get_next_line_utils.c">
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/get_next_line_utils.c">
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/libmlx.dylib">

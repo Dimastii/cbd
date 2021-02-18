@@ -170,59 +170,59 @@ general_utils.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/general_utils.c.s
 .PHONY : general_utils.c.s
 
-gnl/get_next_line.o: gnl/get_next_line.c.o
+get_next_line.o: get_next_line.c.o
 
-.PHONY : gnl/get_next_line.o
-
-# target to build an object file
-gnl/get_next_line.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/gnl/get_next_line.c.o
-.PHONY : gnl/get_next_line.c.o
-
-gnl/get_next_line.i: gnl/get_next_line.c.i
-
-.PHONY : gnl/get_next_line.i
-
-# target to preprocess a source file
-gnl/get_next_line.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/gnl/get_next_line.c.i
-.PHONY : gnl/get_next_line.c.i
-
-gnl/get_next_line.s: gnl/get_next_line.c.s
-
-.PHONY : gnl/get_next_line.s
-
-# target to generate assembly for a file
-gnl/get_next_line.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/gnl/get_next_line.c.s
-.PHONY : gnl/get_next_line.c.s
-
-gnl/get_next_line_utils.o: gnl/get_next_line_utils.c.o
-
-.PHONY : gnl/get_next_line_utils.o
+.PHONY : get_next_line.o
 
 # target to build an object file
-gnl/get_next_line_utils.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.o
-.PHONY : gnl/get_next_line_utils.c.o
+get_next_line.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/get_next_line.c.o
+.PHONY : get_next_line.c.o
 
-gnl/get_next_line_utils.i: gnl/get_next_line_utils.c.i
+get_next_line.i: get_next_line.c.i
 
-.PHONY : gnl/get_next_line_utils.i
+.PHONY : get_next_line.i
 
 # target to preprocess a source file
-gnl/get_next_line_utils.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.i
-.PHONY : gnl/get_next_line_utils.c.i
+get_next_line.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/get_next_line.c.i
+.PHONY : get_next_line.c.i
 
-gnl/get_next_line_utils.s: gnl/get_next_line_utils.c.s
+get_next_line.s: get_next_line.c.s
 
-.PHONY : gnl/get_next_line_utils.s
+.PHONY : get_next_line.s
 
 # target to generate assembly for a file
-gnl/get_next_line_utils.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/gnl/get_next_line_utils.c.s
-.PHONY : gnl/get_next_line_utils.c.s
+get_next_line.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/get_next_line.c.s
+.PHONY : get_next_line.c.s
+
+get_next_line_utils.o: get_next_line_utils.c.o
+
+.PHONY : get_next_line_utils.o
+
+# target to build an object file
+get_next_line_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/get_next_line_utils.c.o
+.PHONY : get_next_line_utils.c.o
+
+get_next_line_utils.i: get_next_line_utils.c.i
+
+.PHONY : get_next_line_utils.i
+
+# target to preprocess a source file
+get_next_line_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/get_next_line_utils.c.i
+.PHONY : get_next_line_utils.c.i
+
+get_next_line_utils.s: get_next_line_utils.c.s
+
+.PHONY : get_next_line_utils.s
+
+# target to generate assembly for a file
+get_next_line_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/get_next_line_utils.c.s
+.PHONY : get_next_line_utils.c.s
 
 main.o: main.c.o
 
@@ -398,12 +398,12 @@ help:
 	@echo "... general_utils.o"
 	@echo "... general_utils.i"
 	@echo "... general_utils.s"
-	@echo "... gnl/get_next_line.o"
-	@echo "... gnl/get_next_line.i"
-	@echo "... gnl/get_next_line.s"
-	@echo "... gnl/get_next_line_utils.o"
-	@echo "... gnl/get_next_line_utils.i"
-	@echo "... gnl/get_next_line_utils.s"
+	@echo "... get_next_line.o"
+	@echo "... get_next_line.i"
+	@echo "... get_next_line.s"
+	@echo "... get_next_line_utils.o"
+	@echo "... get_next_line_utils.i"
+	@echo "... get_next_line_utils.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
