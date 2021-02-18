@@ -5,44 +5,52 @@ CMakeFiles/cub3D.dir/general_utils.c.o
  ../minilibx_mms_20200219/mlx.h
  /Users/cveeta/CLionProjects/cub3D/cub.h
  /Users/cveeta/CLionProjects/cub3D/general_utils.c
- /Users/cveeta/CLionProjects/cub3D/get_next_line.h
-CMakeFiles/cub3D.dir/get_next_line.c.o
- ../minilibx_mms_20200219/mlx.h
- /Users/cveeta/CLionProjects/cub3D/cub.h
- /Users/cveeta/CLionProjects/cub3D/get_next_line.c
- /Users/cveeta/CLionProjects/cub3D/get_next_line.h
-CMakeFiles/cub3D.dir/get_next_line_utils.c.o
- ../minilibx_mms_20200219/mlx.h
- /Users/cveeta/CLionProjects/cub3D/cub.h
- /Users/cveeta/CLionProjects/cub3D/get_next_line.h
- /Users/cveeta/CLionProjects/cub3D/get_next_line_utils.c
+ /Users/cveeta/CLionProjects/cub3D/libft/libft.h
+CMakeFiles/cub3D.dir/libft/ft_strchr.c.o
+ /Users/cveeta/CLionProjects/cub3D/libft/ft_strchr.c
+ /Users/cveeta/CLionProjects/cub3D/libft/libft.h
+CMakeFiles/cub3D.dir/libft/ft_strlen.c.o
+ /Users/cveeta/CLionProjects/cub3D/libft/ft_strlen.c
+CMakeFiles/cub3D.dir/libft/get_next_line.c.o
+ /Users/cveeta/CLionProjects/cub3D/libft/get_next_line.c
+ /Users/cveeta/CLionProjects/cub3D/libft/get_next_line.h
+ /Users/cveeta/CLionProjects/cub3D/libft/libft.h
+CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.o
+ /Users/cveeta/CLionProjects/cub3D/libft/get_next_line.h
+ /Users/cveeta/CLionProjects/cub3D/libft/get_next_line_utils.c
+ /Users/cveeta/CLionProjects/cub3D/libft/libft.h
 CMakeFiles/cub3D.dir/main.c.o
  ../minilibx_mms_20200219/mlx.h
  /Users/cveeta/CLionProjects/cub3D/cub.h
- /Users/cveeta/CLionProjects/cub3D/get_next_line.h
+ /Users/cveeta/CLionProjects/cub3D/libft/libft.h
  /Users/cveeta/CLionProjects/cub3D/main.c
 CMakeFiles/cub3D.dir/preprocess.c.o
  ../minilibx_mms_20200219/mlx.h
  /Users/cveeta/CLionProjects/cub3D/cub.h
- /Users/cveeta/CLionProjects/cub3D/get_next_line.h
+ /Users/cveeta/CLionProjects/cub3D/libft/libft.h
  /Users/cveeta/CLionProjects/cub3D/preprocess.c
+CMakeFiles/cub3D.dir/preprocess_map.c.o
+ ../minilibx_mms_20200219/mlx.h
+ /Users/cveeta/CLionProjects/cub3D/cub.h
+ /Users/cveeta/CLionProjects/cub3D/libft/libft.h
+ /Users/cveeta/CLionProjects/cub3D/preprocess_map.c
 CMakeFiles/cub3D.dir/render_wall_back.c.o
  ../minilibx_mms_20200219/mlx.h
  /Users/cveeta/CLionProjects/cub3D/cub.h
- /Users/cveeta/CLionProjects/cub3D/get_next_line.h
+ /Users/cveeta/CLionProjects/cub3D/libft/libft.h
  /Users/cveeta/CLionProjects/cub3D/render_wall_back.c
 CMakeFiles/cub3D.dir/save.c.o
  ../minilibx_mms_20200219/mlx.h
  /Users/cveeta/CLionProjects/cub3D/cub.h
- /Users/cveeta/CLionProjects/cub3D/get_next_line.h
+ /Users/cveeta/CLionProjects/cub3D/libft/libft.h
  /Users/cveeta/CLionProjects/cub3D/save.c
 CMakeFiles/cub3D.dir/sprt.c.o
  ../minilibx_mms_20200219/mlx.h
  /Users/cveeta/CLionProjects/cub3D/cub.h
- /Users/cveeta/CLionProjects/cub3D/get_next_line.h
+ /Users/cveeta/CLionProjects/cub3D/libft/libft.h
  /Users/cveeta/CLionProjects/cub3D/sprt.c
 CMakeFiles/cub3D.dir/utils.c.o
  ../minilibx_mms_20200219/mlx.h
  /Users/cveeta/CLionProjects/cub3D/cub.h
- /Users/cveeta/CLionProjects/cub3D/get_next_line.h
+ /Users/cveeta/CLionProjects/cub3D/libft/libft.h
  /Users/cveeta/CLionProjects/cub3D/utils.c

@@ -170,59 +170,113 @@ general_utils.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/general_utils.c.s
 .PHONY : general_utils.c.s
 
-get_next_line.o: get_next_line.c.o
+libft/ft_strchr.o: libft/ft_strchr.c.o
 
-.PHONY : get_next_line.o
-
-# target to build an object file
-get_next_line.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/get_next_line.c.o
-.PHONY : get_next_line.c.o
-
-get_next_line.i: get_next_line.c.i
-
-.PHONY : get_next_line.i
-
-# target to preprocess a source file
-get_next_line.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/get_next_line.c.i
-.PHONY : get_next_line.c.i
-
-get_next_line.s: get_next_line.c.s
-
-.PHONY : get_next_line.s
-
-# target to generate assembly for a file
-get_next_line.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/get_next_line.c.s
-.PHONY : get_next_line.c.s
-
-get_next_line_utils.o: get_next_line_utils.c.o
-
-.PHONY : get_next_line_utils.o
+.PHONY : libft/ft_strchr.o
 
 # target to build an object file
-get_next_line_utils.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/get_next_line_utils.c.o
-.PHONY : get_next_line_utils.c.o
+libft/ft_strchr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/ft_strchr.c.o
+.PHONY : libft/ft_strchr.c.o
 
-get_next_line_utils.i: get_next_line_utils.c.i
+libft/ft_strchr.i: libft/ft_strchr.c.i
 
-.PHONY : get_next_line_utils.i
+.PHONY : libft/ft_strchr.i
 
 # target to preprocess a source file
-get_next_line_utils.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/get_next_line_utils.c.i
-.PHONY : get_next_line_utils.c.i
+libft/ft_strchr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/ft_strchr.c.i
+.PHONY : libft/ft_strchr.c.i
 
-get_next_line_utils.s: get_next_line_utils.c.s
+libft/ft_strchr.s: libft/ft_strchr.c.s
 
-.PHONY : get_next_line_utils.s
+.PHONY : libft/ft_strchr.s
 
 # target to generate assembly for a file
-get_next_line_utils.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/get_next_line_utils.c.s
-.PHONY : get_next_line_utils.c.s
+libft/ft_strchr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/ft_strchr.c.s
+.PHONY : libft/ft_strchr.c.s
+
+libft/ft_strlen.o: libft/ft_strlen.c.o
+
+.PHONY : libft/ft_strlen.o
+
+# target to build an object file
+libft/ft_strlen.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/ft_strlen.c.o
+.PHONY : libft/ft_strlen.c.o
+
+libft/ft_strlen.i: libft/ft_strlen.c.i
+
+.PHONY : libft/ft_strlen.i
+
+# target to preprocess a source file
+libft/ft_strlen.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/ft_strlen.c.i
+.PHONY : libft/ft_strlen.c.i
+
+libft/ft_strlen.s: libft/ft_strlen.c.s
+
+.PHONY : libft/ft_strlen.s
+
+# target to generate assembly for a file
+libft/ft_strlen.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/ft_strlen.c.s
+.PHONY : libft/ft_strlen.c.s
+
+libft/get_next_line.o: libft/get_next_line.c.o
+
+.PHONY : libft/get_next_line.o
+
+# target to build an object file
+libft/get_next_line.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/get_next_line.c.o
+.PHONY : libft/get_next_line.c.o
+
+libft/get_next_line.i: libft/get_next_line.c.i
+
+.PHONY : libft/get_next_line.i
+
+# target to preprocess a source file
+libft/get_next_line.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/get_next_line.c.i
+.PHONY : libft/get_next_line.c.i
+
+libft/get_next_line.s: libft/get_next_line.c.s
+
+.PHONY : libft/get_next_line.s
+
+# target to generate assembly for a file
+libft/get_next_line.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/get_next_line.c.s
+.PHONY : libft/get_next_line.c.s
+
+libft/get_next_line_utils.o: libft/get_next_line_utils.c.o
+
+.PHONY : libft/get_next_line_utils.o
+
+# target to build an object file
+libft/get_next_line_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.o
+.PHONY : libft/get_next_line_utils.c.o
+
+libft/get_next_line_utils.i: libft/get_next_line_utils.c.i
+
+.PHONY : libft/get_next_line_utils.i
+
+# target to preprocess a source file
+libft/get_next_line_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.i
+.PHONY : libft/get_next_line_utils.c.i
+
+libft/get_next_line_utils.s: libft/get_next_line_utils.c.s
+
+.PHONY : libft/get_next_line_utils.s
+
+# target to generate assembly for a file
+libft/get_next_line_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.s
+.PHONY : libft/get_next_line_utils.c.s
 
 main.o: main.c.o
 
@@ -277,6 +331,33 @@ preprocess.s: preprocess.c.s
 preprocess.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/preprocess.c.s
 .PHONY : preprocess.c.s
+
+preprocess_map.o: preprocess_map.c.o
+
+.PHONY : preprocess_map.o
+
+# target to build an object file
+preprocess_map.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/preprocess_map.c.o
+.PHONY : preprocess_map.c.o
+
+preprocess_map.i: preprocess_map.c.i
+
+.PHONY : preprocess_map.i
+
+# target to preprocess a source file
+preprocess_map.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/preprocess_map.c.i
+.PHONY : preprocess_map.c.i
+
+preprocess_map.s: preprocess_map.c.s
+
+.PHONY : preprocess_map.s
+
+# target to generate assembly for a file
+preprocess_map.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/preprocess_map.c.s
+.PHONY : preprocess_map.c.s
 
 render_wall_back.o: render_wall_back.c.o
 
@@ -398,18 +479,27 @@ help:
 	@echo "... general_utils.o"
 	@echo "... general_utils.i"
 	@echo "... general_utils.s"
-	@echo "... get_next_line.o"
-	@echo "... get_next_line.i"
-	@echo "... get_next_line.s"
-	@echo "... get_next_line_utils.o"
-	@echo "... get_next_line_utils.i"
-	@echo "... get_next_line_utils.s"
+	@echo "... libft/ft_strchr.o"
+	@echo "... libft/ft_strchr.i"
+	@echo "... libft/ft_strchr.s"
+	@echo "... libft/ft_strlen.o"
+	@echo "... libft/ft_strlen.i"
+	@echo "... libft/ft_strlen.s"
+	@echo "... libft/get_next_line.o"
+	@echo "... libft/get_next_line.i"
+	@echo "... libft/get_next_line.s"
+	@echo "... libft/get_next_line_utils.o"
+	@echo "... libft/get_next_line_utils.i"
+	@echo "... libft/get_next_line_utils.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... preprocess.o"
 	@echo "... preprocess.i"
 	@echo "... preprocess.s"
+	@echo "... preprocess_map.o"
+	@echo "... preprocess_map.i"
+	@echo "... preprocess_map.s"
 	@echo "... render_wall_back.o"
 	@echo "... render_wall_back.i"
 	@echo "... render_wall_back.s"

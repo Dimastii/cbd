@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 21:40:42 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/18 12:40:44 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/19 01:03:08 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void 			ft_move(t_vars *vars)
 	double pred_x = vars->x;
 	double pred_y = vars->y;
 
-	step = 0.25;
+	step = 0.2;
 	turn = 0.05;
 	if (vars->button_rotate == 12) {
 		vars->angle_p -= turn;
@@ -95,7 +95,8 @@ void 			ft_move(t_vars *vars)
 		vars->x += step * cos(vars->angle_p);
 		vars->y -= step * sin(vars->angle_p);
 	}
-	if (worldMap[(int)vars->x][(int)vars->y] == '0')
+//	printf("%d\n" , worldMap[(int)(vars->x + 0.1)][(int)(vars->y + 0.1)]);
+	if (worldMap[(int)(vars->x)][(int)(vars->y)] == 1)
 	{
 		vars->x = pred_x;
 		vars->y = pred_y;
@@ -183,7 +184,7 @@ int				 game_loop(t_vars* vars)
 	double cyx;
 
 
-	double angle_offset = ANLGLE / N_REY;
+	double angle_offset = ANLGLE / vars->size_win_w;
 	double max_angle = vars->angle_p + ANLGLE / 2.0;
 	double min_angle = vars->angle_p - ANLGLE / 2.0;
 
@@ -316,8 +317,11 @@ int             main(int argc, char **argv)
 	t_vars      vars;
 
 	if (argc == 1)
-		print_error(4);
-
+		print_error("ERROR : incorrect arg\n");
+	if (argv[1][ft_strlen(argv[1]) - 1] != 'b'
+	&& argv[1][ft_strlen(argv[1]) - 2] != 'u'
+	&& argv[1][ft_strlen(argv[1]) - 3] != 'c')
+		print_error("ERROR : incorrect .cub\n");
 	if (!ft_strncmp(argv[2], "--save", 6))
 		vars.mode_gl = 2;
 	else
@@ -335,22 +339,26 @@ int             main(int argc, char **argv)
 	vars.img.img = mlx_new_image(vars.mlx, vars.size_win_w, vars.size_win_h);
 	vars.img.addr = mlx_get_data_addr(vars.img.img, &vars.img.bits_per_pixel, &vars.img.line_length, &vars.img.endian);
 
-	vars.img_tex_sp.img = mlx_xpm_file_to_image(vars.mlx, vars.path_tex_wall_sp, &vars.img_tex_sp.w, &vars.img_tex_sp.h);
-	vars.img_tex_sp.addr = mlx_get_data_addr(vars.img_tex_sp.img, &vars.img_tex_sp.bits_per_pixel, &vars.img_tex_sp.line_length, &vars.img_tex_sp.endian);
-
-
-	vars.img_tex_wall_no.img = mlx_xpm_file_to_image(vars.mlx, vars.path_tex_wall_no, &vars.img_tex_wall_no.w, &vars.img_tex_wall_no.h);
-	vars.img_tex_wall_no.addr = mlx_get_data_addr(vars.img_tex_wall_no.img, &vars.img_tex_wall_no.bits_per_pixel, &vars.img_tex_wall_no.line_length, &vars.img_tex_wall_no.endian);
-
-	vars.img_tex_wall_so.img = mlx_xpm_file_to_image(vars.mlx, vars.path_tex_wall_so, &vars.img_tex_wall_so.w, &vars.img_tex_wall_so.h);
-	vars.img_tex_wall_so.addr = mlx_get_data_addr(vars.img_tex_wall_so.img, &vars.img_tex_wall_so.bits_per_pixel, &vars.img_tex_wall_so.line_length, &vars.img_tex_wall_so.endian);
-
-	vars.img_tex_wall_we.img = mlx_xpm_file_to_image(vars.mlx, vars.path_tex_wall_we, &vars.img_tex_wall_we.w, &vars.img_tex_wall_we.h);
-	vars.img_tex_wall_we.addr = mlx_get_data_addr(vars.img_tex_wall_we.img, &vars.img_tex_wall_we.bits_per_pixel, &vars.img_tex_wall_we.line_length, &vars.img_tex_wall_we.endian);
-
-	vars.img_tex_wall_ea.img = mlx_xpm_file_to_image(vars.mlx, vars.path_tex_wall_ea, &vars.img_tex_wall_ea.w, &vars.img_tex_wall_ea.h);
+	if ((vars.img_tex_sp.img = mlx_xpm_file_to_image(vars.mlx, vars.path_tex_wall_sp, &vars.img_tex_sp.w, &vars.img_tex_sp.h)))
+		vars.img_tex_sp.addr = mlx_get_data_addr(vars.img_tex_sp.img, &vars.img_tex_sp.bits_per_pixel, &vars.img_tex_sp.line_length, &vars.img_tex_sp.endian);
+	else
+		print_error("ERROR : incorrect or missing path_tex_wall_sp\n");
+	if ((vars.img_tex_wall_no.img = mlx_xpm_file_to_image(vars.mlx, vars.path_tex_wall_no, &vars.img_tex_wall_no.w, &vars.img_tex_wall_no.h)))
+		vars.img_tex_wall_no.addr = mlx_get_data_addr(vars.img_tex_wall_no.img, &vars.img_tex_wall_no.bits_per_pixel, &vars.img_tex_wall_no.line_length, &vars.img_tex_wall_no.endian);
+	else
+		print_error("ERROR : incorrect or missing path_tex_wall_no\n");
+	if ((vars.img_tex_wall_so.img = mlx_xpm_file_to_image(vars.mlx, vars.path_tex_wall_so, &vars.img_tex_wall_so.w, &vars.img_tex_wall_so.h)))
+		vars.img_tex_wall_so.addr = mlx_get_data_addr(vars.img_tex_wall_so.img, &vars.img_tex_wall_so.bits_per_pixel, &vars.img_tex_wall_so.line_length, &vars.img_tex_wall_so.endian);
+	else
+		print_error("ERROR : incorrect or missing path_tex_wall_so\n");
+	if ((vars.img_tex_wall_we.img = mlx_xpm_file_to_image(vars.mlx, vars.path_tex_wall_we, &vars.img_tex_wall_we.w, &vars.img_tex_wall_we.h)))
+		vars.img_tex_wall_we.addr = mlx_get_data_addr(vars.img_tex_wall_we.img, &vars.img_tex_wall_we.bits_per_pixel, &vars.img_tex_wall_we.line_length, &vars.img_tex_wall_we.endian);
+	else
+		print_error("ERROR : incorrect or missing path_tex_wall_we\n");
+	if ((vars.img_tex_wall_ea.img = mlx_xpm_file_to_image(vars.mlx, vars.path_tex_wall_ea, &vars.img_tex_wall_ea.w, &vars.img_tex_wall_ea.h)))
 	vars.img_tex_wall_ea.addr = mlx_get_data_addr(vars.img_tex_wall_ea.img, &vars.img_tex_wall_ea.bits_per_pixel, &vars.img_tex_wall_ea.line_length, &vars.img_tex_wall_ea.endian);
-
+	else
+		print_error("ERROR : incorrect or missing path_tex_wall_ea\n");
 	if (vars.mode_gl == 1)
 		mlx_hook(vars.win, 2, 1L<<0,key_hook , &vars);
 	if (vars.mode_gl == 1)

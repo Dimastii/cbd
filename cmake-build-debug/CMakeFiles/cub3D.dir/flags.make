@@ -6,5 +6,5 @@ C_FLAGS = -lmlx -framework OpenGL -framework AppKit -g -isysroot /Applications/X
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/cveeta/CLionProjects/cub3D/minilibx_mms_20200219 -I/Users/cveeta/CLionProjects/cub3D/gnl 
+C_INCLUDES = -I/Users/cveeta/CLionProjects/cub3D/minilibx_mms_20200219 -I/Users/cveeta/CLionProjects/cub3D/libft 
 

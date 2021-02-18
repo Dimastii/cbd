@@ -4,45 +4,53 @@
 CMakeFiles/cub3D.dir/general_utils.c.o: ../minilibx_mms_20200219/mlx.h
 CMakeFiles/cub3D.dir/general_utils.c.o: ../cub.h
 CMakeFiles/cub3D.dir/general_utils.c.o: ../general_utils.c
-CMakeFiles/cub3D.dir/general_utils.c.o: ../get_next_line.h
+CMakeFiles/cub3D.dir/general_utils.c.o: ../libft/libft.h
 
-CMakeFiles/cub3D.dir/get_next_line.c.o: ../minilibx_mms_20200219/mlx.h
-CMakeFiles/cub3D.dir/get_next_line.c.o: ../cub.h
-CMakeFiles/cub3D.dir/get_next_line.c.o: ../get_next_line.c
-CMakeFiles/cub3D.dir/get_next_line.c.o: ../get_next_line.h
+CMakeFiles/cub3D.dir/libft/ft_strchr.c.o: ../libft/ft_strchr.c
+CMakeFiles/cub3D.dir/libft/ft_strchr.c.o: ../libft/libft.h
 
-CMakeFiles/cub3D.dir/get_next_line_utils.c.o: ../minilibx_mms_20200219/mlx.h
-CMakeFiles/cub3D.dir/get_next_line_utils.c.o: ../cub.h
-CMakeFiles/cub3D.dir/get_next_line_utils.c.o: ../get_next_line.h
-CMakeFiles/cub3D.dir/get_next_line_utils.c.o: ../get_next_line_utils.c
+CMakeFiles/cub3D.dir/libft/ft_strlen.c.o: ../libft/ft_strlen.c
+
+CMakeFiles/cub3D.dir/libft/get_next_line.c.o: ../libft/get_next_line.c
+CMakeFiles/cub3D.dir/libft/get_next_line.c.o: ../libft/get_next_line.h
+CMakeFiles/cub3D.dir/libft/get_next_line.c.o: ../libft/libft.h
+
+CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.o: ../libft/get_next_line.h
+CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.o: ../libft/get_next_line_utils.c
+CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.o: ../libft/libft.h
 
 CMakeFiles/cub3D.dir/main.c.o: ../minilibx_mms_20200219/mlx.h
 CMakeFiles/cub3D.dir/main.c.o: ../cub.h
-CMakeFiles/cub3D.dir/main.c.o: ../get_next_line.h
+CMakeFiles/cub3D.dir/main.c.o: ../libft/libft.h
 CMakeFiles/cub3D.dir/main.c.o: ../main.c
 
 CMakeFiles/cub3D.dir/preprocess.c.o: ../minilibx_mms_20200219/mlx.h
 CMakeFiles/cub3D.dir/preprocess.c.o: ../cub.h
-CMakeFiles/cub3D.dir/preprocess.c.o: ../get_next_line.h
+CMakeFiles/cub3D.dir/preprocess.c.o: ../libft/libft.h
 CMakeFiles/cub3D.dir/preprocess.c.o: ../preprocess.c
+
+CMakeFiles/cub3D.dir/preprocess_map.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/cub3D.dir/preprocess_map.c.o: ../cub.h
+CMakeFiles/cub3D.dir/preprocess_map.c.o: ../libft/libft.h
+CMakeFiles/cub3D.dir/preprocess_map.c.o: ../preprocess_map.c
 
 CMakeFiles/cub3D.dir/render_wall_back.c.o: ../minilibx_mms_20200219/mlx.h
 CMakeFiles/cub3D.dir/render_wall_back.c.o: ../cub.h
-CMakeFiles/cub3D.dir/render_wall_back.c.o: ../get_next_line.h
+CMakeFiles/cub3D.dir/render_wall_back.c.o: ../libft/libft.h
 CMakeFiles/cub3D.dir/render_wall_back.c.o: ../render_wall_back.c
 
 CMakeFiles/cub3D.dir/save.c.o: ../minilibx_mms_20200219/mlx.h
 CMakeFiles/cub3D.dir/save.c.o: ../cub.h
-CMakeFiles/cub3D.dir/save.c.o: ../get_next_line.h
+CMakeFiles/cub3D.dir/save.c.o: ../libft/libft.h
 CMakeFiles/cub3D.dir/save.c.o: ../save.c
 
 CMakeFiles/cub3D.dir/sprt.c.o: ../minilibx_mms_20200219/mlx.h
 CMakeFiles/cub3D.dir/sprt.c.o: ../cub.h
-CMakeFiles/cub3D.dir/sprt.c.o: ../get_next_line.h
+CMakeFiles/cub3D.dir/sprt.c.o: ../libft/libft.h
 CMakeFiles/cub3D.dir/sprt.c.o: ../sprt.c
 
 CMakeFiles/cub3D.dir/utils.c.o: ../minilibx_mms_20200219/mlx.h
 CMakeFiles/cub3D.dir/utils.c.o: ../cub.h
-CMakeFiles/cub3D.dir/utils.c.o: ../get_next_line.h
+CMakeFiles/cub3D.dir/utils.c.o: ../libft/libft.h
 CMakeFiles/cub3D.dir/utils.c.o: ../utils.c
 

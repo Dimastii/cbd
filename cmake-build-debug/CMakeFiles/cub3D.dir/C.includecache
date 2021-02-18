@@ -11,6 +11,8 @@
 /Users/cveeta/CLionProjects/cub3D/cub.h
 stdio.h
 -
+libft/libft.h
+/Users/cveeta/CLionProjects/cub3D/libft/libft.h
 math.h
 -
 mlx.h
@@ -19,22 +21,16 @@ fcntl.h
 /Users/cveeta/CLionProjects/cub3D/fcntl.h
 unistd.h
 /Users/cveeta/CLionProjects/cub3D/unistd.h
-get_next_line.h
-/Users/cveeta/CLionProjects/cub3D/get_next_line.h
+string.h
+-
+stdlib.h
+-
+
+/Users/cveeta/CLionProjects/cub3D/libft/libft.h
 string.h
 -
 
-/Users/cveeta/CLionProjects/cub3D/get_next_line.h
-unistd.h
-/Users/cveeta/CLionProjects/cub3D/unistd.h
-stdlib.h
-/Users/cveeta/CLionProjects/cub3D/stdlib.h
-
-/Users/cveeta/CLionProjects/cub3D/preprocess.c
-cub.h
-/Users/cveeta/CLionProjects/cub3D/cub.h
-
-/Users/cveeta/CLionProjects/cub3D/save.c
+/Users/cveeta/CLionProjects/cub3D/preprocess_map.c
 cub.h
 /Users/cveeta/CLionProjects/cub3D/cub.h
 
