@@ -6,7 +6,7 @@
 #    By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/23 17:34:28 by cveeta            #+#    #+#              #
-#    Updated: 2021/02/18 12:17:17 by cveeta           ###   ########.fr        #
+#    Updated: 2021/02/18 12:50:31 by cveeta           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,13 +34,13 @@ NAME	= cube3D.a
 CC      = gcc
 #CFLAGS  = -Wall -Wextra -Werror
 RM	= rm -f
-SRCS = main.c preprocess.c render_wall_back.c save.c sprt.c utils.c get_next_line.c \
+SRCS = main.c preprocess.c general_utils.c render_wall_back.c save.c sprt.c utils.c get_next_line.c \
     get_next_line_utils.c
 OBJ	= $(SRCS:.c=.o)
 BONUS_OBJ	= $(BONUS:.c=.o)
 all:	$(NAME)
-$(NAME):$(OBJ) libmlx.dylib
-		ar rc $(NAME) $(OBJ) cub.h
+$(NAME):$(OBJ)
+		gcc $(SRCS) libmlx.dylib
 clean:
 		$(RM) $(OBJ) $(BONUS_OBJ)
 fclean:	clean

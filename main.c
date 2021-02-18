@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 21:40:42 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/18 12:39:23 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/18 12:40:44 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -315,7 +315,7 @@ int             main(int argc, char **argv)
 {
 	t_vars      vars;
 
-	if (!argc)
+	if (argc == 1)
 		print_error(4);
 
 	if (!ft_strncmp(argv[2], "--save", 6))
