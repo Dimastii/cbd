@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 21:40:42 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/19 01:03:08 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/19 18:52:19 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,13 +104,13 @@ void 			ft_move(t_vars *vars)
 }
 int				key_release_hook(int keycode, t_vars *vars)
 {
-	if (keycode == 124)
+	if (keycode == 2)
 		vars->button_move = -1;
-	else if (keycode == 123)
+	else if (keycode == 0)
 		vars->button_move = -1;
-	else if (keycode == 125)
+	else if (keycode == 1)
 		vars->button_move = -1;
-	else if (keycode == 126)
+	else if (keycode == 13)
 		vars->button_move = -1;
 	if (keycode == 12)
 		vars->button_rotate = -1;
@@ -123,16 +123,16 @@ int				key_release_hook(int keycode, t_vars *vars)
 int				key_hook(int keycode, t_vars *vars)
 {
 
-	if (keycode == 124) {
+	if (keycode == 2) {
 		vars->button_move = 124;
 	}
-	else if (keycode == 123) {
+	else if (keycode == 0) {
 		vars->button_move = 123;
 	}
-	else if (keycode == 125) {
+	else if (keycode == 1) {
 		vars->button_move = 125;
 	}
-	else if (keycode == 126) {
+	else if (keycode == 13) {
 		vars->button_move = 126;
 	}
 	else {
@@ -328,6 +328,13 @@ int             main(int argc, char **argv)
 		vars.mode_gl = 1;
 	open_file(&vars, argv[1]);
 
+//	while (1)
+//	{
+//
+//	}
+
+//	return 0;
+
 	vars.x =9.5;
 	vars.y =7.5;
 	vars.angle_p = -M_PI/8;
@@ -359,6 +366,12 @@ int             main(int argc, char **argv)
 	vars.img_tex_wall_ea.addr = mlx_get_data_addr(vars.img_tex_wall_ea.img, &vars.img_tex_wall_ea.bits_per_pixel, &vars.img_tex_wall_ea.line_length, &vars.img_tex_wall_ea.endian);
 	else
 		print_error("ERROR : incorrect or missing path_tex_wall_ea\n");
+
+//	free(vars.path_tex_wall_sp);
+//	free(vars.path_tex_wall_so);
+//	free(vars.path_tex_wall_no);
+//	free(vars.path_tex_wall_we);
+//	free(vars.path_tex_wall_ea);
 	if (vars.mode_gl == 1)
 		mlx_hook(vars.win, 2, 1L<<0,key_hook , &vars);
 	if (vars.mode_gl == 1)

@@ -9,6 +9,9 @@ CMakeFiles/cub3D.dir/general_utils.c.o: ../libft/libft.h
 CMakeFiles/cub3D.dir/libft/ft_strchr.c.o: ../libft/ft_strchr.c
 CMakeFiles/cub3D.dir/libft/ft_strchr.c.o: ../libft/libft.h
 
+CMakeFiles/cub3D.dir/libft/ft_strdup.c.o: ../libft/ft_strdup.c
+CMakeFiles/cub3D.dir/libft/ft_strdup.c.o: ../libft/libft.h
+
 CMakeFiles/cub3D.dir/libft/ft_strlen.c.o: ../libft/ft_strlen.c
 
 CMakeFiles/cub3D.dir/libft/get_next_line.c.o: ../libft/get_next_line.c

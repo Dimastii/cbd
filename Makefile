@@ -28,7 +28,7 @@ clean:
 		$(RM) $(OBJ) $(BONUS_OBJ)
 fclean:	clean
 		$(RM) $(NAME)
-		cd libft && make clean
+		cd libft && make fclean
 re:		fclean $(NAME)
 bonus:	$(OBJ) $(BONUS_OBJ)
 		ar rc $(NAME) $(OBJ) $(BONUS_OBJ) cub.h

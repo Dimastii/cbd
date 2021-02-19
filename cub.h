@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:59:11 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/18 16:21:04 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/19 20:12:16 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ typedef struct  s_sprite {
 typedef struct  s_vars {
 	void        *mlx;
 	void        *win;
+
+	char **map;
+	int map_h;
 
 	int size_win_w;
 	int size_win_h;
@@ -103,7 +106,7 @@ void			my_mlx_pixel_put(t_image *data,int x,int y,int color);
 void			ft_render_wall(t_vars *vars, double len_r_norm, int num);
 void			ft_round_angle(double *ang);
 void			screenshot(t_vars *vars);
-void		print_error(char *mode);
+void			print_error(char *mode);
 void			open_file(t_vars *vars, char *file);
 int				game_loop(t_vars* vars);
 int				ft_len_sprt(t_vars *vars, double ang, t_sprite *sprt);
@@ -113,6 +116,6 @@ int				ft_isspace(int c);
 int				ft_isdigit(int c);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				get_next_line(int fd, char **line);
-int				reed_map(char *line, t_vars *vars);
+int				reed_map(char *line, t_vars *vars, int mode);
 
 #endif

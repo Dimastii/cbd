@@ -19,4 +19,5 @@ add_executable(cub3D
 		render_wall_back.c general_utils.c preprocess.c utils.c save.c preprocess_map.c
 		libft/ft_strchr.c
 		libft/ft_strlen.c
+		libft/ft_strdup.c
 		)
