@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/cub3D.dir/general_utils.c.o"
   "CMakeFiles/cub3D.dir/libft/ft_strchr.c.o"
+  "CMakeFiles/cub3D.dir/libft/ft_strdup.c.o"
   "CMakeFiles/cub3D.dir/libft/ft_strlen.c.o"
   "CMakeFiles/cub3D.dir/libft/get_next_line.c.o"
   "CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.o"

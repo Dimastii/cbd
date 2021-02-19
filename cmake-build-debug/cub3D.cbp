@@ -93,6 +93,9 @@
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/libft/ft_strchr.c">
 			<Option target="cub3D"/>
 		</Unit>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/libft/ft_strdup.c">
+			<Option target="cub3D"/>
+		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/libft/ft_strlen.c">
 			<Option target="cub3D"/>
 		</Unit>
