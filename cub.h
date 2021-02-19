@@ -6,25 +6,25 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:59:11 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/18 12:31:49 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/18 16:21:04 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_CUB_H
 #define CUB3D_CUB_H
 #include <stdio.h>
+#include "libft/libft.h"
 #include <math.h>
 #include "mlx.h"
 #include "fcntl.h"
 #include "unistd.h"
-#include "get_next_line.h"
 #include <string.h>
+#include <stdlib.h>
 
 #define mapWidth  24
 #define mapHeight 24
 
 #define ANLGLE M_PI / 4
-#define N_REY vars->size_win_w
 
 typedef struct  s_image {
 	void        *img;
@@ -102,21 +102,17 @@ void			ft_sort_sprt(t_vars *vars );
 void			my_mlx_pixel_put(t_image *data,int x,int y,int color);
 void			ft_render_wall(t_vars *vars, double len_r_norm, int num);
 void			ft_round_angle(double *ang);
+void			screenshot(t_vars *vars);
+void		print_error(char *mode);
 void			open_file(t_vars *vars, char *file);
 int				game_loop(t_vars* vars);
 int				ft_len_sprt(t_vars *vars, double ang, t_sprite *sprt);
 int				my_mlx_pixel_take(t_image data,int x,int y);
-int				ft_atoi(char **str);
+int				ft_atoi_cb(char **str);
 int				ft_isspace(int c);
 int				ft_isdigit(int c);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
-void			screenshot(t_vars *vars);
-size_t				ft_strlen(const char *s);
-char				*ft_strchr(const char *string, int symbol);
-char				*ft_strjoin(char const *s1, char const *s2);
-int					get_next_line(int fd, char **line);
-char				*ft_strdup(const char *s);
-size_t				ft_strlcpy(char *dst, const char *src);
-void			print_error(int mode);
+int				get_next_line(int fd, char **line);
+int				reed_map(char *line, t_vars *vars);
 
 #endif

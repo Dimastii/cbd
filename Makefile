@@ -6,45 +6,29 @@
 #    By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/23 17:34:28 by cveeta            #+#    #+#              #
-#    Updated: 2021/02/18 12:50:31 by cveeta           ###   ########.fr        #
+#    Updated: 2021/02/18 15:50:05 by cveeta           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-#SRC = main.c preprocess.c render_wall_back.c save.c sprt.c utils.c get_next_line/get_next_line.c \
-#    get_next_line/get_next_line_utils.c
-#OBJC = ${SRS:.c=.o}
-#NAME = cube3D.a
-#FLAG = -Wall -Wextra -Werror
-#OBJC = ${SRC:.c=.o}
-#GCC = gcc
-#.c.o:
-#    ${GCC} ${FLAG} -I. -c $< -o ${<:.c=.o}
-#all: ${NAME}
-#${NAME}: ${OBJC} libmlx.dylib
-#    ar rc ${NAME} ${OBJC}
-#bonus: all
-#clean:
-#    rm -f ${OBJC}
-#fclean: clean
-#    rm -f ${NAME}
-#re: fclean all
-#.PHONY: all clean fclean re bonus
 
 NAME	= cube3D.a
 CC      = gcc
 #CFLAGS  = -Wall -Wextra -Werror
 RM	= rm -f
-SRCS = main.c preprocess.c general_utils.c render_wall_back.c save.c sprt.c utils.c get_next_line.c \
-    get_next_line_utils.c
+SRCS =	main.c preprocess.c general_utils.c render_wall_back.c save.c sprt.c utils.c \
+		preprocess_map.c\
+
 OBJ	= $(SRCS:.c=.o)
 BONUS_OBJ	= $(BONUS:.c=.o)
+
 all:	$(NAME)
 $(NAME):$(OBJ)
-		gcc $(SRCS) libmlx.dylib
+		cd libft && make bonus && mv libft.a ../
+		gcc $(SRCS) libmlx.dylib libft.a -o $(NAME)
 clean:
 		$(RM) $(OBJ) $(BONUS_OBJ)
 fclean:	clean
 		$(RM) $(NAME)
+		cd libft && make clean
 re:		fclean $(NAME)
 bonus:	$(OBJ) $(BONUS_OBJ)
 		ar rc $(NAME) $(OBJ) $(BONUS_OBJ) cub.h
