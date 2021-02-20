@@ -20,4 +20,4 @@ add_executable(cub3D
 		libft/ft_strchr.c
 		libft/ft_strlen.c
 		libft/ft_strdup.c
-		)
+		map_valid.c)

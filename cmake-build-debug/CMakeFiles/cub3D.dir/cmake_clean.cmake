@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/cub3D.dir/libft/get_next_line.c.o"
   "CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.o"
   "CMakeFiles/cub3D.dir/main.c.o"
+  "CMakeFiles/cub3D.dir/map_valid.c.o"
   "CMakeFiles/cub3D.dir/preprocess.c.o"
   "CMakeFiles/cub3D.dir/preprocess_map.c.o"
   "CMakeFiles/cub3D.dir/render_wall_back.c.o"

@@ -27,6 +27,11 @@ CMakeFiles/cub3D.dir/main.c.o: ../cub.h
 CMakeFiles/cub3D.dir/main.c.o: ../libft/libft.h
 CMakeFiles/cub3D.dir/main.c.o: ../main.c
 
+CMakeFiles/cub3D.dir/map_valid.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/cub3D.dir/map_valid.c.o: ../cub.h
+CMakeFiles/cub3D.dir/map_valid.c.o: ../libft/libft.h
+CMakeFiles/cub3D.dir/map_valid.c.o: ../map_valid.c
+
 CMakeFiles/cub3D.dir/preprocess.c.o: ../minilibx_mms_20200219/mlx.h
 CMakeFiles/cub3D.dir/preprocess.c.o: ../cub.h
 CMakeFiles/cub3D.dir/preprocess.c.o: ../libft/libft.h

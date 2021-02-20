@@ -114,6 +114,9 @@
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/main.c">
 			<Option target="cub3D"/>
 		</Unit>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/map_valid.c">
+			<Option target="cub3D"/>
+		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/minilibx_mms_20200219/mlx.h">
 			<Option target="cub3D"/>
 		</Unit>

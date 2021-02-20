@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 21:40:42 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/19 18:52:19 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/20 16:56:40 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,33 @@
 
 #include "cub.h"
 
-int worldMap[mapWidth][mapHeight] =
-		{//     	   1 2 3 4 5 6 7 8 9 10111231141516171819
-		/*0*/		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*2*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*3*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*4*/		{1,0,0,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,0,1},
-		/*5*/		{1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
-		/*6*/		{1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*7*/		{1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*8*/		{1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*9*/		{1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*11*/		{1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*12*/		{1,0,0,0,9,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1},
-		/*13*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*14*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*15*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*16*/		{1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1},
-		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-		/*1*/		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-		};
+//int vars->map[mapWidth][mapHeight] =
+//		{//     	' '  1 2 3 4 5 6 7 8 9 10111231141516171819
+//		/*0*/		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+//		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//		/*2*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//		/*3*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//		/*4*/		{1,0,0,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,9,0,0,1},
+//		/*5*/		{1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1},
+//		/*6*/		{1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//		/*7*/		{1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//		/*8*/		{1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//		/*9*/		{1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//		/*11*/		{1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//		/*12*/		{1,0,0,0,9,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1},
+//		/*13*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//		/*14*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//		/*15*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//		/*16*/		{1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1},
+//		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//		/*1*/		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+//		/*1*/		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+//		};
 //		{
 //				{1,1,1,1,1},
 //				{1,0,0,0,1},
@@ -95,8 +95,8 @@ void 			ft_move(t_vars *vars)
 		vars->x += step * cos(vars->angle_p);
 		vars->y -= step * sin(vars->angle_p);
 	}
-//	printf("%d\n" , worldMap[(int)(vars->x + 0.1)][(int)(vars->y + 0.1)]);
-	if (worldMap[(int)(vars->x)][(int)(vars->y)] == 1)
+//	printf("%d\n" , vars->map[(int)(vars->x + 0.1)][(int)(vars->'y' + 0.1)]);
+	if (vars->map[(int)(vars->x)][(int)(vars->y)] == '1')
 	{
 		vars->x = pred_x;
 		vars->y = pred_y;
@@ -225,17 +225,17 @@ int				 game_loop(t_vars* vars)
 		leny = 10000000000;
 
 		n_sprt = 0;
-		while (cx < mapWidth  && cx > 0)
+		while (cx < mapHeight - 1  && cx > 0)
 		{
 			ft_round(&cx, &cyx, vars);
 			len = fabs((vars->x - cx) / (vars->cos_ang - 0.000000002));
 			y = vars->y + (len * (vars->sin_ang * -1));
-			if (y < mapWidth && y > 0 && worldMap[(int)cx - vars->we_ea][(int)y] == 1)
+			if (y < mapWidth && y > 0 && cx > 0 && vars->map[(int)cx - vars->we_ea][(int)y] == '1')
 			{
 				lenx = len;
 				break;
 			}
-			if (y < mapWidth && y > 0 && worldMap[(int)cx - vars->we_ea][(int)y] == 9 )
+			if (y < mapWidth && y > 0 && cx > 0 && vars->map[(int)cx - vars->we_ea][(int)y] == '2' )
 			{
 				if (vars->sprite[n_sprt].len_to_sprt == -1) {
 
@@ -253,17 +253,17 @@ int				 game_loop(t_vars* vars)
 				}
 			}
 		}
-		while (cy < mapHeight && cy > 0)
+		while (cy < mapWidth  - 1 && cy > 0)
 		{
 			ft_round(&cyx, &cy, vars);
 			len = fabs((vars->y - cy) / (vars->sin_ang - 0.00000002));
 			x = vars->x - (len * vars->cos_ang  * - 1);
-			if (x < mapWidth && x > 0 && (worldMap[(int)x][(int)cy - vars->no_so] == 1))
+			if (x < mapHeight && x > 0 && (vars->map[(int)x][(int)cy - vars->no_so] == '1'))
 			{
 				leny = len;
 				break;
 			}
-			if (x < mapWidth && x > 0 && worldMap[(int)x][(int)cy - vars->no_so] == 9)
+			if (x < mapHeight && x > 0 && vars->map[(int)x][(int)cy - vars->no_so] == '2')
 			{
 				if (vars->sprite[n_sprt].len_to_sprt == -1) {
 					vars->sprite[n_sprt].enter_on_len_x = x;
@@ -316,6 +316,9 @@ int             main(int argc, char **argv)
 {
 	t_vars      vars;
 
+	vars.angle_p = M_PI /2;
+
+
 	if (argc == 1)
 		print_error("ERROR : incorrect arg\n");
 	if (argv[1][ft_strlen(argv[1]) - 1] != 'b'
@@ -335,9 +338,8 @@ int             main(int argc, char **argv)
 
 //	return 0;
 
-	vars.x =9.5;
-	vars.y =7.5;
-	vars.angle_p = -M_PI/8;
+//	vars.x = 3;
+//	vars.y = 3;
 
 	vars.mlx = mlx_init();
 
@@ -358,11 +360,11 @@ int             main(int argc, char **argv)
 		vars.img_tex_wall_so.addr = mlx_get_data_addr(vars.img_tex_wall_so.img, &vars.img_tex_wall_so.bits_per_pixel, &vars.img_tex_wall_so.line_length, &vars.img_tex_wall_so.endian);
 	else
 		print_error("ERROR : incorrect or missing path_tex_wall_so\n");
-	if ((vars.img_tex_wall_we.img = mlx_xpm_file_to_image(vars.mlx, vars.path_tex_wall_we, &vars.img_tex_wall_we.w, &vars.img_tex_wall_we.h)))
+	if ((vars.img_tex_wall_we.img = mlx_xpm_file_to_image(vars.mlx, vars.path_tex_wall_ea, &vars.img_tex_wall_we.w, &vars.img_tex_wall_we.h)))
 		vars.img_tex_wall_we.addr = mlx_get_data_addr(vars.img_tex_wall_we.img, &vars.img_tex_wall_we.bits_per_pixel, &vars.img_tex_wall_we.line_length, &vars.img_tex_wall_we.endian);
 	else
 		print_error("ERROR : incorrect or missing path_tex_wall_we\n");
-	if ((vars.img_tex_wall_ea.img = mlx_xpm_file_to_image(vars.mlx, vars.path_tex_wall_ea, &vars.img_tex_wall_ea.w, &vars.img_tex_wall_ea.h)))
+	if ((vars.img_tex_wall_ea.img = mlx_xpm_file_to_image(vars.mlx, vars.path_tex_wall_we, &vars.img_tex_wall_ea.w, &vars.img_tex_wall_ea.h)))
 	vars.img_tex_wall_ea.addr = mlx_get_data_addr(vars.img_tex_wall_ea.img, &vars.img_tex_wall_ea.bits_per_pixel, &vars.img_tex_wall_ea.line_length, &vars.img_tex_wall_ea.endian);
 	else
 		print_error("ERROR : incorrect or missing path_tex_wall_ea\n");

@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:59:11 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/19 20:12:16 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/20 14:33:41 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define mapWidth  24
-#define mapHeight 24
+#define mapWidth  vars->map_w
+#define mapHeight vars->map_h
 
 #define ANLGLE M_PI / 4
 
@@ -52,6 +52,7 @@ typedef struct  s_vars {
 
 	char **map;
 	int map_h;
+	int map_w;
 
 	int size_win_w;
 	int size_win_h;
@@ -117,5 +118,7 @@ int				ft_isdigit(int c);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				get_next_line(int fd, char **line);
 int				reed_map(char *line, t_vars *vars, int mode);
-
+void			map_validator(t_vars *vars);
+void			get_minimap(t_vars *vars);
+char			*ft_strdup_cd(const char *s, int len);
 #endif

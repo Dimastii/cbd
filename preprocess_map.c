@@ -35,6 +35,8 @@ int reed_map(char *line, t_vars *vars, int mode)
 	{
 		flag = 1;
 		vars->map_h++;
+		if (vars->map_w < ft_strlen(line))
+			vars->map_w = ft_strlen(line);
 	}
 	else if (mode == 2)
 	{

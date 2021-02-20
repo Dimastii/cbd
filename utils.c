@@ -27,6 +27,21 @@ int		ft_isspace(int c)
 	return (0);
 }
 
+char	*ft_strdup_cd(const char *s, int len)
+{
+	char	*str;
+	char	*strret;
+
+	if (!(str = malloc(len + 1)))
+		return (NULL);
+	strret = str;
+	while (*s)
+		*str++ = *s++;
+	*str = '\0';
+	return (strret);
+}
+
+
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned char	*ptr1;

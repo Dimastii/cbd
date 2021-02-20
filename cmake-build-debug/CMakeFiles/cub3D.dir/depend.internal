@@ -27,6 +27,11 @@ CMakeFiles/cub3D.dir/main.c.o
  /Users/cveeta/CLionProjects/cub3D/cub.h
  /Users/cveeta/CLionProjects/cub3D/libft/libft.h
  /Users/cveeta/CLionProjects/cub3D/main.c
+CMakeFiles/cub3D.dir/map_valid.c.o
+ ../minilibx_mms_20200219/mlx.h
+ /Users/cveeta/CLionProjects/cub3D/cub.h
+ /Users/cveeta/CLionProjects/cub3D/libft/libft.h
+ /Users/cveeta/CLionProjects/cub3D/map_valid.c
 CMakeFiles/cub3D.dir/preprocess.c.o
  ../minilibx_mms_20200219/mlx.h
  /Users/cveeta/CLionProjects/cub3D/cub.h

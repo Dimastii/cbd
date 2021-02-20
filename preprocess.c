@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:37:20 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/19 20:49:06 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/20 15:07:39 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ int			cardinal_points(char *line, t_vars *vars)
 	}
 	else
 		return (0);
-	printf("%s\n",*path);
+////	printf("%s\n",*path);
 	return (1);
 }
 
@@ -157,6 +157,7 @@ void		open_file(t_vars *vars, char *file) {
 	control = 0;
 
 	vars->map_h = 0;
+	vars->map_w = 0;
 	fd = open(file, O_RDONLY);
 //	line_free = line;
 
@@ -179,13 +180,13 @@ void		open_file(t_vars *vars, char *file) {
 	free(line);
 	get_next_line(fd, &line);
 	reed_map(line, vars, 1);
-//	printf("\n%d\n", i);
+	printf("\n%d | %d\n", vars->map_h, vars->map_w);
 	free(line);
 	close(fd);
 	fd = open(file, O_RDONLY);
 	while (--i != 0) {
 		get_next_line(fd, &line);
-//		printf("%s| \n" , line);
+////		printf("%s| \n" , line);
 
 		free(line);
 	}
@@ -195,11 +196,12 @@ void		open_file(t_vars *vars, char *file) {
 	while (i <= vars->map_h)
 	{
 		get_next_line(fd, &line);
-		vars->map[i] = ft_strdup(line);
+		vars->map[i] = ft_strdup_cd(line, vars->map_w);
 		i++;
 		free(line);
 	}
-	for (int j = 0; j <= vars->map_h + 1 ; ++j) {
-		printf("%s\n", vars->map[j]);
+	for (int j = 0; j <= vars->map_h; ++j) {
+//		printf("%s\n", vars->map[j]);
 	}
+	get_minimap(vars);
 }

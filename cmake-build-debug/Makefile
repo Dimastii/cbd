@@ -332,6 +332,33 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/main.c.s
 .PHONY : main.c.s
 
+map_valid.o: map_valid.c.o
+
+.PHONY : map_valid.o
+
+# target to build an object file
+map_valid.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/map_valid.c.o
+.PHONY : map_valid.c.o
+
+map_valid.i: map_valid.c.i
+
+.PHONY : map_valid.i
+
+# target to preprocess a source file
+map_valid.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/map_valid.c.i
+.PHONY : map_valid.c.i
+
+map_valid.s: map_valid.c.s
+
+.PHONY : map_valid.s
+
+# target to generate assembly for a file
+map_valid.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/map_valid.c.s
+.PHONY : map_valid.c.s
+
 preprocess.o: preprocess.c.o
 
 .PHONY : preprocess.o
@@ -524,6 +551,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... map_valid.o"
+	@echo "... map_valid.i"
+	@echo "... map_valid.s"
 	@echo "... preprocess.o"
 	@echo "... preprocess.i"
 	@echo "... preprocess.s"
