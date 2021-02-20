@@ -17,7 +17,4 @@ add_executable(cub3D
 		sprt.c
 		cub.h
 		render_wall_back.c general_utils.c preprocess.c utils.c save.c preprocess_map.c
-		libft/ft_strchr.c
-		libft/ft_strlen.c
-		libft/ft_strdup.c
-		)
+		map_valid0.c utils2.c main_check_argv_and_init.c game_loop.c conditions_for_sprt.c hook_move.c map_valid1.c map_valid2.c preprocess_rgb.c preprocess_cardinal_points.c)

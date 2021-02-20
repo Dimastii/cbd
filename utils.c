@@ -6,25 +6,24 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 14:05:05 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/17 15:43:55 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/21 00:04:12 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
 
-int		ft_isdigit(int c)
+char	*ft_strdup_cd(const char *s, int len)
 {
-	if (c <= '9' && c >= '0')
-		return (1);
-	return (0);
-}
+	char	*str;
+	char	*strret;
 
-int		ft_isspace(int c)
-{
-	if (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f'
-		   || c == '\r')
-		return (1);
-	return (0);
+	if (!(str = malloc(len + 1)))
+		return (NULL);
+	strret = str;
+	while (*s)
+		*str++ = *s++;
+	*str = '\0';
+	return (strret);
 }
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -49,13 +48,14 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
-int			ft_atoi_cb(char **str)
+int		ft_atoi_cb(char **str)
 {
 	int				dig;
 
 	dig = 0;
-	while (*(*str) == ' ' || *(*str) == '\t' || *(*str) == '\n' || *(*str) == '\v' || *(*str) == '\f'
-		   || *(*str) == '\r')
+	while (*(*str) == ' ' ||
+	*(*str) == '\t' || *(*str) == '\n' || *(*str) == '\v' || *(*str) == '\f'
+	|| *(*str) == '\r')
 		(*str)++;
 	if (*(*str) == '-')
 	{
@@ -64,11 +64,40 @@ int			ft_atoi_cb(char **str)
 	}
 	while (ft_isdigit(*(*str)))
 	{
-
 		dig = dig * 10 + *(*str) - '0';
 		(*str)++;
 		if (dig > 2147483647)
 			dig = 2147483647;
 	}
 	return (dig);
+}
+
+char	*ft_strchr(const char *string, int symbol)
+{
+	char *str;
+	char sb;
+
+	sb = (char)symbol;
+	str = (char*)string;
+	while (*str)
+	{
+		if (*str == sb)
+			return (str);
+		str++;
+	}
+	return (NULL);
+}
+
+char	*ft_strdup(const char *s)
+{
+	char	*str;
+	char	*strret;
+
+	if (!(str = malloc(ft_strlen(s) + 2)))
+		return (NULL);
+	strret = str;
+	while (*s)
+		*str++ = *s++;
+	*str = '\0';
+	return (strret);
 }

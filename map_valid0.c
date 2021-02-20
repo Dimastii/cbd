@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   map_valid0.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/12 21:40:42 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 22:24:10 by cveeta           ###   ########.fr       */
+/*   Created: 2021/02/20 11:56:34 by cveeta            #+#    #+#             */
+/*   Updated: 2021/02/20 22:47:58 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
 
-int				main(int argc, char **argv)
+void	check_minimap(t_vars *vars)
 {
-	t_vars	vars;
+	int i;
+	int j;
+	int flag;
 
-	check_argv(&vars, argc, argv);
-	open_file(&vars, argv[1]);
-	init_mlx(&vars);
-	if (vars.mode_gl == 1)
-		mlx_hook(vars.win, 2, 1L << 0, key_hook, &vars);
-	if (vars.mode_gl == 1)
-		mlx_hook(vars.win, 3, 1L << 1, key_release_hook, &vars);
-	mlx_loop_hook(vars.mlx, game_loop, &vars);
-	mlx_loop(vars.mlx);
-	return (0);
+	flag = 0;
+	i = -1;
+	while (++i < vars->map_h)
+	{
+		j = -1;
+		while (++j < vars->map_w)
+			check_pers(vars, i, j, &flag);
+	}
+	if (!flag)
+		print_error("player not found");
+	map_validator(vars);
 }

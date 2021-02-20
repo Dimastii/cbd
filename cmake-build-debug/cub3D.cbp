@@ -84,19 +84,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/conditions_for_sprt.c">
+			<Option target="cub3D"/>
+		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/cub.h">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/game_loop.c">
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/general_utils.c">
 			<Option target="cub3D"/>
 		</Unit>
-		<Unit filename="/Users/cveeta/CLionProjects/cub3D/libft/ft_strchr.c">
-			<Option target="cub3D"/>
-		</Unit>
-		<Unit filename="/Users/cveeta/CLionProjects/cub3D/libft/ft_strdup.c">
-			<Option target="cub3D"/>
-		</Unit>
-		<Unit filename="/Users/cveeta/CLionProjects/cub3D/libft/ft_strlen.c">
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/hook_move.c">
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/libft/get_next_line.c">
@@ -114,13 +114,31 @@
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/main.c">
 			<Option target="cub3D"/>
 		</Unit>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/main_check_argv_and_init.c">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/map_valid0.c">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/map_valid1.c">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/map_valid2.c">
+			<Option target="cub3D"/>
+		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/minilibx_mms_20200219/mlx.h">
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/preprocess.c">
 			<Option target="cub3D"/>
 		</Unit>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/preprocess_cardinal_points.c">
+			<Option target="cub3D"/>
+		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/preprocess_map.c">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/preprocess_rgb.c">
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/render_wall_back.c">
@@ -133,6 +151,9 @@
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/utils.c">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/utils2.c">
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/CMakeLists.txt">
