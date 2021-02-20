@@ -4,12 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/cveeta/CLionProjects/cub3D/conditions_for_sprt.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/conditions_for_sprt.c.o"
   "/Users/cveeta/CLionProjects/cub3D/game_loop.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/game_loop.c.o"
   "/Users/cveeta/CLionProjects/cub3D/general_utils.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/general_utils.c.o"
+  "/Users/cveeta/CLionProjects/cub3D/hook_move.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/hook_move.c.o"
   "/Users/cveeta/CLionProjects/cub3D/libft/get_next_line.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/libft/get_next_line.c.o"
   "/Users/cveeta/CLionProjects/cub3D/libft/get_next_line_utils.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.o"
   "/Users/cveeta/CLionProjects/cub3D/main.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/main.c.o"
-  "/Users/cveeta/CLionProjects/cub3D/main_check_&_init.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/main_check_&_init.c.o"
+  "/Users/cveeta/CLionProjects/cub3D/main_check_argv_and_init.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/main_check_argv_and_init.c.o"
   "/Users/cveeta/CLionProjects/cub3D/map_valid.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/map_valid.c.o"
   "/Users/cveeta/CLionProjects/cub3D/preprocess.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/preprocess.c.o"
   "/Users/cveeta/CLionProjects/cub3D/preprocess_map.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/preprocess_map.c.o"

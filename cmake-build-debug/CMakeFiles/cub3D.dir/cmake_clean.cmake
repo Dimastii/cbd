@@ -1,10 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/cub3D.dir/conditions_for_sprt.c.o"
   "CMakeFiles/cub3D.dir/game_loop.c.o"
   "CMakeFiles/cub3D.dir/general_utils.c.o"
+  "CMakeFiles/cub3D.dir/hook_move.c.o"
   "CMakeFiles/cub3D.dir/libft/get_next_line.c.o"
   "CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.o"
   "CMakeFiles/cub3D.dir/main.c.o"
-  "CMakeFiles/cub3D.dir/main_check_&_init.c.o"
+  "CMakeFiles/cub3D.dir/main_check_argv_and_init.c.o"
   "CMakeFiles/cub3D.dir/map_valid.c.o"
   "CMakeFiles/cub3D.dir/preprocess.c.o"
   "CMakeFiles/cub3D.dir/preprocess_map.c.o"

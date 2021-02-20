@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:59:11 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 20:25:06 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/20 22:09:41 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,16 @@ typedef struct  s_sprite {
 	int create;
 
 }               t_sprite;
+typedef struct  s_loop_var {
+	double cy;
+	double cx;
+	double cyx;
+	double lenx;
+	double leny;
+	double len;
+	double y;
+	double x;
+}               t_loop_var;
 
 typedef struct  s_vars {
 	void        *mlx;
@@ -57,6 +67,9 @@ typedef struct  s_vars {
 	int size_win_w;
 	int size_win_h;
 
+	double max_angle;
+	double min_angle;
+
 	double x;
 	double y;
 	double angle_p;
@@ -64,8 +77,8 @@ typedef struct  s_vars {
 	int no_so;
 	int we_ea;
 
-	t_sprite sprite[100];
-
+	t_sprite *sprite;
+	int 	n_sprt;
 	t_image 		img;
 
 	t_image		img_tex_wall_no;
@@ -94,6 +107,7 @@ typedef struct  s_vars {
 	int		button_move;
 
 	int mode_gl;
+	t_loop_var lv;
 }               t_vars;
 
 void			ft_round(double *cx, double *cy,t_vars *vars);
@@ -124,4 +138,9 @@ void 			check_argv(t_vars *vars, int argc, char **argv);
 char			*ft_strdup_cd(const char *s, int len);
 void			init_mlx(t_vars *vars);
 void 			ft_move(t_vars *vars);
+void 			while_cy_if_sprt(t_vars *vars, int *n_sprt);
+void 			while_cx_if_sprt(t_vars *vars, int *n_sprt);
+int				key_hook(int keycode, t_vars *vars);
+int				key_release_hook(int keycode, t_vars *vars);
+
 #endif

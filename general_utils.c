@@ -6,11 +6,23 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 22:28:36 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 20:05:55 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/20 22:23:21 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
+
+void			my_mlx_pixel_put(t_image *data, int x, int y, int color)
+{
+	*(unsigned int*)(data->addr +
+	(y * data->line_length + x * (data->bits_per_pixel / 8))) = color;
+}
+
+int				my_mlx_pixel_take(t_image data, int x, int y)
+{
+	return (*(int*)(data.addr +
+	(y * data.line_length + x * (data.bits_per_pixel / 8))));
+}
 
 void			ft_round_angle(double *ang)
 {

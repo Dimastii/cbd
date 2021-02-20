@@ -26,55 +26,15 @@ string.h
 stdlib.h
 -
 
-/Users/cveeta/CLionProjects/cub3D/game_loop.c
-cub.h
-/Users/cveeta/CLionProjects/cub3D/cub.h
-
-/Users/cveeta/CLionProjects/cub3D/general_utils.c
-cub.h
-/Users/cveeta/CLionProjects/cub3D/cub.h
-
 /Users/cveeta/CLionProjects/cub3D/libft/libft.h
 string.h
 -
 
-/Users/cveeta/CLionProjects/cub3D/main.c
-cub.h
-/Users/cveeta/CLionProjects/cub3D/cub.h
-
-/Users/cveeta/CLionProjects/cub3D/main_check_&_init.c
+/Users/cveeta/CLionProjects/cub3D/main_check_argv_and_init.c
 cub.h
 /Users/cveeta/CLionProjects/cub3D/cub.h
 
 /Users/cveeta/CLionProjects/cub3D/map_valid.c
-cub.h
-/Users/cveeta/CLionProjects/cub3D/cub.h
-
-/Users/cveeta/CLionProjects/cub3D/preprocess.c
-cub.h
-/Users/cveeta/CLionProjects/cub3D/cub.h
-
-/Users/cveeta/CLionProjects/cub3D/preprocess_map.c
-cub.h
-/Users/cveeta/CLionProjects/cub3D/cub.h
-
-/Users/cveeta/CLionProjects/cub3D/render_wall_back.c
-cub.h
-/Users/cveeta/CLionProjects/cub3D/cub.h
-
-/Users/cveeta/CLionProjects/cub3D/save.c
-cub.h
-/Users/cveeta/CLionProjects/cub3D/cub.h
-
-/Users/cveeta/CLionProjects/cub3D/sprt.c
-cub.h
-/Users/cveeta/CLionProjects/cub3D/cub.h
-
-/Users/cveeta/CLionProjects/cub3D/utils.c
-cub.h
-/Users/cveeta/CLionProjects/cub3D/cub.h
-
-/Users/cveeta/CLionProjects/cub3D/utils2.c
 cub.h
 /Users/cveeta/CLionProjects/cub3D/cub.h
 

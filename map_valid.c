@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 11:56:34 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 19:55:45 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/20 21:22:24 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,6 +161,29 @@ void	map_validator(t_vars *vars)
 	}
 }
 
+void	check_pers(t_vars *vars, int i, int j, int *flag)
+{
+	if (vars->map[i][j] == '2')
+		vars->n_sprt++;
+	if (ft_strchr("SWEN", vars->map[i][j]) && !*flag)
+	{
+		if (vars->map[i][j] == 'N')
+			vars->angle_p = - M_PI / 2;
+		if (vars->map[i][j] == 'S')
+			vars->angle_p = M_PI / 2;
+		if (vars->map[i][j] == 'W')
+			vars->angle_p = -M_PI;
+		if (vars->map[i][j] == 'E')
+			vars->angle_p = 0;
+		vars->map[i][j] = '0';
+		vars->y = j + .5;
+		vars->x = i + .5;
+		*flag = 1;
+	}
+	else if (ft_strchr("SWEN", vars->map[i][j]) && *flag)
+		print_error("player dup");
+}
+
 void	get_minimap(t_vars *vars)
 {
 	int i;
@@ -168,30 +191,12 @@ void	get_minimap(t_vars *vars)
 	int flag;
 
 	flag = 0;
-	i = -1;
+	i = - 1;
 	while (++i < vars->map_h)
 	{
-		j = -1;
+		j = - 1;
 		while (++j < vars->map_w)
-		{
-			if (ft_strchr("SWEN", vars->map[i][j]) && !flag)
-			{
-				if (vars->map[i][j] == 'N')
-					vars->angle_p = - M_PI / 2;
-				if (vars->map[i][j] == 'S')
-					vars->angle_p = M_PI / 2;
-				if (vars->map[i][j] == 'W')
-					vars->angle_p = -M_PI;
-				if (vars->map[i][j] == 'E')
-					vars->angle_p = 0;
-				vars->map[i][j] = '0';
-				vars->y = j + .5;
-				vars->x = i + .5;
-				flag = 1;
-			}
-			else if (ft_strchr("SWEN", vars->map[i][j]) && flag)
-				print_error("player dup");
-		}
+			check_pers(vars, i, j, &flag);
 	}
 	if (!flag)
 		print_error("player not found");

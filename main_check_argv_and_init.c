@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_check_&_init.c                                :+:      :+:    :+:   */
+/*   main_check_argv_and_init.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 20:09:21 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 20:12:02 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/20 22:34:30 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
 
-void 		check_argv(t_vars *vars, int argc, char **argv)
+void		check_argv(t_vars *vars, int argc, char **argv)
 {
-	vars->angle_p = M_PI /2;
+	vars->angle_p = M_PI / 2;
 	if (argc == 1)
 		print_error("ERROR : incorrect arg\n");
 	if (argv[1][ft_strlen(argv[1]) - 1] != 'b'
@@ -83,10 +83,14 @@ vars->img_tex_wall_ea.img, &vars->img_tex_wall_ea.bits_per_pixel,
 	else
 		print_error("ERROR : incorrect or missing path_tex_wall_ea\n");
 }
+
 void		init_mlx(t_vars *vars)
 {
 	vars->mlx = mlx_init();
 	init_win_img_sp(vars);
 	init_no_so(vars);
 	init_ea_we(vars);
+	vars->max_angle = vars->angle_p + ANLGLE / 2.0;
+	vars->min_angle = vars->angle_p - ANLGLE / 2.0;
+	vars->sprite = malloc(sizeof(t_sprite) * vars->n_sprt);
 }

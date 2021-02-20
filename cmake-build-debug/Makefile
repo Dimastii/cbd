@@ -143,6 +143,33 @@ cub3D/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/build
 .PHONY : cub3D/fast
 
+conditions_for_sprt.o: conditions_for_sprt.c.o
+
+.PHONY : conditions_for_sprt.o
+
+# target to build an object file
+conditions_for_sprt.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/conditions_for_sprt.c.o
+.PHONY : conditions_for_sprt.c.o
+
+conditions_for_sprt.i: conditions_for_sprt.c.i
+
+.PHONY : conditions_for_sprt.i
+
+# target to preprocess a source file
+conditions_for_sprt.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/conditions_for_sprt.c.i
+.PHONY : conditions_for_sprt.c.i
+
+conditions_for_sprt.s: conditions_for_sprt.c.s
+
+.PHONY : conditions_for_sprt.s
+
+# target to generate assembly for a file
+conditions_for_sprt.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/conditions_for_sprt.c.s
+.PHONY : conditions_for_sprt.c.s
+
 game_loop.o: game_loop.c.o
 
 .PHONY : game_loop.o
@@ -196,6 +223,33 @@ general_utils.s: general_utils.c.s
 general_utils.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/general_utils.c.s
 .PHONY : general_utils.c.s
+
+hook_move.o: hook_move.c.o
+
+.PHONY : hook_move.o
+
+# target to build an object file
+hook_move.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/hook_move.c.o
+.PHONY : hook_move.c.o
+
+hook_move.i: hook_move.c.i
+
+.PHONY : hook_move.i
+
+# target to preprocess a source file
+hook_move.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/hook_move.c.i
+.PHONY : hook_move.c.i
+
+hook_move.s: hook_move.c.s
+
+.PHONY : hook_move.s
+
+# target to generate assembly for a file
+hook_move.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/hook_move.c.s
+.PHONY : hook_move.c.s
 
 libft/get_next_line.o: libft/get_next_line.c.o
 
@@ -278,32 +332,32 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/main.c.s
 .PHONY : main.c.s
 
-main_check_&_init.o: main_check_&_init.c.o
+main_check_argv_and_init.o: main_check_argv_and_init.c.o
 
-.PHONY : main_check_&_init.o
+.PHONY : main_check_argv_and_init.o
 
 # target to build an object file
-main_check_&_init.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make "CMakeFiles/cub3D.dir/main_check_&_init.c.o"
-.PHONY : main_check_&_init.c.o
+main_check_argv_and_init.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/main_check_argv_and_init.c.o
+.PHONY : main_check_argv_and_init.c.o
 
-main_check_&_init.i: main_check_&_init.c.i
+main_check_argv_and_init.i: main_check_argv_and_init.c.i
 
-.PHONY : main_check_&_init.i
+.PHONY : main_check_argv_and_init.i
 
 # target to preprocess a source file
-main_check_&_init.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make "CMakeFiles/cub3D.dir/main_check_&_init.c.i"
-.PHONY : main_check_&_init.c.i
+main_check_argv_and_init.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/main_check_argv_and_init.c.i
+.PHONY : main_check_argv_and_init.c.i
 
-main_check_&_init.s: main_check_&_init.c.s
+main_check_argv_and_init.s: main_check_argv_and_init.c.s
 
-.PHONY : main_check_&_init.s
+.PHONY : main_check_argv_and_init.s
 
 # target to generate assembly for a file
-main_check_&_init.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make "CMakeFiles/cub3D.dir/main_check_&_init.c.s"
-.PHONY : main_check_&_init.c.s
+main_check_argv_and_init.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/main_check_argv_and_init.c.s
+.PHONY : main_check_argv_and_init.c.s
 
 map_valid.o: map_valid.c.o
 
@@ -530,12 +584,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... cub3D"
+	@echo "... conditions_for_sprt.o"
+	@echo "... conditions_for_sprt.i"
+	@echo "... conditions_for_sprt.s"
 	@echo "... game_loop.o"
 	@echo "... game_loop.i"
 	@echo "... game_loop.s"
 	@echo "... general_utils.o"
 	@echo "... general_utils.i"
 	@echo "... general_utils.s"
+	@echo "... hook_move.o"
+	@echo "... hook_move.i"
+	@echo "... hook_move.s"
 	@echo "... libft/get_next_line.o"
 	@echo "... libft/get_next_line.i"
 	@echo "... libft/get_next_line.s"
@@ -545,9 +605,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... main_check_&_init.o"
-	@echo "... main_check_&_init.i"
-	@echo "... main_check_&_init.s"
+	@echo "... main_check_argv_and_init.o"
+	@echo "... main_check_argv_and_init.i"
+	@echo "... main_check_argv_and_init.s"
 	@echo "... map_valid.o"
 	@echo "... map_valid.i"
 	@echo "... map_valid.s"
