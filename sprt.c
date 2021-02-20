@@ -64,7 +64,7 @@ void			ft_sort_sprt(t_vars *vars)
 	}
 }
 
-static void 	ft_angle_sprt(t_vars vars, t_sprite sprt,
+static void		ft_angle_sprt(t_vars vars, t_sprite sprt,
 							double h_x, double *an_sptr)
 {
 	if (sprt.enter_on_len_x - vars.x >= 0

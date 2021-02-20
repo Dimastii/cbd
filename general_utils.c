@@ -6,15 +6,15 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 22:28:36 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 22:23:32 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/21 00:04:59 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
 
-int		rgb_to_int(int r, int g, int b)
+int				rgb_to_int(int r, int g, int b)
 {
-	return(r << 16 | g << 8 | b);
+	return (r << 16 | g << 8 | b);
 }
 
 void			my_mlx_pixel_put(t_image *data, int x, int y, int color)

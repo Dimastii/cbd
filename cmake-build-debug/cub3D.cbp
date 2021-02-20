@@ -132,7 +132,13 @@
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/preprocess.c">
 			<Option target="cub3D"/>
 		</Unit>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/preprocess_cardinal_points.c">
+			<Option target="cub3D"/>
+		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/preprocess_map.c">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/preprocess_rgb.c">
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/render_wall_back.c">

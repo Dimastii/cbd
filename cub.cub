@@ -1,28 +1,18 @@
 
 
-NO ./wall_tex/wave_of_kaganav1.xpm
-C  102,102,153
+    NO ./wall_tex/wave_of_kaganav1.xpm
 EA ./wall_tex/wall_pink_tyan1.xpm
 
 
 WE ./wall_tex/wave_of_kaganav3.xpm
 
-
 SO ./wall_tex/wave_of_kaganav2.xpm
 
-
-F  205,136,179
-
-
-R    1000  1000
-
-
-
-
-
-
+C  102,102,153
 
 S  ./sprt_tex/sprt_enot.xpm
+F  205,136,179
+R    1000  1000
 111111111111111111111111       1     111111111111111111111
 1111110000000000001           1      10101000000001000001
 1000000000000110111111111       1    101010000000000000011

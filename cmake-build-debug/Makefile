@@ -467,6 +467,33 @@ preprocess.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/preprocess.c.s
 .PHONY : preprocess.c.s
 
+preprocess_cardinal_points.o: preprocess_cardinal_points.c.o
+
+.PHONY : preprocess_cardinal_points.o
+
+# target to build an object file
+preprocess_cardinal_points.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/preprocess_cardinal_points.c.o
+.PHONY : preprocess_cardinal_points.c.o
+
+preprocess_cardinal_points.i: preprocess_cardinal_points.c.i
+
+.PHONY : preprocess_cardinal_points.i
+
+# target to preprocess a source file
+preprocess_cardinal_points.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/preprocess_cardinal_points.c.i
+.PHONY : preprocess_cardinal_points.c.i
+
+preprocess_cardinal_points.s: preprocess_cardinal_points.c.s
+
+.PHONY : preprocess_cardinal_points.s
+
+# target to generate assembly for a file
+preprocess_cardinal_points.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/preprocess_cardinal_points.c.s
+.PHONY : preprocess_cardinal_points.c.s
+
 preprocess_map.o: preprocess_map.c.o
 
 .PHONY : preprocess_map.o
@@ -493,6 +520,33 @@ preprocess_map.s: preprocess_map.c.s
 preprocess_map.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/preprocess_map.c.s
 .PHONY : preprocess_map.c.s
+
+preprocess_rgb.o: preprocess_rgb.c.o
+
+.PHONY : preprocess_rgb.o
+
+# target to build an object file
+preprocess_rgb.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/preprocess_rgb.c.o
+.PHONY : preprocess_rgb.c.o
+
+preprocess_rgb.i: preprocess_rgb.c.i
+
+.PHONY : preprocess_rgb.i
+
+# target to preprocess a source file
+preprocess_rgb.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/preprocess_rgb.c.i
+.PHONY : preprocess_rgb.c.i
+
+preprocess_rgb.s: preprocess_rgb.c.s
+
+.PHONY : preprocess_rgb.s
+
+# target to generate assembly for a file
+preprocess_rgb.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/preprocess_rgb.c.s
+.PHONY : preprocess_rgb.c.s
 
 render_wall_back.o: render_wall_back.c.o
 
@@ -674,9 +728,15 @@ help:
 	@echo "... preprocess.o"
 	@echo "... preprocess.i"
 	@echo "... preprocess.s"
+	@echo "... preprocess_cardinal_points.o"
+	@echo "... preprocess_cardinal_points.i"
+	@echo "... preprocess_cardinal_points.s"
 	@echo "... preprocess_map.o"
 	@echo "... preprocess_map.i"
 	@echo "... preprocess_map.s"
+	@echo "... preprocess_rgb.o"
+	@echo "... preprocess_rgb.i"
+	@echo "... preprocess_rgb.s"
 	@echo "... render_wall_back.o"
 	@echo "... render_wall_back.i"
 	@echo "... render_wall_back.s"

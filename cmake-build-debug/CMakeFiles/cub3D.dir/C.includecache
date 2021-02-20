@@ -30,11 +30,7 @@ stdlib.h
 string.h
 -
 
-/Users/cveeta/CLionProjects/cub3D/preprocess.c
-cub.h
-/Users/cveeta/CLionProjects/cub3D/cub.h
-
-/Users/cveeta/CLionProjects/cub3D/preprocess_map.c
+/Users/cveeta/CLionProjects/cub3D/preprocess_cardinal_points.c
 cub.h
 /Users/cveeta/CLionProjects/cub3D/cub.h
 

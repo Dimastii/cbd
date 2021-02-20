@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 14:05:05 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 19:41:18 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/21 00:04:12 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ char	*ft_strdup_cd(const char *s, int len)
 	*str = '\0';
 	return (strret);
 }
-
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -49,13 +48,14 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
-int			ft_atoi_cb(char **str)
+int		ft_atoi_cb(char **str)
 {
 	int				dig;
 
 	dig = 0;
-	while (*(*str) == ' ' || *(*str) == '\t' || *(*str) == '\n' || *(*str) == '\v' || *(*str) == '\f'
-		   || *(*str) == '\r')
+	while (*(*str) == ' ' ||
+	*(*str) == '\t' || *(*str) == '\n' || *(*str) == '\v' || *(*str) == '\f'
+	|| *(*str) == '\r')
 		(*str)++;
 	if (*(*str) == '-')
 	{
@@ -64,7 +64,6 @@ int			ft_atoi_cb(char **str)
 	}
 	while (ft_isdigit(*(*str)))
 	{
-
 		dig = dig * 10 + *(*str) - '0';
 		(*str)++;
 		if (dig > 2147483647)

@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 11:04:08 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/18 12:06:50 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/21 00:02:18 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static	void	screenshot_norm_one(int fd)
 	write(fd, &plane, 2);
 }
 
-void fill_screen(int fd, t_vars *vars)
+void			fill_screen(int fd, t_vars *vars)
 {
 	int i;
 	int j;
@@ -45,7 +45,7 @@ void fill_screen(int fd, t_vars *vars)
 		j = 0;
 		while (j < vars->size_win_w)
 		{
-			color = my_mlx_pixel_take((vars->img),j, vars->size_win_h - 1 - i);
+			color = my_mlx_pixel_take((vars->img), j, vars->size_win_h - 1 - i);
 			write(fd, &color, 4);
 			j++;
 		}
@@ -72,11 +72,9 @@ void			screenshot(t_vars *vars)
 	write(fd, &pos_pix, 4);
 	pos_pix = 40;
 	write(fd, &pos_pix, 4);
-	write(fd, &vars->size_win_w , 4);
-	write(fd, &vars->size_win_h , 4);
+	write(fd, &vars->size_win_w, 4);
+	write(fd, &vars->size_win_h, 4);
 	screenshot_norm_one(fd);
 	screenshot_norm_two(fd, all_pix, zero, size);
 	fill_screen(fd, vars);
 }
-
-

@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 20:03:04 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 20:05:15 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/20 22:53:26 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ size_t		ft_strlen(const char *s)
 	return (len);
 }
 
-int		ft_isdigit(int c)
+int			ft_isdigit(int c)
 {
 	if (c <= '9' && c >= '0')
 		return (1);
 	return (0);
 }
 
-int		ft_isspace(int c)
+int			ft_isspace(int c)
 {
 	if (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f'
 		|| c == '\r')
@@ -37,7 +37,7 @@ int		ft_isspace(int c)
 	return (0);
 }
 
-void			ft_round_angle(double *ang)
+void		ft_round_angle(double *ang)
 {
 	if (*ang < 0)
 		while (*ang < -(2.0 * M_PI))

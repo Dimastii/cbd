@@ -59,11 +59,21 @@ CMakeFiles/cub3D.dir/preprocess.c.o
  /Users/cveeta/CLionProjects/cub3D/cub.h
  /Users/cveeta/CLionProjects/cub3D/libft/libft.h
  /Users/cveeta/CLionProjects/cub3D/preprocess.c
+CMakeFiles/cub3D.dir/preprocess_cardinal_points.c.o
+ ../minilibx_mms_20200219/mlx.h
+ /Users/cveeta/CLionProjects/cub3D/cub.h
+ /Users/cveeta/CLionProjects/cub3D/libft/libft.h
+ /Users/cveeta/CLionProjects/cub3D/preprocess_cardinal_points.c
 CMakeFiles/cub3D.dir/preprocess_map.c.o
  ../minilibx_mms_20200219/mlx.h
  /Users/cveeta/CLionProjects/cub3D/cub.h
  /Users/cveeta/CLionProjects/cub3D/libft/libft.h
  /Users/cveeta/CLionProjects/cub3D/preprocess_map.c
+CMakeFiles/cub3D.dir/preprocess_rgb.c.o
+ ../minilibx_mms_20200219/mlx.h
+ /Users/cveeta/CLionProjects/cub3D/cub.h
+ /Users/cveeta/CLionProjects/cub3D/libft/libft.h
+ /Users/cveeta/CLionProjects/cub3D/preprocess_rgb.c
 CMakeFiles/cub3D.dir/render_wall_back.c.o
  ../minilibx_mms_20200219/mlx.h
  /Users/cveeta/CLionProjects/cub3D/cub.h

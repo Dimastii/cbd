@@ -59,10 +59,20 @@ CMakeFiles/cub3D.dir/preprocess.c.o: ../cub.h
 CMakeFiles/cub3D.dir/preprocess.c.o: ../libft/libft.h
 CMakeFiles/cub3D.dir/preprocess.c.o: ../preprocess.c
 
+CMakeFiles/cub3D.dir/preprocess_cardinal_points.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/cub3D.dir/preprocess_cardinal_points.c.o: ../cub.h
+CMakeFiles/cub3D.dir/preprocess_cardinal_points.c.o: ../libft/libft.h
+CMakeFiles/cub3D.dir/preprocess_cardinal_points.c.o: ../preprocess_cardinal_points.c
+
 CMakeFiles/cub3D.dir/preprocess_map.c.o: ../minilibx_mms_20200219/mlx.h
 CMakeFiles/cub3D.dir/preprocess_map.c.o: ../cub.h
 CMakeFiles/cub3D.dir/preprocess_map.c.o: ../libft/libft.h
 CMakeFiles/cub3D.dir/preprocess_map.c.o: ../preprocess_map.c
+
+CMakeFiles/cub3D.dir/preprocess_rgb.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/cub3D.dir/preprocess_rgb.c.o: ../cub.h
+CMakeFiles/cub3D.dir/preprocess_rgb.c.o: ../libft/libft.h
+CMakeFiles/cub3D.dir/preprocess_rgb.c.o: ../preprocess_rgb.c
 
 CMakeFiles/cub3D.dir/render_wall_back.c.o: ../minilibx_mms_20200219/mlx.h
 CMakeFiles/cub3D.dir/render_wall_back.c.o: ../cub.h
