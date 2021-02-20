@@ -6,26 +6,11 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 14:05:05 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/17 15:43:55 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/20 19:41:18 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
-
-int		ft_isdigit(int c)
-{
-	if (c <= '9' && c >= '0')
-		return (1);
-	return (0);
-}
-
-int		ft_isspace(int c)
-{
-	if (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f'
-		   || c == '\r')
-		return (1);
-	return (0);
-}
 
 char	*ft_strdup_cd(const char *s, int len)
 {
@@ -86,4 +71,34 @@ int			ft_atoi_cb(char **str)
 			dig = 2147483647;
 	}
 	return (dig);
+}
+
+char	*ft_strchr(const char *string, int symbol)
+{
+	char *str;
+	char sb;
+
+	sb = (char)symbol;
+	str = (char*)string;
+	while (*str)
+	{
+		if (*str == sb)
+			return (str);
+		str++;
+	}
+	return (NULL);
+}
+
+char	*ft_strdup(const char *s)
+{
+	char	*str;
+	char	*strret;
+
+	if (!(str = malloc(ft_strlen(s) + 2)))
+		return (NULL);
+	strret = str;
+	while (*s)
+		*str++ = *s++;
+	*str = '\0';
+	return (strret);
 }

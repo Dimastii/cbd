@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 15:33:30 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/19 20:25:13 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/20 19:16:29 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,27 +24,22 @@ int 		check_readability_str_map(const char *line)
 	return (0);
 }
 
-int reed_map(char *line, t_vars *vars, int mode)
+int reed_map(char *line, t_vars *vars, int *i)
 {
 	static int flag;
 	static int local_map_h;
 
 	if (flag != 1 && *line == '\0')
+	{
+		(*i)++;
 		return (0);
-	else if (mode == 1)
+	}
+	else
 	{
 		flag = 1;
 		vars->map_h++;
 		if (vars->map_w < ft_strlen(line))
 			vars->map_w = ft_strlen(line);
 	}
-	else if (mode == 2)
-	{
-		vars->map[local_map_h] = ft_strdup(line);
-
-		local_map_h++;
-	}
-//	printf("%d|%s| \n",map_h , line);
-
-
+	return (0);
 }

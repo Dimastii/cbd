@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:59:11 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 14:33:41 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/20 20:25:06 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define mapWidth  vars->map_w
-#define mapHeight vars->map_h
+#define MAPW vars->map_w
+#define MAPH vars->map_h
 
 #define ANLGLE M_PI / 4
 
@@ -117,8 +117,11 @@ int				ft_isspace(int c);
 int				ft_isdigit(int c);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				get_next_line(int fd, char **line);
-int				reed_map(char *line, t_vars *vars, int mode);
+int				reed_map(char *line, t_vars *vars, int *i);
 void			map_validator(t_vars *vars);
 void			get_minimap(t_vars *vars);
+void 			check_argv(t_vars *vars, int argc, char **argv);
 char			*ft_strdup_cd(const char *s, int len);
+void			init_mlx(t_vars *vars);
+void 			ft_move(t_vars *vars);
 #endif

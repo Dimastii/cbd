@@ -143,6 +143,33 @@ cub3D/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/build
 .PHONY : cub3D/fast
 
+game_loop.o: game_loop.c.o
+
+.PHONY : game_loop.o
+
+# target to build an object file
+game_loop.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/game_loop.c.o
+.PHONY : game_loop.c.o
+
+game_loop.i: game_loop.c.i
+
+.PHONY : game_loop.i
+
+# target to preprocess a source file
+game_loop.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/game_loop.c.i
+.PHONY : game_loop.c.i
+
+game_loop.s: game_loop.c.s
+
+.PHONY : game_loop.s
+
+# target to generate assembly for a file
+game_loop.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/game_loop.c.s
+.PHONY : game_loop.c.s
+
 general_utils.o: general_utils.c.o
 
 .PHONY : general_utils.o
@@ -169,87 +196,6 @@ general_utils.s: general_utils.c.s
 general_utils.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/general_utils.c.s
 .PHONY : general_utils.c.s
-
-libft/ft_strchr.o: libft/ft_strchr.c.o
-
-.PHONY : libft/ft_strchr.o
-
-# target to build an object file
-libft/ft_strchr.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/ft_strchr.c.o
-.PHONY : libft/ft_strchr.c.o
-
-libft/ft_strchr.i: libft/ft_strchr.c.i
-
-.PHONY : libft/ft_strchr.i
-
-# target to preprocess a source file
-libft/ft_strchr.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/ft_strchr.c.i
-.PHONY : libft/ft_strchr.c.i
-
-libft/ft_strchr.s: libft/ft_strchr.c.s
-
-.PHONY : libft/ft_strchr.s
-
-# target to generate assembly for a file
-libft/ft_strchr.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/ft_strchr.c.s
-.PHONY : libft/ft_strchr.c.s
-
-libft/ft_strdup.o: libft/ft_strdup.c.o
-
-.PHONY : libft/ft_strdup.o
-
-# target to build an object file
-libft/ft_strdup.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/ft_strdup.c.o
-.PHONY : libft/ft_strdup.c.o
-
-libft/ft_strdup.i: libft/ft_strdup.c.i
-
-.PHONY : libft/ft_strdup.i
-
-# target to preprocess a source file
-libft/ft_strdup.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/ft_strdup.c.i
-.PHONY : libft/ft_strdup.c.i
-
-libft/ft_strdup.s: libft/ft_strdup.c.s
-
-.PHONY : libft/ft_strdup.s
-
-# target to generate assembly for a file
-libft/ft_strdup.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/ft_strdup.c.s
-.PHONY : libft/ft_strdup.c.s
-
-libft/ft_strlen.o: libft/ft_strlen.c.o
-
-.PHONY : libft/ft_strlen.o
-
-# target to build an object file
-libft/ft_strlen.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/ft_strlen.c.o
-.PHONY : libft/ft_strlen.c.o
-
-libft/ft_strlen.i: libft/ft_strlen.c.i
-
-.PHONY : libft/ft_strlen.i
-
-# target to preprocess a source file
-libft/ft_strlen.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/ft_strlen.c.i
-.PHONY : libft/ft_strlen.c.i
-
-libft/ft_strlen.s: libft/ft_strlen.c.s
-
-.PHONY : libft/ft_strlen.s
-
-# target to generate assembly for a file
-libft/ft_strlen.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/libft/ft_strlen.c.s
-.PHONY : libft/ft_strlen.c.s
 
 libft/get_next_line.o: libft/get_next_line.c.o
 
@@ -331,6 +277,33 @@ main.s: main.c.s
 main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/main.c.s
 .PHONY : main.c.s
+
+main_check_&_init.o: main_check_&_init.c.o
+
+.PHONY : main_check_&_init.o
+
+# target to build an object file
+main_check_&_init.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make "CMakeFiles/cub3D.dir/main_check_&_init.c.o"
+.PHONY : main_check_&_init.c.o
+
+main_check_&_init.i: main_check_&_init.c.i
+
+.PHONY : main_check_&_init.i
+
+# target to preprocess a source file
+main_check_&_init.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make "CMakeFiles/cub3D.dir/main_check_&_init.c.i"
+.PHONY : main_check_&_init.c.i
+
+main_check_&_init.s: main_check_&_init.c.s
+
+.PHONY : main_check_&_init.s
+
+# target to generate assembly for a file
+main_check_&_init.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make "CMakeFiles/cub3D.dir/main_check_&_init.c.s"
+.PHONY : main_check_&_init.c.s
 
 map_valid.o: map_valid.c.o
 
@@ -521,6 +494,33 @@ utils.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/utils.c.s
 .PHONY : utils.c.s
 
+utils2.o: utils2.c.o
+
+.PHONY : utils2.o
+
+# target to build an object file
+utils2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/utils2.c.o
+.PHONY : utils2.c.o
+
+utils2.i: utils2.c.i
+
+.PHONY : utils2.i
+
+# target to preprocess a source file
+utils2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/utils2.c.i
+.PHONY : utils2.c.i
+
+utils2.s: utils2.c.s
+
+.PHONY : utils2.s
+
+# target to generate assembly for a file
+utils2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/utils2.c.s
+.PHONY : utils2.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -530,18 +530,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... cub3D"
+	@echo "... game_loop.o"
+	@echo "... game_loop.i"
+	@echo "... game_loop.s"
 	@echo "... general_utils.o"
 	@echo "... general_utils.i"
 	@echo "... general_utils.s"
-	@echo "... libft/ft_strchr.o"
-	@echo "... libft/ft_strchr.i"
-	@echo "... libft/ft_strchr.s"
-	@echo "... libft/ft_strdup.o"
-	@echo "... libft/ft_strdup.i"
-	@echo "... libft/ft_strdup.s"
-	@echo "... libft/ft_strlen.o"
-	@echo "... libft/ft_strlen.i"
-	@echo "... libft/ft_strlen.s"
 	@echo "... libft/get_next_line.o"
 	@echo "... libft/get_next_line.i"
 	@echo "... libft/get_next_line.s"
@@ -551,6 +545,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... main_check_&_init.o"
+	@echo "... main_check_&_init.i"
+	@echo "... main_check_&_init.s"
 	@echo "... map_valid.o"
 	@echo "... map_valid.i"
 	@echo "... map_valid.s"
@@ -572,6 +569,9 @@ help:
 	@echo "... utils.o"
 	@echo "... utils.i"
 	@echo "... utils.s"
+	@echo "... utils2.o"
+	@echo "... utils2.i"
+	@echo "... utils2.s"
 .PHONY : help
 
 

@@ -87,16 +87,10 @@
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/cub.h">
 			<Option target="cub3D"/>
 		</Unit>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/game_loop.c">
+			<Option target="cub3D"/>
+		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/general_utils.c">
-			<Option target="cub3D"/>
-		</Unit>
-		<Unit filename="/Users/cveeta/CLionProjects/cub3D/libft/ft_strchr.c">
-			<Option target="cub3D"/>
-		</Unit>
-		<Unit filename="/Users/cveeta/CLionProjects/cub3D/libft/ft_strdup.c">
-			<Option target="cub3D"/>
-		</Unit>
-		<Unit filename="/Users/cveeta/CLionProjects/cub3D/libft/ft_strlen.c">
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/libft/get_next_line.c">
@@ -112,6 +106,9 @@
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/main.c">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/main_check_&amp;_init.c">
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/map_valid.c">
@@ -136,6 +133,9 @@
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/utils.c">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/utils2.c">
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/CMakeLists.txt">

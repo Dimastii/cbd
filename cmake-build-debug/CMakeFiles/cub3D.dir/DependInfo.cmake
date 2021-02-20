@@ -4,13 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/cveeta/CLionProjects/cub3D/game_loop.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/game_loop.c.o"
   "/Users/cveeta/CLionProjects/cub3D/general_utils.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/general_utils.c.o"
-  "/Users/cveeta/CLionProjects/cub3D/libft/ft_strchr.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/libft/ft_strchr.c.o"
-  "/Users/cveeta/CLionProjects/cub3D/libft/ft_strdup.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/libft/ft_strdup.c.o"
-  "/Users/cveeta/CLionProjects/cub3D/libft/ft_strlen.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/libft/ft_strlen.c.o"
   "/Users/cveeta/CLionProjects/cub3D/libft/get_next_line.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/libft/get_next_line.c.o"
   "/Users/cveeta/CLionProjects/cub3D/libft/get_next_line_utils.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/libft/get_next_line_utils.c.o"
   "/Users/cveeta/CLionProjects/cub3D/main.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/main.c.o"
+  "/Users/cveeta/CLionProjects/cub3D/main_check_&_init.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/main_check_&_init.c.o"
   "/Users/cveeta/CLionProjects/cub3D/map_valid.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/map_valid.c.o"
   "/Users/cveeta/CLionProjects/cub3D/preprocess.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/preprocess.c.o"
   "/Users/cveeta/CLionProjects/cub3D/preprocess_map.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/preprocess_map.c.o"
@@ -18,6 +17,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/cveeta/CLionProjects/cub3D/save.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/save.c.o"
   "/Users/cveeta/CLionProjects/cub3D/sprt.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/sprt.c.o"
   "/Users/cveeta/CLionProjects/cub3D/utils.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/utils.c.o"
+  "/Users/cveeta/CLionProjects/cub3D/utils2.c" "/Users/cveeta/CLionProjects/cub3D/cmake-build-debug/CMakeFiles/cub3D.dir/utils2.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

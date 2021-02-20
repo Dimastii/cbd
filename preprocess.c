@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:37:20 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 15:07:39 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/20 19:23:07 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,52 +150,51 @@ if (color)
 void		open_file(t_vars *vars, char *file) {
 	int fd;
 	char *line;
-	char *line_free;
 	int control;
 	int i;
+
 	i = 0;
 	control = 0;
-
 	vars->map_h = 0;
 	vars->map_w = 0;
 	fd = open(file, O_RDONLY);
-//	line_free = line;
-
-	while (get_next_line(fd, &line) && control < 8) {
+	while (get_next_line(fd, &line) && control < 8)
+	{
 		control += rgb(line, vars) + cardinal_points(line, vars) + resolution(line, vars);
 		i++;
 		free(line);
 	}
 	if (control < 8)
 		print_error("ERROR : not enough information\n");
-	else {
-		reed_map(line, vars, 1);
+	else
+	{
+		reed_map(line, vars, &i);
 		i++;
 		free(line);
-		while (get_next_line(fd, &line)) {
-			reed_map(line, vars, 1);
+		while (get_next_line(fd, &line))
+		{
+			reed_map(line, vars, &i);
 			free(line);
 		}
 	}
 	free(line);
 	get_next_line(fd, &line);
-	reed_map(line, vars, 1);
+	reed_map(line, vars, &i);
 	printf("\n%d | %d\n", vars->map_h, vars->map_w);
 	free(line);
 	close(fd);
 	fd = open(file, O_RDONLY);
 	while (--i != 0) {
 		get_next_line(fd, &line);
-////		printf("%s| \n" , line);
-
 		free(line);
 	}
 	vars->map = malloc(sizeof(char **) * (vars->map_h + 1));
 	vars->map[vars->map_h + 1] = NULL;
-//	vars->map[i] = ft_strdup(line);
-	while (i <= vars->map_h)
+	while (i < vars->map_h)
 	{
 		get_next_line(fd, &line);
+		if (*line == '\0')
+			print_error("ERROR : find \\n after map");
 		vars->map[i] = ft_strdup_cd(line, vars->map_w);
 		i++;
 		free(line);
