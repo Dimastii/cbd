@@ -117,7 +117,13 @@
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/main_check_argv_and_init.c">
 			<Option target="cub3D"/>
 		</Unit>
-		<Unit filename="/Users/cveeta/CLionProjects/cub3D/map_valid.c">
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/map_valid0.c">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/map_valid1.c">
+			<Option target="cub3D"/>
+		</Unit>
+		<Unit filename="/Users/cveeta/CLionProjects/cub3D/map_valid2.c">
 			<Option target="cub3D"/>
 		</Unit>
 		<Unit filename="/Users/cveeta/CLionProjects/cub3D/minilibx_mms_20200219/mlx.h">

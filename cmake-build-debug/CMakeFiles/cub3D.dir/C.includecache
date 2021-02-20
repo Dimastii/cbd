@@ -30,11 +30,11 @@ stdlib.h
 string.h
 -
 
-/Users/cveeta/CLionProjects/cub3D/main_check_argv_and_init.c
+/Users/cveeta/CLionProjects/cub3D/preprocess.c
 cub.h
 /Users/cveeta/CLionProjects/cub3D/cub.h
 
-/Users/cveeta/CLionProjects/cub3D/map_valid.c
+/Users/cveeta/CLionProjects/cub3D/preprocess_map.c
 cub.h
 /Users/cveeta/CLionProjects/cub3D/cub.h
 

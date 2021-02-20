@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_valid.c                                        :+:      :+:    :+:   */
+/*   map_valid1.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 11:56:34 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 21:22:24 by cveeta           ###   ########.fr       */
+/*   Created: 2021/02/20 22:44:57 by cveeta            #+#    #+#             */
+/*   Updated: 2021/02/20 22:45:53 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,123 +82,4 @@ void	check_around(t_vars *vars, int i, int j)
 	check_up_bot_middle(vars, i, k);
 	check_up_bot_right(vars, i, k);
 	check_left_right(vars, i, k);
-}
-
-
-int		check_inside(char *row, int j)
-{
-	int flag;
-
-	flag = 0;
-	while (row[++j])
-	{
-		if (row[j] == '0')
-			flag = 1;
-		else if (row[j] == '2')
-			;
-		else if (row[j] == '1')
-		{
-			flag = 0;
-			break ;
-		}
-		else if (row[j] == ' ' && flag == 0)
-			;
-		else
-			print_error("map is not closed");
-	}
-	if (flag == 1)
-		print_error("map is not closed");
-	return (j - 1);
-}
-
-void	check_map_row(t_vars *vars, int i)
-{
-	int j;
-
-	j = -1;
-	while (vars->map[i][++j])
-	{
-		if (vars->map[i][j] == '1')
-			j = check_inside(*(vars->map + i), j);
-		else if (!ft_strchr("1 \0", vars->map[i][j]))
-			print_error("map is not closed. Didnt find start/end of wall");
-	}
-}
-
-void	check_close(t_vars *vars)
-{
-	int	j;
-	int i;
-
-	j = -1;
-	i = -1;
-	while (vars->map[++i] && i < vars->map_h)
-	{
-		if (i == 0)
-		{
-			while (vars->map[i][++j])
-				if (!ft_strchr("1 \0", vars->map[i][j]))
-					print_error("map is not closed at top");
-		}
-		if (i < vars->map_h)
-			check_map_row(vars, i);
-	}
-}
-
-void	map_validator(t_vars *vars)
-{
-	int	i;
-	int j;
-
-	i = 0;
-	check_close(vars);
-	while (vars->map[++i] && i < vars->map_h )
-	{
-		j = -1;
-		while (vars->map[i][++j] && i < vars->map_h)
-			if (vars->map[i][j] == '0' || vars->map[i][j] == '2')
-				check_around(vars, i, j);
-	}
-}
-
-void	check_pers(t_vars *vars, int i, int j, int *flag)
-{
-	if (vars->map[i][j] == '2')
-		vars->n_sprt++;
-	if (ft_strchr("SWEN", vars->map[i][j]) && !*flag)
-	{
-		if (vars->map[i][j] == 'N')
-			vars->angle_p = - M_PI / 2;
-		if (vars->map[i][j] == 'S')
-			vars->angle_p = M_PI / 2;
-		if (vars->map[i][j] == 'W')
-			vars->angle_p = -M_PI;
-		if (vars->map[i][j] == 'E')
-			vars->angle_p = 0;
-		vars->map[i][j] = '0';
-		vars->y = j + .5;
-		vars->x = i + .5;
-		*flag = 1;
-	}
-	else if (ft_strchr("SWEN", vars->map[i][j]) && *flag)
-		print_error("player dup");
-}
-
-void	get_minimap(t_vars *vars)
-{
-	int i;
-	int j;
-	int flag;
-
-	flag = 0;
-	i = - 1;
-	while (++i < vars->map_h)
-	{
-		j = - 1;
-		while (++j < vars->map_w)
-			check_pers(vars, i, j, &flag);
-	}
-	if (!flag)
-		print_error("player not found");
-	map_validator(vars);
 }

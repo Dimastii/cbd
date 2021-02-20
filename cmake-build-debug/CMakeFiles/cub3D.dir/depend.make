@@ -39,10 +39,20 @@ CMakeFiles/cub3D.dir/main_check_argv_and_init.c.o: ../cub.h
 CMakeFiles/cub3D.dir/main_check_argv_and_init.c.o: ../libft/libft.h
 CMakeFiles/cub3D.dir/main_check_argv_and_init.c.o: ../main_check_argv_and_init.c
 
-CMakeFiles/cub3D.dir/map_valid.c.o: ../minilibx_mms_20200219/mlx.h
-CMakeFiles/cub3D.dir/map_valid.c.o: ../cub.h
-CMakeFiles/cub3D.dir/map_valid.c.o: ../libft/libft.h
-CMakeFiles/cub3D.dir/map_valid.c.o: ../map_valid.c
+CMakeFiles/cub3D.dir/map_valid0.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/cub3D.dir/map_valid0.c.o: ../cub.h
+CMakeFiles/cub3D.dir/map_valid0.c.o: ../libft/libft.h
+CMakeFiles/cub3D.dir/map_valid0.c.o: ../map_valid0.c
+
+CMakeFiles/cub3D.dir/map_valid1.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/cub3D.dir/map_valid1.c.o: ../cub.h
+CMakeFiles/cub3D.dir/map_valid1.c.o: ../libft/libft.h
+CMakeFiles/cub3D.dir/map_valid1.c.o: ../map_valid1.c
+
+CMakeFiles/cub3D.dir/map_valid2.c.o: ../minilibx_mms_20200219/mlx.h
+CMakeFiles/cub3D.dir/map_valid2.c.o: ../cub.h
+CMakeFiles/cub3D.dir/map_valid2.c.o: ../libft/libft.h
+CMakeFiles/cub3D.dir/map_valid2.c.o: ../map_valid2.c
 
 CMakeFiles/cub3D.dir/preprocess.c.o: ../minilibx_mms_20200219/mlx.h
 CMakeFiles/cub3D.dir/preprocess.c.o: ../cub.h

@@ -6,16 +6,11 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:37:20 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 19:23:07 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/20 23:07:34 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
-
-int		rgb_to_int(int r, int g, int b)
-{
-	return(r << 16 | g << 8 | b);
-}
 
 void		print_error(char *mode)
 {
@@ -43,18 +38,15 @@ int			resolution(char *line, t_vars *vars)
 		return (1);
 	}
 	else
-	{
-//		free(line);
 		return (0);
-	}
 }
 
 int			cardinal_points(char *line, t_vars *vars)
 {
-	int i;
-	char **path;
-	static int enter;
-	static int count_call;
+	int			i;
+	char		**path;
+	static int	enter;
+	static int	count_call;
 
 	i = 1;
 	path = NULL;
@@ -100,7 +92,6 @@ int			cardinal_points(char *line, t_vars *vars)
 	}
 	else
 		return (0);
-////	printf("%s\n",*path);
 	return (1);
 }
 
@@ -147,11 +138,12 @@ if (color)
 	return (1);
 }
 
-void		open_file(t_vars *vars, char *file) {
-	int fd;
-	char *line;
-	int control;
-	int i;
+void		open_file(t_vars *vars, char *file)
+{
+	int		fd;
+	char	*line;
+	int		control;
+	int		i;
 
 	i = 0;
 	control = 0;
@@ -160,31 +152,22 @@ void		open_file(t_vars *vars, char *file) {
 	fd = open(file, O_RDONLY);
 	while (get_next_line(fd, &line) && control < 8)
 	{
-		control += rgb(line, vars) + cardinal_points(line, vars) + resolution(line, vars);
+		control += rgb(line, vars)
+				+ cardinal_points(line, vars) + resolution(line, vars);
 		i++;
 		free(line);
 	}
 	if (control < 8)
 		print_error("ERROR : not enough information\n");
 	else
-	{
-		reed_map(line, vars, &i);
-		i++;
-		free(line);
-		while (get_next_line(fd, &line))
-		{
-			reed_map(line, vars, &i);
-			free(line);
-		}
-	}
-	free(line);
+		skip_line(&line, vars, &i, fd);
 	get_next_line(fd, &line);
 	reed_map(line, vars, &i);
-	printf("\n%d | %d\n", vars->map_h, vars->map_w);
 	free(line);
 	close(fd);
 	fd = open(file, O_RDONLY);
-	while (--i != 0) {
+	while (--i != 0)
+	{
 		get_next_line(fd, &line);
 		free(line);
 	}
@@ -198,9 +181,6 @@ void		open_file(t_vars *vars, char *file) {
 		vars->map[i] = ft_strdup_cd(line, vars->map_w);
 		i++;
 		free(line);
-	}
-	for (int j = 0; j <= vars->map_h; ++j) {
-//		printf("%s\n", vars->map[j]);
 	}
 	get_minimap(vars);
 }

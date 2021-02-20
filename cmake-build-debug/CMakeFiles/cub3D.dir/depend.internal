@@ -39,11 +39,21 @@ CMakeFiles/cub3D.dir/main_check_argv_and_init.c.o
  /Users/cveeta/CLionProjects/cub3D/cub.h
  /Users/cveeta/CLionProjects/cub3D/libft/libft.h
  /Users/cveeta/CLionProjects/cub3D/main_check_argv_and_init.c
-CMakeFiles/cub3D.dir/map_valid.c.o
+CMakeFiles/cub3D.dir/map_valid0.c.o
  ../minilibx_mms_20200219/mlx.h
  /Users/cveeta/CLionProjects/cub3D/cub.h
  /Users/cveeta/CLionProjects/cub3D/libft/libft.h
- /Users/cveeta/CLionProjects/cub3D/map_valid.c
+ /Users/cveeta/CLionProjects/cub3D/map_valid0.c
+CMakeFiles/cub3D.dir/map_valid1.c.o
+ ../minilibx_mms_20200219/mlx.h
+ /Users/cveeta/CLionProjects/cub3D/cub.h
+ /Users/cveeta/CLionProjects/cub3D/libft/libft.h
+ /Users/cveeta/CLionProjects/cub3D/map_valid1.c
+CMakeFiles/cub3D.dir/map_valid2.c.o
+ ../minilibx_mms_20200219/mlx.h
+ /Users/cveeta/CLionProjects/cub3D/cub.h
+ /Users/cveeta/CLionProjects/cub3D/libft/libft.h
+ /Users/cveeta/CLionProjects/cub3D/map_valid2.c
 CMakeFiles/cub3D.dir/preprocess.c.o
  ../minilibx_mms_20200219/mlx.h
  /Users/cveeta/CLionProjects/cub3D/cub.h

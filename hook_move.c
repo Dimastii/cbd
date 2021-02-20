@@ -45,7 +45,7 @@ void			ft_move(t_vars *vars)
 
 	pred_x = vars->x;
 	pred_y = vars->y;
-	step = 0.2;
+	step = 0.3;
 	turn = 0.05;
 	if (vars->button_rotate == 12)
 		vars->angle_p -= turn;

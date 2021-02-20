@@ -359,32 +359,86 @@ main_check_argv_and_init.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/main_check_argv_and_init.c.s
 .PHONY : main_check_argv_and_init.c.s
 
-map_valid.o: map_valid.c.o
+map_valid0.o: map_valid0.c.o
 
-.PHONY : map_valid.o
+.PHONY : map_valid0.o
 
 # target to build an object file
-map_valid.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/map_valid.c.o
-.PHONY : map_valid.c.o
+map_valid0.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/map_valid0.c.o
+.PHONY : map_valid0.c.o
 
-map_valid.i: map_valid.c.i
+map_valid0.i: map_valid0.c.i
 
-.PHONY : map_valid.i
+.PHONY : map_valid0.i
 
 # target to preprocess a source file
-map_valid.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/map_valid.c.i
-.PHONY : map_valid.c.i
+map_valid0.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/map_valid0.c.i
+.PHONY : map_valid0.c.i
 
-map_valid.s: map_valid.c.s
+map_valid0.s: map_valid0.c.s
 
-.PHONY : map_valid.s
+.PHONY : map_valid0.s
 
 # target to generate assembly for a file
-map_valid.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/map_valid.c.s
-.PHONY : map_valid.c.s
+map_valid0.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/map_valid0.c.s
+.PHONY : map_valid0.c.s
+
+map_valid1.o: map_valid1.c.o
+
+.PHONY : map_valid1.o
+
+# target to build an object file
+map_valid1.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/map_valid1.c.o
+.PHONY : map_valid1.c.o
+
+map_valid1.i: map_valid1.c.i
+
+.PHONY : map_valid1.i
+
+# target to preprocess a source file
+map_valid1.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/map_valid1.c.i
+.PHONY : map_valid1.c.i
+
+map_valid1.s: map_valid1.c.s
+
+.PHONY : map_valid1.s
+
+# target to generate assembly for a file
+map_valid1.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/map_valid1.c.s
+.PHONY : map_valid1.c.s
+
+map_valid2.o: map_valid2.c.o
+
+.PHONY : map_valid2.o
+
+# target to build an object file
+map_valid2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/map_valid2.c.o
+.PHONY : map_valid2.c.o
+
+map_valid2.i: map_valid2.c.i
+
+.PHONY : map_valid2.i
+
+# target to preprocess a source file
+map_valid2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/map_valid2.c.i
+.PHONY : map_valid2.c.i
+
+map_valid2.s: map_valid2.c.s
+
+.PHONY : map_valid2.s
+
+# target to generate assembly for a file
+map_valid2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3D.dir/build.make CMakeFiles/cub3D.dir/map_valid2.c.s
+.PHONY : map_valid2.c.s
 
 preprocess.o: preprocess.c.o
 
@@ -608,9 +662,15 @@ help:
 	@echo "... main_check_argv_and_init.o"
 	@echo "... main_check_argv_and_init.i"
 	@echo "... main_check_argv_and_init.s"
-	@echo "... map_valid.o"
-	@echo "... map_valid.i"
-	@echo "... map_valid.s"
+	@echo "... map_valid0.o"
+	@echo "... map_valid0.i"
+	@echo "... map_valid0.s"
+	@echo "... map_valid1.o"
+	@echo "... map_valid1.i"
+	@echo "... map_valid1.s"
+	@echo "... map_valid2.o"
+	@echo "... map_valid2.i"
+	@echo "... map_valid2.s"
 	@echo "... preprocess.o"
 	@echo "... preprocess.i"
 	@echo "... preprocess.s"

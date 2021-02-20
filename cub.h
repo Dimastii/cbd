@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:59:11 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 22:09:41 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/20 23:01:48 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,5 +142,8 @@ void 			while_cy_if_sprt(t_vars *vars, int *n_sprt);
 void 			while_cx_if_sprt(t_vars *vars, int *n_sprt);
 int				key_hook(int keycode, t_vars *vars);
 int				key_release_hook(int keycode, t_vars *vars);
-
+void			check_around(t_vars *vars, int i, int j);
+void			check_pers(t_vars *vars, int i, int j, int *flag);
+int				rgb_to_int(int r, int g, int b);
+void			skip_line(char **line, t_vars *vars, int *i, int fd);
 #endif

@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 20:03:04 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 20:03:04 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/20 20:05:15 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,18 @@ int		ft_isspace(int c)
 		|| c == '\r')
 		return (1);
 	return (0);
+}
+
+void			ft_round_angle(double *ang)
+{
+	if (*ang < 0)
+		while (*ang < -(2.0 * M_PI))
+			*ang += (2.0 * M_PI);
+	else if (*ang > 0)
+		while (*ang > (2.0 * M_PI))
+			*ang -= (2.0 * M_PI);
+	if (*ang > M_PI)
+		*ang -= (2.0 * M_PI);
+	if (*ang < -M_PI)
+		*ang += (2.0 * M_PI);
 }

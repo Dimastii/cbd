@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 15:33:30 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 19:36:20 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/20 23:07:34 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,17 @@ int reed_map(char *line, t_vars *vars, int *i)
 			vars->map_w = ft_strlen(line);
 	}
 	return (0);
+}
+
+void 	skip_line(char **line, t_vars *vars, int *i, int fd)
+{
+	reed_map(*line, vars, i);
+	(*i)++;
+	free(*line);
+	while (get_next_line(fd, line))
+	{
+		reed_map(*line, vars, i);
+		free(*line);
+	}
+	free(*line);
 }
