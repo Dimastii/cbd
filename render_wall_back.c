@@ -18,9 +18,9 @@ void			ft_render_background(int num_rey, t_vars *vars)
 
 	h = 0;
 	while (h <= vars->size_win_h / 2)
-		my_mlx_pixel_put(&vars->img, num_rey - 1, h++, vars->color_floor);
-	while (h < vars->size_win_h)
 		my_mlx_pixel_put(&vars->img, num_rey - 1, h++, vars->color_roof);
+	while (h < vars->size_win_h)
+		my_mlx_pixel_put(&vars->img, num_rey - 1, h++, vars->color_floor);
 }
 
 static void		ft_render_wall_check(t_vars *vars)

@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:59:11 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/21 00:11:37 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/21 21:43:54 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@
 # include "unistd.h"
 # include <string.h>
 # include <stdlib.h>
-
-# define MAPW vars->map_w
-# define MAPH vars->map_h
 
 # define ANLGLE M_PI / 4
 
@@ -56,64 +53,52 @@ typedef struct	s_loop_var {
 	double		x;
 }				t_loop_var;
 
-typedef struct	s_vars {
-	void		*mlx;
-	void		*win;
-
-	char		**map;
-	int			map_h;
-	int			map_w;
-
-	int			size_win_w;
-	int			size_win_h;
-
-	double		max_angle;
-	double		min_angle;
-
-	double		x;
-	double		y;
-	double		angle_p;
-
-	int			no_so;
-	int			we_ea;
-
-	t_sprite	*sprite;
-	int			n_sprt;
-	t_image		img;
-
-	t_image		img_tex_wall_no;
-	char		*path_tex_wall_no;
-	t_image		img_tex_wall_so;
-	char		*path_tex_wall_so;
-	t_image		img_tex_wall_we;
-	char		*path_tex_wall_we;
-	t_image		img_tex_wall_ea;
-	char		*path_tex_wall_ea;
-	t_image		img_tex_sp;
-	char		*path_tex_wall_sp;
-	t_image		img_tex_print;
-
-	double		x_tex;
-	double		x_tex_sprt;
-
-	int			color_floor;
-	int			color_roof;
-
-	double		cos_ang;
-	double		sin_ang;
-
-	int			button_rotate;
-	int			button_move;
-
-	int			mode_gl;
-	t_loop_var	lv;
-}				t_vars;
-
 typedef struct	s_clr {
 	int		a;
 	int		b;
 	int		c;
 }				t_clr;
+
+typedef struct	s_vars {
+	char		**map;
+	void		*mlx;
+	void		*win;
+	t_loop_var	lv;
+	double		max_angle;
+	double		y;
+	double		min_angle;
+	double		x;
+	double		angle_p;
+	double		x_tex;
+	double		x_tex_sprt;
+	double		cos_ang;
+	double		sin_ang;
+	t_sprite	*sprite;
+	t_image		img;
+	t_image		img_tex_wall_no;
+	t_image		img_tex_wall_so;
+	t_image		img_tex_wall_we;
+	t_image		img_tex_wall_ea;
+	t_image		img_tex_sp;
+	t_image		img_tex_print;
+	int			map_h;
+	int			map_w;
+	int			size_win_w;
+	int			color_floor;
+	int			color_roof;
+	int			button_rotate;
+	int			button_move;
+	int			mode_gl;
+	int			size_win_h;
+	int			no_so;
+	int			we_ea;
+	int			n_sprt;
+	char		*path_tex_wall_no;
+	char		*path_tex_wall_we;
+	char		*path_tex_wall_so;
+	char		*path_tex_wall_ea;
+	char		*path_tex_wall_sp;
+}				t_vars;
 
 void			ft_round(double *cx, double *cy, t_vars *vars);
 void			ft_render_background(int num_rey, t_vars *vars);
@@ -138,10 +123,11 @@ void			check_around(t_vars *vars, int i, int j);
 void			check_pers(t_vars *vars, int i, int j, int *flag);
 void			check_argv(t_vars *vars, int argc, char **argv);
 void			skip_line(char **line, t_vars *vars, int *i, int fd);
-void			get_map(char **line, t_vars *vars, int *i, int fd);
+void			get_map(char **line, t_vars *vars, int i, int fd);
 char			*ft_strdup_cd(const char *s, int len);
 int				game_loop(t_vars *vars);
 int				ft_len_sprt(t_vars *vars, double ang, t_sprite *sprt);
+int				ft_exit();
 int				my_mlx_pixel_take(t_image data, int x, int y);
 int				ft_atoi_cb(char **str);
 int				ft_isspace(int c);
@@ -154,4 +140,5 @@ int				key_release_hook(int keycode, t_vars *vars);
 int				rgb_to_int(int r, int g, int b);
 int				rgb(char *line, t_vars *vars);
 int				cardinal_points(char *line, t_vars *vars);
+int				mlx_sync(int cmd, void *param);
 #endif

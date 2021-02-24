@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 20:26:33 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 22:17:48 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/21 18:30:35 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void			while_cx(t_vars *vars, int *n_sprt)
 {
 	*n_sprt = 0;
-	while (vars->lv.cx < MAPH - 1 && vars->lv.cx > 0)
+	while (vars->lv.cx < vars->map_h - 1 && vars->lv.cx > 0)
 	{
 		ft_round(&vars->lv.cx, &vars->lv.cyx, vars);
 		vars->lv.len = fabs((vars->x - vars->lv.cx)
 				/ (vars->cos_ang - 0.000000002));
 		vars->lv.y = vars->y + (vars->lv.len * (vars->sin_ang * -1));
-		if (vars->lv.y < MAPW && vars->lv.y > 0 && vars->lv.cx > 0
+		if (vars->lv.y < vars->map_w && vars->lv.y > 0 && vars->lv.cx > 0
 		&& vars->map[(int)vars->lv.cx - vars->we_ea][(int)vars->lv.y] == '1')
 		{
 			vars->lv.lenx = vars->lv.len;
@@ -33,13 +33,13 @@ void			while_cx(t_vars *vars, int *n_sprt)
 
 void			while_cy(t_vars *vars, int *n_sprt)
 {
-	while (vars->lv.cy < MAPW - 1 && vars->lv.cy > 0)
+	while (vars->lv.cy < vars->map_w - 1 && vars->lv.cy > 0)
 	{
 		ft_round(&vars->lv.cyx, &vars->lv.cy, vars);
 		vars->lv.len = fabs((vars->y - vars->lv.cy)
 				/ (vars->sin_ang - 0.00000002));
 		vars->lv.x = vars->x - (vars->lv.len * vars->cos_ang * -1);
-		if (vars->lv.x < MAPH && vars->lv.x > 0
+		if (vars->lv.x < vars->map_h && vars->lv.x > 0
 	&& (vars->map[(int)vars->lv.x][(int)vars->lv.cy - vars->no_so] == '1'))
 		{
 			vars->lv.leny = vars->lv.len;
@@ -118,7 +118,7 @@ int				game_loop(t_vars *vars)
 	if (vars->mode_gl == 2)
 	{
 		screenshot(vars);
-		exit(0);
+		ft_exit();
 	}
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img.img, 0, 0);
 	return (0);

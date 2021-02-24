@@ -14,7 +14,7 @@
 
 void				while_cx_if_sprt(t_vars *vars, int *n_sprt)
 {
-	if (vars->lv.y < MAPW && vars->lv.y > 0 && vars->lv.cx > 0
+	if (vars->lv.y < vars->map_w && vars->lv.y > 0 && vars->lv.cx > 0
 		&& vars->map[(int)vars->lv.cx - vars->we_ea][(int)vars->lv.y] == '2')
 	{
 		if (vars->sprite[*n_sprt].len_to_sprt == -1)
@@ -35,7 +35,7 @@ void				while_cx_if_sprt(t_vars *vars, int *n_sprt)
 
 void				while_cy_if_sprt(t_vars *vars, int *n_sprt)
 {
-	if (vars->lv.x < MAPH && vars->lv.x > 0
+	if (vars->lv.x < vars->map_h && vars->lv.x > 0
 		&& vars->map[(int)vars->lv.x][(int)vars->lv.cy - vars->no_so] == '2')
 	{
 		if (vars->sprite[*n_sprt].len_to_sprt == -1)

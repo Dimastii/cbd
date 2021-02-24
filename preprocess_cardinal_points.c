@@ -41,12 +41,6 @@ void		check_id(const char *line, char ***path, t_vars *vars, int *enter)
 	}
 }
 
-void		skip_line_cp(char **line)
-{
-	while (ft_isspace(**line))
-		(*line)++;
-}
-
 int			cardinal_points(char *line, t_vars *vars)
 {
 	int			i;
@@ -56,7 +50,6 @@ int			cardinal_points(char *line, t_vars *vars)
 
 	i = 1;
 	path = NULL;
-	skip_line_cp(&line);
 	check_id(line, &path, vars, &enter);
 	if (path)
 	{
@@ -67,7 +60,7 @@ int			cardinal_points(char *line, t_vars *vars)
 		while (!ft_isspace(*(line + i)) && *(line + i))
 			i++;
 		if (count_call > 5 || ft_isspace(*(line + i)))
-			print_error("ERROR : duplicate path\n");
+			print_error("Error\n : duplicate path\n");
 		else
 			*path = ft_strdup(line);
 	}

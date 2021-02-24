@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 12:37:20 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 23:49:31 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/21 17:54:14 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 void		print_error(char *mode)
 {
 	write(2, mode, ft_strlen(mode));
-	exit(0);
+	ft_exit();
 }
 
 int			resolution(char *line, t_vars *vars)
 {
 	static int count_call;
 
-	while (*line == ' ')
-		line++;
 	if (*line == 'R')
 	{
 		line++;
@@ -34,12 +32,36 @@ int			resolution(char *line, t_vars *vars)
 		if (vars->size_win_h > 1440 && vars->mode_gl == 1)
 			vars->size_win_h = 1440;
 		if (count_call || *line || !vars->size_win_h || !vars->size_win_w)
-			print_error("ERROR : incorrect resolution\n");
+			print_error("Error\n : incorrect resolution\n");
 		count_call = 1;
 		return (1);
 	}
 	else
 		return (0);
+}
+
+void		check(int *control, t_vars *vars, char **line, int *i)
+{
+	static int flag;
+
+	if (*control < 8)
+	{
+		*control += rgb(*line, vars)
+	+ cardinal_points(*line, vars) + resolution(*line, vars);
+		(*i)++;
+	}
+	else if (flag != 1 && **line == '\0')
+	{
+		(*i)++;
+	}
+	else
+	{
+		flag = 1;
+		vars->map_h++;
+		if (vars->map_w < (int)ft_strlen(*line))
+			vars->map_w = ft_strlen(*line);
+	}
+	free(*line);
 }
 
 void		open_file(t_vars *vars, char *file)
@@ -53,18 +75,17 @@ void		open_file(t_vars *vars, char *file)
 	control = 0;
 	vars->map_h = 0;
 	vars->map_w = 0;
-	fd = open(file, O_RDONLY);
-	while (get_next_line(fd, &line) && control < 8)
+	if ((fd = open(file, O_RDONLY)) < 1)
+		print_error("Error\n : dont open file");
+	while (get_next_line(fd, &line))
 	{
-		control += rgb(line, vars)
-				+ cardinal_points(line, vars) + resolution(line, vars);
-		i++;
-		free(line);
+		check(&control, vars, &line, &i);
 	}
+	check(&control, vars, &line, &i);
 	if (control < 8)
-		print_error("ERROR : not enough information\n");
-	skip_line(&line, vars, &i, fd);
+		print_error("Error\n : not enough information\n");
+	close(fd);
 	fd = open(file, O_RDONLY);
-	get_map(&line, vars, &i, fd);
+	get_map(&line, vars, i, fd);
 	check_minimap(vars);
 }

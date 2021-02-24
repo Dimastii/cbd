@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 22:46:00 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 22:46:00 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/21 16:55:31 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ int		check_inside(char *row, int j)
 		else if (row[j] == ' ' && flag == 0)
 			;
 		else
-			print_error("map is not closed");
+			print_error("Error\n : map is not closed");
 	}
 	if (flag == 1)
-		print_error("map is not closed");
+		print_error("Error\n : map is not closed");
 	return (j - 1);
 }
 
@@ -48,7 +48,8 @@ void	check_map_row(t_vars *vars, int i)
 		if (vars->map[i][j] == '1')
 			j = check_inside(*(vars->map + i), j);
 		else if (!ft_strchr("1 \0", vars->map[i][j]))
-			print_error("map is not closed. Didnt find start/end of wall");
+			print_error(
+"Error\n : map is not closed. Didnt find start/end of wall");
 	}
 }
 
@@ -65,7 +66,7 @@ void	check_close(t_vars *vars)
 		{
 			while (vars->map[i][++j])
 				if (!ft_strchr("1 \0", vars->map[i][j]))
-					print_error("map is not closed at top");
+					print_error("Error\n : map is not closed at top");
 		}
 		if (i < vars->map_h)
 			check_map_row(vars, i);
@@ -108,5 +109,5 @@ void	check_pers(t_vars *vars, int i, int j, int *flag)
 		*flag = 1;
 	}
 	else if (ft_strchr("SWEN", vars->map[i][j]) && *flag)
-		print_error("player dup");
+		print_error("Error\n : player dup");
 }

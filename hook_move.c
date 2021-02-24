@@ -6,7 +6,7 @@
 /*   By: cveeta <cveeta@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 22:24:58 by cveeta            #+#    #+#             */
-/*   Updated: 2021/02/20 22:29:51 by cveeta           ###   ########.fr       */
+/*   Updated: 2021/02/21 18:30:35 by cveeta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,15 @@ void			ft_move(t_vars *vars)
 
 	pred_x = vars->x;
 	pred_y = vars->y;
-	step = 0.3;
+	step = 0.15;
 	turn = 0.05;
 	if (vars->button_rotate == 12)
 		vars->angle_p -= turn;
 	else if (vars->button_rotate == 14)
 		vars->angle_p += turn;
 	button_move(vars, step);
-	if (vars->map[(int)(vars->x)][(int)(vars->y)] == '1')
+	if (vars->map[(int)(vars->x)][(int)(vars->y)] == '1'
+	|| vars->map[(int)(vars->x)][(int)(vars->y)] == '2')
 	{
 		vars->x = pred_x;
 		vars->y = pred_y;
@@ -74,7 +75,7 @@ int				key_release_hook(int keycode, t_vars *vars)
 	else if (keycode == 14)
 		vars->button_rotate = -1;
 	if (keycode == 53)
-		exit(0);
+		ft_exit();
 	return (0);
 }
 
@@ -97,6 +98,6 @@ int				key_hook(int keycode, t_vars *vars)
 	else
 		vars->button_rotate = -1;
 	if (keycode == 53)
-		exit(0);
+		ft_exit();
 	return (0);
 }
